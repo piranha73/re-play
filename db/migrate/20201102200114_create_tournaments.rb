@@ -1,7 +1,7 @@
 class CreateTournaments < ActiveRecord::Migration[6.0]
   def change
     create_table :tournaments do |t|
-      t.string :true_booking_fields
+      t.jsonb :optionals
       t.string :name
       t.string :location
       t.string :description
@@ -13,7 +13,6 @@ class CreateTournaments < ActiveRecord::Migration[6.0]
       t.references :user, null: false, foreign_key: true
       t.references :sport, null: false, foreign_key: true
       t.references :structure, null: false, foreign_key: true
-      t.references :optional, null: false, foreign_key: true
 
       t.timestamps
     end
