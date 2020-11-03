@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class OptionalSubscriptionFieldTest < ActiveSupport::TestCase
+class OptionalTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
