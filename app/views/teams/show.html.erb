@@ -1,2 +1,10 @@
-<h1>Teams#show</h1>
-<p>Find me in app/views/teams/show.html.erb</p>
+<div class="container">
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(255, 99, 71, 0.2) 0%, rgba(255, 99, 71, 0.6) 50%);">
+    <div class="container">
+      <h1><%= @team.name %></h1>
+      <p>Here is your team!</p>
+      <%= link_to "Back to Home", root_path, class: "btn btn-ghost" %>
+      <%= link_to "", root_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger far fa-trash-alt", style: "text-align: right" %>
+    </div>
+  </div>
+</div>
