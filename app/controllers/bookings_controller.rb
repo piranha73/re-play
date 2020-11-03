@@ -3,11 +3,6 @@ class BookingsController < ApplicationController
   before_action :find_booking, only: [:show,:destroy]
 
 
-  def index
-    @tournament = Tournament.find(params[:tournament_id])
-    @bookings = @tournament.bookings
-  end
-
   def new
     @tournament = Tournament.find(params[:tournament_id])
     @booking = Booking.new
