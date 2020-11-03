@@ -1,6 +1,6 @@
 class TournamentsController < ApplicationController
 
-  before_action :find_tournament, only: [:show, :edit,:destroy]
+  before_action :find_tournament, only: [:show, :edit, :destroy]
 
   def index
     @tournaments = Tournament.all
