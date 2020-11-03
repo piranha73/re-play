@@ -36,10 +36,10 @@ ActiveRecord::Schema.define(version: 2020_11_03_092532) do
     t.index ["user_id"], name: "index_join_team_players_on_user_id"
   end
 
-  create_table "optional_subscription_fields", force: :cascade do |t|
-    t.string "role"
-    t.boolean "team"
-    t.integer "player_number"
+  create_table "optionals", force: :cascade do |t|
+    t.boolean "role", default: false
+    t.boolean "team", default: true
+    t.boolean "player_number", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2020_11_03_092532) do
   end
 
   create_table "structures", force: :cascade do |t|
-    t.string "type"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -75,10 +75,10 @@ ActiveRecord::Schema.define(version: 2020_11_03_092532) do
     t.bigint "user_id", null: false
     t.bigint "sport_id", null: false
     t.bigint "structure_id", null: false
-    t.bigint "optional_subscription_fields_id", null: false
+    t.bigint "optional_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["optional_subscription_fields_id"], name: "index_tournaments_on_optional_subscription_fields_id"
+    t.index ["optional_id"], name: "index_tournaments_on_optional_id"
     t.index ["sport_id"], name: "index_tournaments_on_sport_id"
     t.index ["structure_id"], name: "index_tournaments_on_structure_id"
     t.index ["user_id"], name: "index_tournaments_on_user_id"
@@ -106,7 +106,7 @@ ActiveRecord::Schema.define(version: 2020_11_03_092532) do
   add_foreign_key "bookings", "users"
   add_foreign_key "join_team_players", "teams"
   add_foreign_key "join_team_players", "users"
-  add_foreign_key "tournaments", "optional_subscription_fields", column: "optional_subscription_fields_id"
+  add_foreign_key "tournaments", "optionals"
   add_foreign_key "tournaments", "sports"
   add_foreign_key "tournaments", "structures"
   add_foreign_key "tournaments", "users"

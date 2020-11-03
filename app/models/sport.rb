@@ -1,3 +1,3 @@
 class Sport < ApplicationRecord
-  belongs_to :tournament
+  has_many :tournaments
 end
