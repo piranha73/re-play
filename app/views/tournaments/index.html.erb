@@ -3,4 +3,6 @@
 
 <% @tournaments.each do |tournament| %>
   <p><%= tournament.name %></p>
+  <%= link_to "Show Tournament", tournament_path(tournament), class: "btn btn-primary" %>
+  <%= link_to "Book Tournament", new_tournament_booking_path(tournament), class: "btn btn-success" %>
 <% end %>
