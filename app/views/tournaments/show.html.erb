@@ -7,3 +7,5 @@
 <p><%= @tournament.number_of_teams %></p>
 <p><%= @tournament.number_of_players_per_team %></p>
 <p><%= @tournament.price %></p>
+<%= link_to "Back", tournaments_path %>
+<%= link_to "Book", new_tournament_booking_path(@tournament), class: 'btn btn-success' %>
