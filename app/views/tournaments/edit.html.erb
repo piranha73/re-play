@@ -1,2 +1,11 @@
 <h1>Tournaments#edit</h1>
 <p>Find me in app/views/tournaments/edit.html.erb</p>
+<%= simple_form_for(restaurant) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :location %>
+  <%= f.input :number_of_teams %>
+  <%= f.input :number_of_players_per_team %>
+  <%= f.input :price %>
+  <%= f.submit %>
+<% end %>
