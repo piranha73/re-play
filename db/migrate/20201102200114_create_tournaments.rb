@@ -13,7 +13,7 @@ class CreateTournaments < ActiveRecord::Migration[6.0]
       t.references :user, null: false, foreign_key: true
       t.references :sport, null: false, foreign_key: true
       t.references :structure, null: false, foreign_key: true
-      t.references :optional_subscription_fields, null: false, foreign_key: true
+      t.references :optional, null: false, foreign_key: true
 
       t.timestamps
     end

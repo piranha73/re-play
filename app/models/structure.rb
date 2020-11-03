@@ -1,3 +1,3 @@
 class Structure < ApplicationRecord
-  belongs_to :tournament
+  has_many :tournaments
 end
