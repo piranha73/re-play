@@ -9,14 +9,17 @@ class BookingsController < ApplicationController
   end
 
   def create
+    @team = Team.find(params[:booking][:team_id])
+    @tournament = Tournament.find(params[:tournament_id])
     @booking = Booking.new(booking_params)
-    @booking.user_id = current_user
-    @booking.tournament_id = params["tournament_id"]
-    @booking.team_id = params["team_id"]
+    @booking.user = current_user
+    @booking.tournament = @tournament
+    @booking.team = @team
     if @booking.save
-      redirect_to tournament_booking_path(@booking.tournament_id,@booking)
+      redirect_to tournaments_path
+      flash[:notice] = "Tournament book"
     else
-      redirect_to new_tournament_booking_path(@booking)
+      render 'new'
       flash[:notice] = "Booking not possible"
     end
   end
