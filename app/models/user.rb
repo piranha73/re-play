@@ -5,6 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :bookings
   has_many :tournaments
-  has_one_attached :photo
-  belongs_to :join_team_players
+  has_many :join_team_players
 end

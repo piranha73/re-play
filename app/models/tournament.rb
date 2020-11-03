@@ -1,3 +1,3 @@
 class Tournament < ApplicationRecord
-  belongs_to :booking
+  has_many :bookings
 end

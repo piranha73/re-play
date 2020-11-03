@@ -1,4 +1,4 @@
 class Team < ApplicationRecord
-  belongs_to :booking
-  belongs_to :join_team_players
+  has_many :bookings
+  has_many :join_team_players
 end

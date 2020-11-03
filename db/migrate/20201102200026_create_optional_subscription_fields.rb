@@ -4,7 +4,6 @@ class CreateOptionalSubscriptionFields < ActiveRecord::Migration[6.0]
       t.string :role
       t.boolean :team
       t.integer :player_number
-      t.references :tournament, null: false, foreign_key: true
 
       t.timestamps
     end
