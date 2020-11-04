@@ -4,4 +4,6 @@ class Tournament < ApplicationRecord
   belongs_to :sport
   belongs_to :structure
   belongs_to :user #manager
+  geocoded_by :location
+  after_validation :geocode
 end

@@ -7,6 +7,11 @@
 <p><%= @tournament.number_of_teams %></p>
 <p><%= @tournament.number_of_players_per_team %></p>
 <p><%= @tournament.price %></p>
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 <%= link_to "Back", tournaments_path %>
 <% if current_user.has_team? %>
   <%= link_to "Book", new_tournament_booking_path(@tournament), class: 'btn btn-success' %>

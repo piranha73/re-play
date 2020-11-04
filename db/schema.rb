@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_03_092532) do
+ActiveRecord::Schema.define(version: 2020_11_04_150845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.jsonb "optionals"
+    t.jsonb "optionals", default: "{}", null: false
     t.bigint "team_id", null: false
     t.bigint "user_id", null: false
     t.bigint "tournament_id", null: false
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2020_11_03_092532) do
   end
 
   create_table "tournaments", force: :cascade do |t|
-    t.jsonb "optionals"
+    t.jsonb "optionals", default: "{}", null: false
     t.string "name"
     t.string "location"
     t.string "description"
@@ -69,6 +69,8 @@ ActiveRecord::Schema.define(version: 2020_11_03_092532) do
     t.bigint "structure_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["sport_id"], name: "index_tournaments_on_sport_id"
     t.index ["structure_id"], name: "index_tournaments_on_structure_id"
     t.index ["user_id"], name: "index_tournaments_on_user_id"
