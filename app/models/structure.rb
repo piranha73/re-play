@@ -3,7 +3,7 @@ class Structure < ApplicationRecord
 
   def games_generator(tournament)
     # teams = ["team1","team2","team3","team4","team5"]
-    teams = tournament.teams.pluck(:id)
+    teams = tournament.teams.uniq.pluck(:id)
     matchdays = RoundRobinTournament.schedule(teams)
     matchdays.each_with_index do |matchday, index|
       day = Matchday.create(
