@@ -8,4 +8,13 @@
 <p><%= @tournament.number_of_players_per_team %></p>
 <p><%= @tournament.price %></p>
 <%= link_to "Back", tournaments_path %>
-<%= link_to "Book", new_tournament_booking_path(@tournament), class: 'btn btn-success' %>
+<% if current_user.has_team? %>
+  <%= link_to "Book", new_tournament_booking_path(@tournament), class: 'btn btn-success' %>
+ <% else %>
+  <button onclick="createTeam()">Book</button>
+ <% end %>
+<script type="text/javascript">
+  function createTeam() {
+  alert("In order to book a tournament you have to create a team first!");
+}
+</script>

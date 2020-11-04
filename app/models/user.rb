@@ -22,5 +22,8 @@ class User < ApplicationRecord
       player_teams << team
     end
     player_teams
+
+  def has_team?
+    !self.teams.empty?
   end
 end
