@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_11_03_092532) do
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.jsonb "optionals"
+    t.jsonb "optionals", default: "{}", null: false
     t.bigint "team_id", null: false
     t.bigint "user_id", null: false
     t.bigint "tournament_id", null: false
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2020_11_03_092532) do
   end
 
   create_table "tournaments", force: :cascade do |t|
-    t.jsonb "optionals"
+    t.jsonb "optionals", default: "{}", null: false
     t.string "name"
     t.string "location"
     t.string "description"
