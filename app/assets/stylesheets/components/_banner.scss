@@ -1,0 +1,22 @@
+.banner {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #0f054f;
+  background-size: cover;
+
+}
+
+.banner-content {
+  h1 {
+    color: #c7eaf5;
+    font-size: 45px;
+    font-weight: bold;
+  }
+  p {
+    color: #c7eaf5;
+    font-size: 25px;
+    font-weight: lighter;
+  }
+}
