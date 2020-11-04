@@ -4,5 +4,14 @@
 <% @tournaments.each do |tournament| %>
   <p><%= tournament.name %></p>
   <%= link_to "Show Tournament", tournament_path(tournament), class: "btn btn-primary" %>
-  <%= link_to "Book Tournament", new_tournament_booking_path(tournament), class: "btn btn-success" %>
+ <% if current_user.has_team? %>
+  <%= link_to "Book", new_tournament_booking_path(tournament), class: 'btn btn-success' %>
+ <% else %>
+  <button onclick="createTeam()">Book</button>
+ <% end %>
 <% end %>
+<script type="text/javascript">
+  function createTeam() {
+  alert("In order to book a tournament you have to create a team first!");
+}
+</script>
