@@ -9,15 +9,15 @@ class BookingsController < ApplicationController
   end
 
   def create
+    @booking = Booking.new
     @team = Team.find(params[:booking][:team_id])
     @tournament = Tournament.find(params[:tournament_id])
-    @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.tournament = @tournament
     @booking.team = @team
     if @booking.save
       redirect_to tournaments_path
-      flash[:notice] = "Tournament book"
+      flash[:notice] = "Tournament booked"
     else
       render 'new'
       flash[:notice] = "Booking not possible"
@@ -38,6 +38,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:requested_booking_fields)
+#    params.require(:booking).permit(:requested_booking_fields)
   end
 end

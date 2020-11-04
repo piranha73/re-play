@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_11_03_092532) do
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.string "requested_booking_fields"
+    t.jsonb "optionals"
     t.bigint "team_id", null: false
     t.bigint "user_id", null: false
     t.bigint "tournament_id", null: false
@@ -34,14 +34,6 @@ ActiveRecord::Schema.define(version: 2020_11_03_092532) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["team_id"], name: "index_join_team_players_on_team_id"
     t.index ["user_id"], name: "index_join_team_players_on_user_id"
-  end
-
-  create_table "optionals", force: :cascade do |t|
-    t.boolean "role", default: false
-    t.boolean "team", default: true
-    t.boolean "player_number", default: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "sports", force: :cascade do |t|
@@ -63,7 +55,7 @@ ActiveRecord::Schema.define(version: 2020_11_03_092532) do
   end
 
   create_table "tournaments", force: :cascade do |t|
-    t.string "true_booking_fields"
+    t.jsonb "optionals"
     t.string "name"
     t.string "location"
     t.string "description"
@@ -75,10 +67,8 @@ ActiveRecord::Schema.define(version: 2020_11_03_092532) do
     t.bigint "user_id", null: false
     t.bigint "sport_id", null: false
     t.bigint "structure_id", null: false
-    t.bigint "optional_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["optional_id"], name: "index_tournaments_on_optional_id"
     t.index ["sport_id"], name: "index_tournaments_on_sport_id"
     t.index ["structure_id"], name: "index_tournaments_on_structure_id"
     t.index ["user_id"], name: "index_tournaments_on_user_id"
@@ -96,7 +86,7 @@ ActiveRecord::Schema.define(version: 2020_11_03_092532) do
     t.string "last_name"
     t.string "address"
     t.date "birth_date"
-    t.string "social_secuirity_number"
+    t.string "social_security_number"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -106,7 +96,6 @@ ActiveRecord::Schema.define(version: 2020_11_03_092532) do
   add_foreign_key "bookings", "users"
   add_foreign_key "join_team_players", "teams"
   add_foreign_key "join_team_players", "users"
-  add_foreign_key "tournaments", "optionals"
   add_foreign_key "tournaments", "sports"
   add_foreign_key "tournaments", "structures"
   add_foreign_key "tournaments", "users"
