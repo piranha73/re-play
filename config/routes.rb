@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   end
 
   resources :teams
+  get '/account', to: 'pages#account'
 end

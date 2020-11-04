@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<h1 style="text-align: center; font-weight: bold;">My Profile</h1>
+<div class="container">
+  <div class="card-product row">
+    <div class="card-info col-md-9">
+      <h1><%= current_user.first_name %> <%= current_user.last_name %></h1>
+      <p>Email: <%= current_user.email %></p>
+
+    </div>
+    <div class="col-md-3 card-price" style="">
+      <div class="actions">
+        <% if !current_user.tournaments.empty? %>
+             <%= link_to "My tournaments", root_path, class: "btn btn-primary" %>
+            <% end %>
+        <% if !current_user.bookings.empty? %>
+             <%= link_to "My Bookings", root_path, class: "btn btn-success" %>
+            <% end %>
+        <%= link_to "Create my team", new_team_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
