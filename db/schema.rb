@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_03_092532) do
+ActiveRecord::Schema.define(version: 2020_11_04_170513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.jsonb "optionals"
+    t.jsonb "optionals", default: "{}", null: false
     t.bigint "team_id", null: false
     t.bigint "user_id", null: false
     t.bigint "tournament_id", null: false
@@ -27,6 +27,17 @@ ActiveRecord::Schema.define(version: 2020_11_03_092532) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+  create_table "games", force: :cascade do |t|
+    t.bigint "home_team_id", null: false
+    t.bigint "away_team_id", null: false
+    t.bigint "matchday_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["away_team_id"], name: "index_games_on_away_team_id"
+    t.index ["home_team_id"], name: "index_games_on_home_team_id"
+    t.index ["matchday_id"], name: "index_games_on_matchday_id"
+  end
+
   create_table "join_team_players", force: :cascade do |t|
     t.bigint "team_id", null: false
     t.bigint "user_id", null: false
@@ -34,6 +45,14 @@ ActiveRecord::Schema.define(version: 2020_11_03_092532) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["team_id"], name: "index_join_team_players_on_team_id"
     t.index ["user_id"], name: "index_join_team_players_on_user_id"
+  end
+
+  create_table "matchdays", force: :cascade do |t|
+    t.integer "number"
+    t.bigint "tournament_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tournament_id"], name: "index_matchdays_on_tournament_id"
   end
 
   create_table "sports", force: :cascade do |t|
@@ -55,7 +74,7 @@ ActiveRecord::Schema.define(version: 2020_11_03_092532) do
   end
 
   create_table "tournaments", force: :cascade do |t|
-    t.jsonb "optionals"
+    t.jsonb "optionals", default: "{}", null: false
     t.string "name"
     t.string "location"
     t.string "description"
@@ -94,8 +113,12 @@ ActiveRecord::Schema.define(version: 2020_11_03_092532) do
   add_foreign_key "bookings", "teams"
   add_foreign_key "bookings", "tournaments"
   add_foreign_key "bookings", "users"
+  add_foreign_key "games", "matchdays"
+  add_foreign_key "games", "teams", column: "away_team_id"
+  add_foreign_key "games", "teams", column: "home_team_id"
   add_foreign_key "join_team_players", "teams"
   add_foreign_key "join_team_players", "users"
+  add_foreign_key "matchdays", "tournaments"
   add_foreign_key "tournaments", "sports"
   add_foreign_key "tournaments", "structures"
   add_foreign_key "tournaments", "users"
