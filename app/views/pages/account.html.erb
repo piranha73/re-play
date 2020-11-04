@@ -2,21 +2,26 @@
 <h1 style="text-align: center; font-weight: bold;">My Profile</h1>
 <div class="container">
   <div class="card-product row">
-    <div class="card-info col-md-9">
+    <div class="card-info col-md-12" style="text-align: center;">
       <h1><%= current_user.first_name %> <%= current_user.last_name %></h1>
       <p>Email: <%= current_user.email %></p>
 
     </div>
-    <div class="col-md-3 card-price" style="">
-      <div class="actions">
-        <% if !current_user.tournaments.empty? %>
-             <%= link_to "My tournaments", root_path, class: "btn btn-primary" %>
-            <% end %>
-        <% if !current_user.bookings.empty? %>
-             <%= link_to "My Bookings", root_path, class: "btn btn-success" %>
-            <% end %>
-        <%= link_to "Create my team", new_team_path, class: "btn btn-primary" %>
-      </div>
+    <div class="container" style="">
+        <div class="personal_box" id='player'>
+          <h1 style="text-align: center; font-weight: bold;">Tournament Participations</h1>
+
+          <%= render partial: "pages/personal_tournaments", locals: { tournaments: current_user.player_tournaments } %>
+
+          <h1 style="text-align: center; font-weight: bold;">My Teams</h1>
+
+          <%= render partial: "pages/personal_teams", locals: { teams: current_user.player_teams } %>
+        </div>
+
+        <div class="personal_box" id='manager'>
+          <h1 style="text-align: center; font-weight: bold;">Managed Tournaments</h1>
+          <%= render partial: "pages/personal_tournaments", locals: { tournaments: current_user.tournaments } %>
+        </div>
     </div>
   </div>
 </div>
