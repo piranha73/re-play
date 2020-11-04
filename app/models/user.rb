@@ -6,4 +6,9 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :tournaments
   has_many :join_team_players
+  has_many :teams, through: :join_team_players
+
+  def has_team?
+    !self.teams.empty?
+  end
 end
