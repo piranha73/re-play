@@ -1,14 +1,19 @@
 <h1>Tournaments#index</h1>
 <p>Find me in app/views/tournaments/index.html.erb</p>
 
-<% @tournaments.each do |tournament| %>
-  <p><%= tournament.name %></p>
-  <%= link_to "Show Tournament", tournament_path(tournament), class: "btn btn-primary" %>
- <% if current_user.has_team? %>
-  <%= link_to "Book", new_tournament_booking_path(tournament), class: 'btn btn-success' %>
- <% else %>
-  <button onclick="createTeam()">Book</button>
- <% end %>
+<% @tournaments.each.with_index do |tournament,index| %>
+<section class = "tournament <%="active" if index == 0 %>" id="<%= tournament.name  %>"
+         data-latitude = "<%= tournament.latitude %>"
+         data-longitude = "<%= tournament.longitude %>">
+        <h3><%= tournament.name %></h3>
+        <p><%=  tournament.description%></p>
+        <%= link_to "Show Tournament", tournament_path(tournament), class: "btn btn-primary" %>
+        <% if current_user.has_team? %>
+          <%= link_to "Book", new_tournament_booking_path(tournament), class: 'btn btn-success' %>
+        <% else %>
+          <button onclick="createTeam()">Book</button>
+        <% end %>
+</section>
 
  <div id="map"
      style="width: 100%; height: 600px;"
