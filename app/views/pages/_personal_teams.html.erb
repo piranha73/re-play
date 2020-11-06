@@ -1,6 +1,5 @@
-
-<div class="col-md-7 card-info" style="">
-  <% teams.each do |team| %>
-    <h1 style="font-size: 24px; text-align: left;"><%= team.name %></h1>
-  <% end %>
-</div>
+<% teams.each do |team| %>
+  <div class="card-info-teams" style="">
+    <%= link_to team.name, team_path(team), style: "font-size: 24px; text-align: left; color: #C7EAF5;" %>
+  </div>
+<% end %>
