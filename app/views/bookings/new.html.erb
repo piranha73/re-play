@@ -1,7 +1,16 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
-<%= simple_form_for [ @tournament, @booking ] do |f| %>
-  <%= f.association :team %>
-  <%= f.submit "Join Tournament" %>
-<% end %>
-<%= link_to 'Back', tournaments_path %>
+<div class="card col-md-8" style="text-align: center;margin:0 auto;width:50%;border:3px;padding:10px;">
+  <br>
+  <h1>New Booking</h1>
+  <br>
+  <%= simple_form_for [ @tournament, @booking ] do |f| %>
+    <%= f.association :team %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  <% end %>
+  <br>
+  <%= link_to 'Back', tournaments_path, class: "back-button" %>
+</div>
+ <br>
+  <br>
+   <br>
+    <br>
+
