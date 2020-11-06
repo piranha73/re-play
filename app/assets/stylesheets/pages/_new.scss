@@ -4,3 +4,11 @@ form {
   margin-right: auto;
   display: inline-block;
  }
+
+.card {
+        float: none; /* Added */
+        margin-bottom: 30px;
+        color: black;
+        padding-bottom: 20%;
+        border-radius: 4px;
+}
