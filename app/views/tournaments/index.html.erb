@@ -1,17 +1,17 @@
-<h1>Tournaments#index</h1>
-<p>Find me in app/views/tournaments/index.html.erb</p>
-
-<% @tournaments.each do |tournament| %>
-  <p><%= tournament.name %></p>
-  <%= link_to "Show Tournament", tournament_path(tournament), class: "btn btn-primary" %>
- <% if current_user.has_team? %>
-  <%= link_to "Book", new_tournament_booking_path(tournament), class: 'btn btn-success' %>
- <% else %>
-  <button onclick="createTeam()">Book</button>
- <% end %>
-<% end %>
-<script type="text/javascript">
-  function createTeam() {
-  alert("In order to book a tournament you have to create a team first!");
-}
-</script>
+<div class="card col-md-8" style="text-align: center; margin:1 auto;width:50%;border:3px;padding:10px 10px;">
+  <% @tournaments.each do |tournament| %>
+    <p style="padding:0px 15px; font-weight: bold; margin-top: 15px;"><%= tournament.name %></p>
+    <%= link_to "Show Tournament", tournament_path(tournament), class: "btn btn-primary" %>
+    <% if current_user.has_team? %>
+      <%= link_to "Book", new_tournament_booking_path(tournament), class: 'btn btn-success', style: "width: 30%; text-align: center;" %>
+    <% else %>
+      <button onclick="createTeam()">Book</button>
+    <% end %>
+  <% end %>
+  <script type="text/javascript">
+    function createTeam() {
+    alert("In order to book a tournament you have to create a team first!");
+  }
+  </script>
+</div>
+<br>
