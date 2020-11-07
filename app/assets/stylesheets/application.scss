@@ -7,14 +7,16 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import 'mapbox-gl/dist/mapbox-gl';
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/tournaments";
+@import "pages/form";
 @import "pages/account";
 @import "pages/new";
 @import "pages/tournament_show";
-
 
 body {
   // min-height: 100vh;

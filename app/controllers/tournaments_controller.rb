@@ -3,9 +3,28 @@ class TournamentsController < ApplicationController
 
   def index
     @tournaments = Tournament.all
+     @markers = @tournaments.geocoded.map do |tournament|
+      {
+        lat: tournament.latitude,
+        lng: tournament.longitude
+      }
+    end
   end
 
   def show
+    if @tournament.started
+      render 'tournaments/show_started'
+    else
+      render 'tournaments/show'
+    end
+  end
+
+  def generate_calendar
+    @tournament = Tournament.find(params[:tournament_id])
+    @tournament.started = true
+    @tournament.save
+    # @tournament.structure.games_generator(@tournament)
+    redirect_to tournament_path(@tournament)
   end
 
   def show_user_tournaments
@@ -19,6 +38,8 @@ class TournamentsController < ApplicationController
   def create
     @tournament = Tournament.new(tournament_params)
     @tournament.user = current_user
+    @tournament.sport_id = 1
+    @tournament.structure_id = 1
     if @tournament.save
       redirect_to tournament_path(@tournament)
     else

@@ -148,11 +148,11 @@ JoinTeamPlayer.create(user_id: 46, team_id: 16)
 JoinTeamPlayer.create(user_id: 47, team_id: 17)
 
 #Tournament Seeds
-Tournament.create(name: "Champions League", location: "Madrid, Spain", description: "Great tournament!", number_of_teams: 4, number_of_players_per_team: 4, price: 10, sport_id: 1, user_id: 1, structure_id: 1)
-Tournament.create(name: "Europa League", location: "Milan, Italy", description: "Good tournament!", number_of_teams: 4, number_of_players_per_team: 2, price: 20, sport_id: 1, user_id: 2, structure_id: 1)
-Tournament.create(name: "Players League", location: "Paris, France", description: "Nice tournament!", number_of_teams: 3, number_of_players_per_team: 3, price: 15, sport_id: 1, user_id: 3, structure_id: 1)
-Tournament.create(name: "Cool League", location: "London, UK", description: "Cool tournament!", number_of_teams: 2, number_of_players_per_team: 5, price: 10, sport_id: 1, user_id: 4, structure_id: 1)
-Tournament.create(name: "Pro League", location: "Berlin, Germany", description: "Well-organized tournament!", number_of_teams: 4, number_of_players_per_team: 1, price: 7, sport_id: 1, user_id: 5, structure_id: 1)
+# Tournament.create(name: "Champions League", location: "Madrid, Spain", description: "Great tournament!", number_of_teams: 5, number_of_players_per_team: 5, price: 1000, sport_id: 1, user_id: 1, structure_id: 1)
+# Tournament.create(name: "Europa League", location: "Milan, Italy", description: "Good tournament!", number_of_teams: 4, number_of_players_per_team: 2, price: 800, sport_id: 1, user_id: 2, structure_id: 1)
+# Tournament.create(name: "Players League", location: "Paris, France", description: "Nice tournament!", number_of_teams: 3, number_of_players_per_team: 3, price: 700, sport_id: 1, user_id: 3, structure_id: 1)
+# Tournament.create(name: "Cool League", location: "London, UK", description: "Cool tournament!", number_of_teams: 2, number_of_players_per_team: 5, price: 600, sport_id: 1, user_id: 4, structure_id: 1)
+# Tournament.create(name: "Pro League", location: "Berlin, Germany", description: "Well-organized tournament!", number_of_teams: 4, number_of_players_per_team: 1, price: 500, sport_id: 1, user_id: 1, structure_id: 1)
 
 #Booking Seeds
 Booking.create(user_id: 1, team_id: 1, tournament_id: 1)
@@ -188,26 +188,27 @@ Booking.create(user_id: 24, team_id: 8, tournament_id: 2)
 Booking.create(user_id: 25, team_id: 9, tournament_id: 3)
 Booking.create(user_id: 26, team_id: 9, tournament_id: 3)
 Booking.create(user_id: 27, team_id: 9, tournament_id: 3)
-Booking.create(user_id: 28, team_id: 10, tournament_id: 3)
 
+Booking.create(user_id: 28, team_id: 10, tournament_id: 3)
 Booking.create(user_id: 29, team_id: 10, tournament_id: 3)
 Booking.create(user_id: 30, team_id: 10, tournament_id: 3)
+
 Booking.create(user_id: 31, team_id: 11, tournament_id: 3)
 Booking.create(user_id: 32, team_id: 11, tournament_id: 3)
-
 Booking.create(user_id: 33, team_id: 11, tournament_id: 3)
+
 Booking.create(user_id: 34, team_id: 12, tournament_id: 4)
 Booking.create(user_id: 35, team_id: 12, tournament_id: 4)
 Booking.create(user_id: 36, team_id: 12, tournament_id: 4)
-
 Booking.create(user_id: 37, team_id: 12, tournament_id: 4)
 Booking.create(user_id: 38, team_id: 12, tournament_id: 4)
+
 Booking.create(user_id: 39, team_id: 13, tournament_id: 4)
 Booking.create(user_id: 40, team_id: 13, tournament_id: 4)
-
 Booking.create(user_id: 41, team_id: 13, tournament_id: 4)
 Booking.create(user_id: 42, team_id: 13, tournament_id: 4)
 Booking.create(user_id: 43, team_id: 13, tournament_id: 4)
+
 Booking.create(user_id: 44, team_id: 14, tournament_id: 5)
 
 Booking.create(user_id: 45, team_id: 15, tournament_id: 5)

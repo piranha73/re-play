@@ -67,30 +67,31 @@ function tabToggle() {
 
 </div>
 
-
-
-
-
-  <div class="description">
-    <h2><%= @tournament.name %></h2>
-    <p><%= @tournament.description %></p>
-    <p><%= @tournament.location %></p>
-    <p>Number of Teams: <%= @tournament.number_of_teams %></p>
-    <p>Number of Players per Team: <%= @tournament.number_of_players_per_team %></p>
-    <p>Tournament Price: €<%= @tournament.price %></p>
-    <%= @tournament.bookings %>
-    <%#= link_to "Teammates", , class: "btn btn-success" %>
-    <% @tournament.teams.uniq.each do |team| %>
-      <%= team.name %>
-    <% end %>
-    <% if current_user.has_team? %>
-      <%= link_to "Book", new_tournament_booking_path(@tournament), class: 'btn btn-success' %>
-     <% else %>
-      <button onclick="createTeam()">Book</button>
-     <% end %>
-  </div>
-
   <%= link_to "Back", tournaments_path %>
+
+<h2><%= @tournament.name %></h2>
+<p><%= @tournament.description %></p>
+<p><%= @tournament.location %></p>
+<p><%= @tournament.number_of_teams %></p>
+<p><%= @tournament.number_of_players_per_team %></p>
+<p><%= @tournament.price %></p>
+<%= @tournament.bookings %>
+<%#= link_to "Teammates", , class: "btn btn-success" %>
+<% @tournament.teams.uniq.each do |team| %>
+  <%= team.name %>
+<% end %>
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+<%= link_to "Generate Calendar", tournament_generate_calendar_path(@tournament), method: :post %>
+<%= link_to "Back", tournaments_path %>
+<% if current_user.has_team? %>
+  <%= link_to "Book", new_tournament_booking_path(@tournament), class: 'btn btn-success' %>
+ <% else %>
+  <button onclick="createTeam()">Book</button>
+ <% end %>
 
 <script type="text/javascript">
     function createTeam() {
