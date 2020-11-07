@@ -1,0 +1,23 @@
+p {
+  color: white;
+  font-size: 16px;
+}
+
+h2 {
+  color: $light-blue;
+  font-size: 32px;
+}
+
+.top-container {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+}
+
+.description {
+  width: 70%;
+  margin: 0 auto;
+}
+
+#map {
+  display: none;
+}
