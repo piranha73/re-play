@@ -31,7 +31,7 @@ function tabToggle() {
       <div class="buttons">
         <button class="btn"><%= link_to "Edit", edit_tournament_path(@tournament), class: "fas fa-edit" %></button>
         <button class="btn"><%= link_to "Subscriptions", tournament_bookings_path(@tournament), class: "fas fa-user-friends" %></button>
-        <button class="btn"><%= link_to "Schedule Matches", tournament_generate_calendar_path(@tournament), class: "fas fa-calendar-alt" %></button>
+        <button class="btn"><%= link_to "Schedule Matches", tournament_generate_calendar_path(@tournament), method: :post, class: "fas fa-calendar-alt" %></button>
     </div>
 <!--     <div class="button-container">
       <button class="tab-toggle" style="width: 80px;">Map</button>
