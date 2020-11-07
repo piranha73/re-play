@@ -1,5 +1,4 @@
-<h1>Tournaments#show</h1>
-<p>Find me in app/views/tournaments/show.html.erb</p>
+
 
 <h2><%= @tournament.name %></h2>
 <p><%= @tournament.description %></p>
@@ -12,6 +11,7 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
+<%= link_to "Generate Calendar", tournament_generate_calendar_path(@tournament), method: :post %>
 <%= link_to "Back", tournaments_path %>
 <% if current_user.has_team? %>
   <%= link_to "Book", new_tournament_booking_path(@tournament), class: 'btn btn-success' %>

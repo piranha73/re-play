@@ -1,1 +1,52 @@
 // Specific CSS for your home-page
+.top-text {
+  display: flex;
+  position: relative;
+  h1 {
+    z-index: 5000;
+  }
+}
+
+.rectangle {
+  background-color: #11ffff;
+  position: absolute;
+  width: 450px;
+  height: 40px;
+  top: 32px;
+  left: 326px;
+  background: linear-gradient(90deg, #11ffff, transparent);
+}
+
+.bottom-text {
+  display: flex;
+}
+
+.bottom-part {
+  display: flex;
+}
+
+.play-button {
+  // border: solid 2px;
+  // border-color: #11ffff;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-right: 30px;
+  width: 150px;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #11ffff, 0 0 40px #11ffff, 0 0 50px #11ffff, 0 0 60px #11ffff, 0 0 70px #11ffff;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white, 0 0 80px white;
+  }
+}
+
+.play-icon {
+  justify-content: space-between;
+}

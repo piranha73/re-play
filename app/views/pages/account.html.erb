@@ -1,22 +1,38 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<h1 style="text-align: center; font-weight: bold;">My Profile</h1>
-<div class="container">
-  <div class="card-product row">
-    <div class="card-info col-md-9">
-      <h1><%= current_user.first_name %> <%= current_user.last_name %></h1>
-      <p>Email: <%= current_user.email %></p>
-
-    </div>
-    <div class="col-md-3 card-price" style="">
-      <div class="actions">
-        <% if !current_user.tournaments.empty? %>
-             <%= link_to "My tournaments", root_path, class: "btn btn-primary" %>
-            <% end %>
-        <% if !current_user.bookings.empty? %>
-             <%= link_to "My Bookings", root_path, class: "btn btn-success" %>
-            <% end %>
-        <%= link_to "Create my team", new_team_path, class: "btn btn-primary" %>
+<script src="../../javascript/components/tabs.js" defer></script>
+<div class="wrapper">
+  <h1 style="text-align: center; font-weight: bold;">My Profile</h1>
+  <div class="container">
+    <div class="card-product row">
+      <div class="card-info-top col-md-12" style="text-align: center;">
+        <h1><%= current_user.first_name %> <%= current_user.last_name %></h1>
+        <p style="color: white;">Email: <%= current_user.email %></p>
       </div>
     </div>
+
+      <div class="right-box">
+        <div class="tabs">
+
+          <h1 data-tab-target="#managing" class="active tab" style="font-weight: normal;">Managing</h1>
+
+          <h1 data-tab-target="#tournaments" class="tab" style="font-weight: normal;">Tournaments</h1>
+
+          <h1 data-tab-target="#teams" class="tab" style="font-weight: normal;">Teams</h1>
+
+        </div>
+
+        <div class="tab-content">
+          <div id="managing" data-tab-content class="active">
+            <%= render partial: "pages/personal_tournaments", locals: { tournaments: current_user.tournaments } %>
+          </div>
+          <div id="tournaments" data-tab-content>
+            <%= render partial: "pages/personal_tournaments", locals: { tournaments: current_user.player_tournaments } %>
+          </div>
+          <div id="teams" data-tab-content>
+            <%= render partial: "pages/personal_teams", locals: { teams: current_user.player_teams } %>
+          </div>
+        </div>
+      </div>
   </div>
 </div>
+

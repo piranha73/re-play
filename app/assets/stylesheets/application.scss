@@ -13,9 +13,11 @@
 @import "components/index";
 @import "pages/index";
 @import "pages/tournaments";
+@import "pages/form";
+@import "pages/account";
 
 body {
-  min-height: 100vh;
+  // min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_04_150845) do
+
+ActiveRecord::Schema.define(version: 2020_11_06_204934) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +28,17 @@ ActiveRecord::Schema.define(version: 2020_11_04_150845) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+  create_table "games", force: :cascade do |t|
+    t.bigint "home_team_id", null: false
+    t.bigint "away_team_id", null: false
+    t.bigint "matchday_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["away_team_id"], name: "index_games_on_away_team_id"
+    t.index ["home_team_id"], name: "index_games_on_home_team_id"
+    t.index ["matchday_id"], name: "index_games_on_matchday_id"
+  end
+
   create_table "join_team_players", force: :cascade do |t|
     t.bigint "team_id", null: false
     t.bigint "user_id", null: false
@@ -34,6 +46,14 @@ ActiveRecord::Schema.define(version: 2020_11_04_150845) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["team_id"], name: "index_join_team_players_on_team_id"
     t.index ["user_id"], name: "index_join_team_players_on_user_id"
+  end
+
+  create_table "matchdays", force: :cascade do |t|
+    t.integer "number"
+    t.bigint "tournament_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tournament_id"], name: "index_matchdays_on_tournament_id"
   end
 
   create_table "sports", force: :cascade do |t|
@@ -71,6 +91,7 @@ ActiveRecord::Schema.define(version: 2020_11_04_150845) do
     t.datetime "updated_at", precision: 6, null: false
     t.float "latitude"
     t.float "longitude"
+    t.boolean "started", default: false
     t.index ["sport_id"], name: "index_tournaments_on_sport_id"
     t.index ["structure_id"], name: "index_tournaments_on_structure_id"
     t.index ["user_id"], name: "index_tournaments_on_user_id"
@@ -96,8 +117,12 @@ ActiveRecord::Schema.define(version: 2020_11_04_150845) do
   add_foreign_key "bookings", "teams"
   add_foreign_key "bookings", "tournaments"
   add_foreign_key "bookings", "users"
+  add_foreign_key "games", "matchdays"
+  add_foreign_key "games", "teams", column: "away_team_id"
+  add_foreign_key "games", "teams", column: "home_team_id"
   add_foreign_key "join_team_players", "teams"
   add_foreign_key "join_team_players", "users"
+  add_foreign_key "matchdays", "tournaments"
   add_foreign_key "tournaments", "sports"
   add_foreign_key "tournaments", "structures"
   add_foreign_key "tournaments", "users"

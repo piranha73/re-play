@@ -4,3 +4,77 @@
         margin-bottom: 10px; /* Added */
         color: black;
 }
+
+.card-info {
+  width: 100%;
+  border: solid 2px;
+  border-color: $fluo-blue;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+body {
+  background-color: $dark-blue;
+}
+
+h1 {
+  color: $light-blue;
+  font-size: 40px;
+}
+
+.card-info-teams {
+  width: 100%;
+  border: solid 2px;
+  border-color: $fluo-blue;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+[data-tab-content] {
+  display: none;
+
+}
+
+.active[data-tab-content] {
+  display: block;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0;
+  border-bottom: 1px solid $fluo-blue;
+}
+
+.tab {
+  cursor: pointer;
+  text-align: left;
+}
+
+.tab.active {
+  background-color: $fluo-blue;
+  color: $dark-blue;
+}
+
+.tab:hover {
+  background-color: $fluo-blue;
+  color: white;
+}
+
+.vl {
+  border-left: 1px solid $fluo-blue;
+  height: 100vh;
+  margin-left: 10px;
+}
+
+
+
+
+
+
+
