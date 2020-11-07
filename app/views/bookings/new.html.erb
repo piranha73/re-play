@@ -3,6 +3,12 @@
     <br>
     <h1>New Booking</h1>
     <br>
+    <br>
+    <%= link_to "Create Team", new_team_path(@tournament), class: 'btn btn-primary' %>
+    <br>
+    <br>
+    <h2 style="font-size: 15px;">or join:</h2>
+    <br>
     <%= simple_form_for [ @tournament, @booking ] do |f| %>
       <%= f.association :team %>
       <%= f.button :submit,  "Create Booking", class: 'btn btn-primary' %>
