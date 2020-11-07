@@ -2,15 +2,15 @@
 <script src="../../javascript/components/tabs.js" defer></script>
 <div class="wrapper">
   <h1 style="text-align: center; font-weight: bold;">My Profile</h1>
-  <div class="container">
-    <div class="card-product row">
+  <div class="">
+    <div class="card-product">
       <div class="card-info-top col-md-12" style="text-align: center;">
         <h1><%= current_user.first_name %> <%= current_user.last_name %></h1>
         <p style="color: white;">Email: <%= current_user.email %></p>
       </div>
     </div>
 
-      <div class="right-box">
+      <div class="bottom-box">
         <div class="tabs">
 
           <h1 data-tab-target="#managing" class="active tab" style="font-weight: normal;">Managing</h1>
@@ -35,4 +35,3 @@
       </div>
   </div>
 </div>
-

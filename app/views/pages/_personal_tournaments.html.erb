@@ -1,6 +1,6 @@
 
   <% tournaments.each do |tournament| %>
-    <div class="card-info" style="">
+    <div class="card-info" style="margin-top: 10px;">
       <div class="right-text" style="">
         <%= link_to  tournament.name, tournament_path(tournament), style: "font-size: 24px; text-align: left; color: #C7EAF5;" %>
         <h2 style="font-size: 18px; text-align: left; color: #C7EAF5;"><%= tournament.description %></h2>
