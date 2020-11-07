@@ -18,6 +18,18 @@ h2 {
   margin: 0 auto;
 }
 
-#map {
+.map {
   display: none;
+}
+
+.bottom-container {
+  display: grid;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.button-container {
+  width: 80vw;
+  margin: 0 auto;
+
 }
