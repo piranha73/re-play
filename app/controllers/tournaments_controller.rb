@@ -6,6 +6,19 @@ class TournamentsController < ApplicationController
   end
 
   def show
+    if @tournament.started
+      render 'tournaments/show_started'
+    else
+      render 'tournaments/show'
+    end
+  end
+
+  def generate_calendar
+    @tournament = Tournament.find(params[:tournament_id])
+    @tournament.started = true
+    @tournament.save
+    # @tournament.structure.games_generator(@tournament)
+    redirect_to tournament_path(@tournament)
   end
 
   def show_user_tournaments

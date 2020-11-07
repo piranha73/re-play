@@ -27,4 +27,8 @@ class User < ApplicationRecord
   def has_team?
     !self.teams.empty?
   end
+
+  def is_manager?(tournament)
+    self == tournament.user
+  end
 end
