@@ -1,14 +1,6 @@
-form {
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-  display: inline-block;
- }
-
-.card {
-        float: none; /* Added */
-        margin-bottom: 30px;
-        color: black;
-        padding-bottom: 20%;
-        border-radius: 4px;
+.form {
+  color: $light-blue;
+  border: 4px solid;
+  border-color: $fluo-blue;
+  border-radius: 4px;
 }

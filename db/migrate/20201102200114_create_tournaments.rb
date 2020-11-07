@@ -4,7 +4,7 @@ class CreateTournaments < ActiveRecord::Migration[6.0]
       t.jsonb :optionals, null: false, default: '{}'
       t.string :name
       t.string :location
-      t.string :description
+      t.text :description
       t.integer :number_of_teams
       t.integer :number_of_players_per_team
       t.integer :price

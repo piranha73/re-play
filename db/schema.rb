@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 2020_11_06_204934) do
     t.jsonb "optionals", default: "{}", null: false
     t.string "name"
     t.string "location"
-    t.string "description"
+    t.text "description"
     t.integer "number_of_teams"
     t.integer "number_of_players_per_team"
     t.integer "price"
