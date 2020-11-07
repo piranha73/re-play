@@ -1,16 +1,18 @@
-<div class="card col-md-8" style="text-align: center;margin:0 auto;width:50%;border:3px;padding:10px;">
-  <br>
-  <h1>New Booking</h1>
-  <br>
-  <%= simple_form_for [ @tournament, @booking ] do |f| %>
-    <%= f.association :team %>
-    <%= f.button :submit, class: 'btn btn-primary' %>
-  <% end %>
-  <br>
-  <%= link_to 'Back', tournaments_path, class: "back-button" %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="card col-md-8" style="text-align: center; padding: 20px 20px;">
+      <br>
+      <h1>New Booking</h1>
+      <br>
+      <%= simple_form_for [ @tournament, @booking ] do |f| %>
+        <%= f.association :team %>
+        <%= f.button :submit,  "Create Booking", class: 'btn btn-primary' %>
+      <% end %>
+      <br>
+      <%= link_to 'Back', tournaments_path, class: "back-button" %>
+    </div>
+  </div>
 </div>
- <br>
-  <br>
-   <br>
-    <br>
-
+<br>
+<br>
+<br>
