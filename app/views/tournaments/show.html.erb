@@ -34,7 +34,7 @@ function tabToggle() {
         <button class="btn"><%= link_to "Schedule Matches", tournament_generate_calendar_path(@tournament), class: "fas fa-calendar-alt" %></button>
     </div>
     <div class="button-container">
-      <button onclick="tabToggle()" style="width: 80px;">Map</button>
+      <button class="tab-toggle" style="width: 80px;">Map</button>
     </div>
 
     <div class="bottom-container">
@@ -79,10 +79,6 @@ function tabToggle() {
         </div>
       </div>
       <div class="buttons">
-        <button class="btn"><%= link_to "Edit", edit_tournament_path(@tournament), class: "fas fa-edit" %></button>
-        <button class="btn"><%= link_to "Subscriptions", tournament_bookings_path(@tournament), class: "fas fa-user-friends" %></button>
-        <button class="btn"><%= link_to "Schedule Matches", tournament_generate_calendar_path(@tournament), class: "fas fa-calendar-alt" %></button>
-        <%= link_to "Generate Calendar", tournament_generate_calendar_path(@tournament), method: :post %>
         <% if current_user.has_team? %>
           <%= link_to "Book", new_tournament_booking_path(@tournament), class: 'btn btn-success' %>
         <% else %>
@@ -90,7 +86,7 @@ function tabToggle() {
         <% end %>
       </div>
     <div class="button-container">
-      <button onclick="tabToggle()" style="width: 80px;">Map</button>
+      <button class="tab-toggle" style="width: 80px;">Map</button>
     </div>
 
     <div class="bottom-container">

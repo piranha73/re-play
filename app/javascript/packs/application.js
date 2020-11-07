@@ -30,13 +30,24 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initMapbox } from '../plugins/init_mapbox';
-import {tabsFunction} from "../components/tabs";
-import {tabToggle} from "../components/tabs2";
+import { tabsFunction } from "../components/tabs";
+import { tabToggle } from "../components/tabs2";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initAutocomplete();
-  initMapbox();
+
+  // if (document.getElementById('map')) {
+  //   initMapbox();
+  // }
+
+  // if (document.getElementById("map")) {
+  //   tabToggle();
+  // }
+
+  if (document.querySelectorAll('[data-tab-target]')) {
+    tabsFunction();
+  }
 });
 
