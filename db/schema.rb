@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_11_06_204934) do
 
   # These are extensions that must be enabled in order to support this database
@@ -88,6 +89,8 @@ ActiveRecord::Schema.define(version: 2020_11_06_204934) do
     t.bigint "structure_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "latitude"
+    t.float "longitude"
     t.boolean "started", default: false
     t.index ["sport_id"], name: "index_tournaments_on_sport_id"
     t.index ["structure_id"], name: "index_tournaments_on_structure_id"

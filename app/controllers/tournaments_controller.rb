@@ -3,6 +3,12 @@ class TournamentsController < ApplicationController
 
   def index
     @tournaments = Tournament.all
+     @markers = @tournaments.geocoded.map do |tournament|
+      {
+        lat: tournament.latitude,
+        lng: tournament.longitude
+      }
+    end
   end
 
   def show
@@ -32,6 +38,8 @@ class TournamentsController < ApplicationController
   def create
     @tournament = Tournament.new(tournament_params)
     @tournament.user = current_user
+    @tournament.sport_id = 1
+    @tournament.structure_id = 1
     if @tournament.save
       redirect_to tournament_path(@tournament)
     else
