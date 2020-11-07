@@ -34,3 +34,15 @@ section:last-child {
 border-bottom: none;
 margin-bottom: 200px;
 }
+
+.card1 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  margin-bottom: 500px;
+  color: $light-blue;
+  border: 4px solid;
+  border-color: $fluo-blue;
+  border-radius: 4px;
+}
