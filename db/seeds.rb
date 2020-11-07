@@ -188,26 +188,27 @@ Booking.create(user_id: 24, team_id: 8, tournament_id: 2)
 Booking.create(user_id: 25, team_id: 9, tournament_id: 3)
 Booking.create(user_id: 26, team_id: 9, tournament_id: 3)
 Booking.create(user_id: 27, team_id: 9, tournament_id: 3)
-Booking.create(user_id: 28, team_id: 10, tournament_id: 3)
 
+Booking.create(user_id: 28, team_id: 10, tournament_id: 3)
 Booking.create(user_id: 29, team_id: 10, tournament_id: 3)
 Booking.create(user_id: 30, team_id: 10, tournament_id: 3)
+
 Booking.create(user_id: 31, team_id: 11, tournament_id: 3)
 Booking.create(user_id: 32, team_id: 11, tournament_id: 3)
-
 Booking.create(user_id: 33, team_id: 11, tournament_id: 3)
+
 Booking.create(user_id: 34, team_id: 12, tournament_id: 4)
 Booking.create(user_id: 35, team_id: 12, tournament_id: 4)
 Booking.create(user_id: 36, team_id: 12, tournament_id: 4)
-
 Booking.create(user_id: 37, team_id: 12, tournament_id: 4)
 Booking.create(user_id: 38, team_id: 12, tournament_id: 4)
+
 Booking.create(user_id: 39, team_id: 13, tournament_id: 4)
 Booking.create(user_id: 40, team_id: 13, tournament_id: 4)
-
 Booking.create(user_id: 41, team_id: 13, tournament_id: 4)
 Booking.create(user_id: 42, team_id: 13, tournament_id: 4)
 Booking.create(user_id: 43, team_id: 13, tournament_id: 4)
+
 Booking.create(user_id: 44, team_id: 14, tournament_id: 5)
 
 Booking.create(user_id: 45, team_id: 15, tournament_id: 5)
