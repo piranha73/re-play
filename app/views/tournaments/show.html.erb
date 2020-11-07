@@ -7,6 +7,7 @@
 <p><%= @tournament.number_of_teams %></p>
 <p><%= @tournament.number_of_players_per_team %></p>
 <p><%= @tournament.price %></p>
+<%= link_to "Generate Calendar", tournament_generate_calendar_path(@tournament), method: :post %>
 <%= link_to "Back", tournaments_path %>
 <% if current_user.has_team? %>
   <%= link_to "Book", new_tournament_booking_path(@tournament), class: 'btn btn-success' %>
