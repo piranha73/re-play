@@ -1,14 +1,15 @@
 import mapboxgl from 'mapbox-gl';
 
 
-const mapElement = document.getElementById('map');
+const mapElement = document.getElementById('map1');
 const tournament = document.querySelectorAll('.tournament');
 var map;
+console.log(tournament);
 
 const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   map = new mapboxgl.Map({
-    container: 'map',
+    container: 'map1',
     style: 'mapbox://styles/mapbox/streets-v11',
     center: [parseFloat(tournament[0].dataset.longitude),parseFloat(tournament[0].dataset.latitude)],
     zoom: 15.5
