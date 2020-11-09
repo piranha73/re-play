@@ -1,4 +1,3 @@
-
 <div class="title">
   <h1>Tournaments</h1>
 </div>
@@ -21,10 +20,8 @@
       <% end %>
   </div>
 </div>
-  <div id="map"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+
+<%= render "map_index", tournaments: @tournaments %>
 
 <script type="text/javascript">
   function createTeam() {
