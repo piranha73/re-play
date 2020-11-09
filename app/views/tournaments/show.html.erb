@@ -31,11 +31,11 @@ function tabToggle() {
       <div class="buttons">
         <button class="btn"><%= link_to "Edit", edit_tournament_path(@tournament), class: "fas fa-edit" %></button>
         <button class="btn"><%= link_to "Subscriptions", tournament_bookings_path(@tournament), class: "fas fa-user-friends" %></button>
-        <button class="btn"><%= link_to "Schedule Matches", tournament_generate_calendar_path(@tournament), class: "fas fa-calendar-alt" %></button>
+        <button class="btn"><%= link_to "Schedule Matches", tournament_generate_calendar_path(@tournament), method: :post, class: "fas fa-calendar-alt" %></button>
     </div>
-    <div class="button-container">
-      <button onclick="tabToggle()" style="width: 80px;">Map</button>
-    </div>
+<!--     <div class="button-container">
+      <button class="tab-toggle" style="width: 80px;">Map</button>
+    </div> -->
 
     <div class="bottom-container">
 
@@ -47,10 +47,12 @@ function tabToggle() {
       </div>
 
       <div class="map" id="map1">
-        <p><%= @tournament.description %></p>
-        <% @tournament.teams.uniq.each do |team| %>
+        <div>
+          <p><%= @tournament.description %></p>
+          <% @tournament.teams.uniq.each do |team| %>
             <%= team.name %>
           <% end %>
+        </div>
         <div id="map"
        style="width: 100%; height: 600px;"
        data-markers="<%= @markers.to_json %>"
@@ -79,19 +81,15 @@ function tabToggle() {
         </div>
       </div>
       <div class="buttons">
-        <button class="btn"><%= link_to "Edit", edit_tournament_path(@tournament), class: "fas fa-edit" %></button>
-        <button class="btn"><%= link_to "Subscriptions", tournament_bookings_path(@tournament), class: "fas fa-user-friends" %></button>
-        <button class="btn"><%= link_to "Schedule Matches", tournament_generate_calendar_path(@tournament), class: "fas fa-calendar-alt" %></button>
-        <%= link_to "Generate Calendar", tournament_generate_calendar_path(@tournament), method: :post %>
         <% if current_user.has_team? %>
           <%= link_to "Book", new_tournament_booking_path(@tournament), class: 'btn btn-success' %>
         <% else %>
           <button onclick="createTeam()">Book</button>
         <% end %>
       </div>
-    <div class="button-container">
-      <button onclick="tabToggle()" style="width: 80px;">Map</button>
-    </div>
+<!--     <div class="button-container">
+      <button class="tab-toggle" style="width: 80px;">Map</button>
+    </div> -->
 
     <div class="bottom-container">
 
@@ -100,20 +98,20 @@ function tabToggle() {
         <% @tournament.teams.uniq.each do |team| %>
             <h1><%= team.name %></h1>
           <% end %>
-        <%= @tournament.bookings %>
         <%#= link_to "Teammates", , class: "btn btn-success" %>
       </div>
 
-      <div class="map" id="map1">
+<!--       <div class="map" id="map1">
         <p><%= @tournament.description %></p>
         <% @tournament.teams.uniq.each do |team| %>
             <%= team.name %>
-          <% end %>
-        <div id="map"
+        <% end %>
+ -->
+<!--         <div id="map"
        style="width: 100%; height: 600px;"
        data-markers="<%= @markers.to_json %>"
        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
+      </div> -->
 
     </div>
   <%= link_to "Back", tournaments_path %>
