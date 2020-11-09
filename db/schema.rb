@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_06_204934) do
+ActiveRecord::Schema.define(version: 2020_11_09_122624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "actions", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "bookings", force: :cascade do |t|
     t.jsonb "optionals", default: "{}", null: false
@@ -59,6 +65,19 @@ ActiveRecord::Schema.define(version: 2020_11_06_204934) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "statistics", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "game_id", null: false
+    t.bigint "team_id", null: false
+    t.bigint "action_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["action_id"], name: "index_statistics_on_action_id"
+    t.index ["game_id"], name: "index_statistics_on_game_id"
+    t.index ["team_id"], name: "index_statistics_on_team_id"
+    t.index ["user_id"], name: "index_statistics_on_user_id"
   end
 
   create_table "structures", force: :cascade do |t|
@@ -122,6 +141,10 @@ ActiveRecord::Schema.define(version: 2020_11_06_204934) do
   add_foreign_key "join_team_players", "teams"
   add_foreign_key "join_team_players", "users"
   add_foreign_key "matchdays", "tournaments"
+  add_foreign_key "statistics", "actions"
+  add_foreign_key "statistics", "games"
+  add_foreign_key "statistics", "teams"
+  add_foreign_key "statistics", "users"
   add_foreign_key "tournaments", "sports"
   add_foreign_key "tournaments", "structures"
   add_foreign_key "tournaments", "users"

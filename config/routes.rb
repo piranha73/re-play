@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :tournaments do
     post '/generate_calendar', to: 'tournaments#generate_calendar'
     resources :bookings, only: [ :index, :show, :new, :create, :destroy ]
+    resources :games, only: [:show] do
+      resources :statistics, only: [:create, :destroy]
+    end
   end
 
   resources :teams
