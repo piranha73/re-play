@@ -23,6 +23,7 @@ require("channels")
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 //
+import "../plugins/flatpickr";
 // External imports
 import "bootstrap";
 
