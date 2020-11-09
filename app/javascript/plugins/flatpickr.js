@@ -5,11 +5,11 @@ import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  flatpickr("#start_date", {
+  flatpickr("#flatpickr_start", {
         altInput: true,
         minDate: "today",
         enableTime: true,
-        plugins: [new rangePlugin({ input: "#end_date"})]
+        plugins: [new rangePlugin({ input: "#flatpickr_end"})]
       });
 
 });
