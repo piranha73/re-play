@@ -8,8 +8,8 @@
       <%= f.input :number_of_teams %>
       <%= f.input :number_of_players_per_team %>
       <%= f.input :price %>
-      <%= f.input :start_time %>
-      <%= f.input :end_time %>
+      <%= f.input :start_time, as: :string, required: false,placeholder: "From", input_html: {id: "start_date"} %>
+      <%= f.input :end_time, as: :string, required: false,  placeholder: "To",input_html: {id: "end_date"} %>
       <%= f.button :submit, "Create Tournament", class: 'btn btn-primary' %>
     <% end %>
     <%= link_to 'Back', teams_path, class: "back-button" %>
