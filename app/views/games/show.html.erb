@@ -3,7 +3,8 @@
     <%= @home_team.name %>
   </div>
   <div class="result">
-    <p>2 - 0</p>
+    <p> <%=  @home_team.action_in_game(Action.first, @game) %> - <%= @away_team.action_in_game(Action.first, @game) %></p>
+
   </div>
   <div class="away-team">
     <%= @away_team.name %>
