@@ -16,24 +16,26 @@
 
 <div id="highlights">
   <div class="home-team">
-    <p>home team</p>
+    <%= render partial: 'games/highlights', locals: { team: @home_team } %>
   </div>
   <div class="actions">
     <p>action</p>
   </div>
   <div class="away-team">
-    <p>away team</p>
+    <%= render partial: 'games/highlights', locals: { team: @away_team } %>
   </div>
 </div>
 
 <div id="team-stats">
   <div class="home-team">
-    <p>home team</p>
+    <%= render partial: 'games/team_highlights', locals: { team: @home_team, game: @game.id } %>
   </div>
   <div class="actions">
-    <p>action</p>
+    <% Action.all.each do |action| %>
+      <p><%= action.name %></p>
+    <% end %>
   </div>
   <div class="away-team">
-    <p>away team</p>
+    <%= render partial: 'games/team_highlights', locals: { team: @away_team, game: @game.id } %>
   </div>
 </div>

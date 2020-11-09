@@ -1,5 +1,6 @@
 <%= simple_form_for([@tournament, @game, @statistic]) do |f| %>
-  <%= f.association :user, collection: team.players_in_tournament(@tournament)%>
+  <%= f.association :user, collection: team.players_in_tournament(@tournament), label_method: :first_name%>
   <%= f.association :action %>
-  <%= f.button :submit, "Save Statistic"%>
+  <%= hidden_field_tag 'team_id', team.id %>
+  <%= f.button :submit, "Save Statistic" %>
 <% end %>

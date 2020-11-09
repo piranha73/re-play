@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :tournaments
   has_many :join_team_players
   has_many :teams, through: :join_team_players
+  has_many :statistics
 
   def player_tournaments
     player_tournaments = []
