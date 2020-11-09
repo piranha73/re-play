@@ -1,0 +1,6 @@
+<% @game.statistics.where(team: team).each do |statistic| %>
+  <%#= statistic.created_at %>
+  time
+  <%= statistic.user.first_name %>
+  <%= statistic.action.name %>
+<% end %>

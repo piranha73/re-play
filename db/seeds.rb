@@ -214,3 +214,9 @@ Booking.create(user_id: 44, team_id: 14, tournament_id: 5)
 Booking.create(user_id: 45, team_id: 15, tournament_id: 5)
 Booking.create(user_id: 46, team_id: 16, tournament_id: 5)
 Booking.create(user_id: 47, team_id: 17, tournament_id: 5)
+
+#Actions Seed
+Action.create(name:'goal')
+Action.create(name:'assist')
+Action.create(name:'foul')
+Action.create(name:'save')

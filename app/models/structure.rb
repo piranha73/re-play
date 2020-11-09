@@ -2,13 +2,15 @@ class Structure < ApplicationRecord
   has_many :tournaments
 
   def games_generator(tournament)
+    clean_matchdays(tournament)
     teams = tournament.teams.uniq.pluck(:id)
     matchdays = RoundRobinTournament.schedule(teams)
     matchdays.each_with_index do |matchday, index|
+      day = create_day(index, tournament)
       matchday.each do |game|
         next if matchday.index(game).zero? && teams.length.odd?
 
-        create_game(game, create_day(index, tournament))
+        create_game(game, day)
       end
     end
   end
@@ -28,5 +30,11 @@ class Structure < ApplicationRecord
       away_team_id: game.last,
       matchday: day
     )
+  end
+
+  def clean_matchdays(tournament)
+    tournament.matchdays.each do |matchday|
+      matchday.destroy
+    end
   end
 end
