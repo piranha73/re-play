@@ -5,7 +5,6 @@
     <h1>Tournaments</h1>
   </div>
 
-
   <div class="search-bar">
     <%= simple_form_for :search, html: { class: 'form-inline' },wrapper: :horizontal_form, :method => :get  do |f| %>
     <%= f.input :address, label: 'Type the address please' %>
@@ -18,20 +17,7 @@
 
   <div class="wrapper-index-tournaments">
     <div class="left-part">
-       <% @tournaments.each.with_index do |tournament,index| %>
-       <div class = "tournament <%="active" if index == 0 %>" id="<%= tournament.name  %>"
-        data-latitude = "<%= tournament.latitude %>"
-        data-longitude = "<%= tournament.longitude %>">
-        <h3><%= tournament.name %></h3>
-        <p><%=  tournament.description%></p>
-        <%= link_to "Show Tournament", tournament_path(tournament), class: "btn btn-primary" %>
-        <% if current_user.has_team? %>
-        <%= link_to "Book", new_tournament_booking_path(tournament), class: 'btn btn-success' %>
-        <% else %>
-        <button onclick="createTeam()">Book</button>
-        <% end %>
-      </div>
-      <% end %>
+       <%= render partial: "card_index", tournaments: @tournaments %>
     </div>
 
     <div class="right-part">
