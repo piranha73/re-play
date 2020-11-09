@@ -2,13 +2,26 @@ class TournamentsController < ApplicationController
   before_action :find_tournament, only: [:show, :edit, :destroy]
 
   def index
+
+    if params.has_key?(:search)
+      start_time = Date.parse(params["search"]["start_time"])
+      end_time = Date.parse(params["search"]["end_time"])
+      @tournaments = Tournament.where(['start_time >= ? AND end_time >= ?', start_time, Date.today])
+
+    else
+
     @tournaments = Tournament.all
+
+    end
+
+
      @markers = @tournaments.geocoded.map do |tournament|
       {
         lat: tournament.latitude,
         lng: tournament.longitude
       }
     end
+
   end
 
   def show

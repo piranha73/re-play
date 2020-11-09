@@ -1,33 +1,49 @@
+<div class="index-tournaments">
 
-<div class="title">
-  <h1>Tournaments</h1>
-</div>
-<br>
-<div class="row justify-content-center">
-  <div class="card1">
-    <% @tournaments.each.with_index do |tournament,index| %>
-      <section class = "tournament <%="active" if index == 0 %>" id="<%= tournament.name  %>"
-                data-latitude = "<%= tournament.latitude %>"
-                data-longitude = "<%= tournament.longitude %>">
-              <h3><%= tournament.name %></h3>
-              <p><%=  tournament.description%></p>
-              <%= link_to "Show Tournament", tournament_path(tournament), class: "btn btn-primary" %>
-              <% if current_user.has_team? %>
-                <%= link_to "Book", new_tournament_booking_path(tournament), class: 'btn btn-success' %>
-              <% else %>
-                <button onclick="createTeam()">Book</button>
-              <% end %>
-      </section>
-      <% end %>
+
+  <div class="title">
+    <h1>Tournaments</h1>
   </div>
-</div>
-  <div id="map"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+
+
+  <div class="search-bar">
+    <%= simple_form_for :search, html: { class: 'form-inline' },wrapper: :horizontal_form, :method => :get  do |f| %>
+    <%= f.input :address, label: 'Type the address please' %>
+    <%= f.input :start_time, placeholder: 'Starting date', input_html: { id: "flatpickr_start" }  %>
+    <%= f.input :end_time, placeholder: 'Ending date', input_html: { id: "flatpickr_end" }  %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+
+  <div class="wrapper-index-tournaments">
+    <div class="left-part">
+       <% @tournaments.each.with_index do |tournament,index| %>
+       <div class = "tournament <%="active" if index == 0 %>" id="<%= tournament.name  %>"
+        data-latitude = "<%= tournament.latitude %>"
+        data-longitude = "<%= tournament.longitude %>">
+        <h3><%= tournament.name %></h3>
+        <p><%=  tournament.description%></p>
+        <%= link_to "Show Tournament", tournament_path(tournament), class: "btn btn-primary" %>
+        <% if current_user.has_team? %>
+        <%= link_to "Book", new_tournament_booking_path(tournament), class: 'btn btn-success' %>
+        <% else %>
+        <button onclick="createTeam()">Book</button>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+
+    <div class="right-part">
+
+      <%= render "map_index", tournaments: @tournaments %>
+
+    </div>
+
   </div>
 
 <script type="text/javascript">
   function createTeam() {
-  alert("In order to book a tournament you have to create a team first!");
-}
+    alert("In order to book a tournament you have to create a team first!");
+  }
 </script>

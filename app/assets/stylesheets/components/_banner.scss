@@ -5,18 +5,17 @@
   align-items: center;
   background-color: #0f054f;
   background-size: cover;
-
 }
 
 .banner-content {
   h1 {
     color: #c7eaf5;
-    font-size: 45px;
     font-weight: bold;
   }
-  p {
+  h2 {
     color: #c7eaf5;
-    font-size: 25px;
+    font-size: 42px;
     font-weight: lighter;
+    letter-spacing: 4px;
   }
 }

@@ -4,6 +4,13 @@
   position: relative;
   h1 {
     z-index: 5000;
+    letter-spacing: 12px;
+    transform: scaleY(1.2);
+    font-size: 60px;
+    font-weight: normal;
+  }
+  p {
+
   }
 }
 
@@ -12,8 +19,8 @@
   position: absolute;
   width: 450px;
   height: 40px;
-  top: 32px;
-  left: 326px;
+  top: 38px;
+  left: 454px;
   background: linear-gradient(90deg, #11ffff, transparent);
 }
 

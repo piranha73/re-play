@@ -1,40 +1,65 @@
-p {
+.container-tournament-show {
+  p {
   color: white;
   font-size: 16px;
-}
+  }
 
-h2 {
-  color: $light-blue;
-  font-size: 32px;
-}
+  h2 {
+    color: $light-blue;
+    font-size: 32px;
+  }
 
-.top-container {
-  display: grid;
-  grid-template-columns: 4fr 1fr;
-}
+  .top-container {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+  }
 
-.description {
-  width: 70%;
-  margin: 0 auto;
-}
+  .description {
+    width: 70%;
+    margin: 0 auto;
+  }
 
-.map {
-  display: none;
-}
+  .tabs-show {
+    display: flex;
+    justify-content: flex-end;
+    h1 {
+      font-size: 24px;
 
-.bottom-container {
-  display: grid;
-  width: 80vw;
-  margin: 0 auto;
-}
+    }
+    .tab-show-content {
+      margin-left: 20px;
+      cursor: pointer;
+    }
+    .tab-show-content.active {
+      background-color: $fluo-blue;
+    }
+    .tab-show-content:hover {
+      background-color: $fluo-blue;
+      color: $dark-blue;
+    }
+  }
 
-.button-container {
-  width: 80vw;
-  margin: 0 auto;
+  .bottom-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // width: 80vw;
+    margin: 0 auto;
+    .tab-content {
 
-}
+    }
 
-#map1 {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+    [data-tab-content] {
+      display: none;
+    }
+
+    .active[data-tab-content] {
+      display: block;
+    }
+  }
+
+  .button-container {
+    width: 80vw;
+    margin: 0 auto;
+
+  }
 }

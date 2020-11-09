@@ -1,8 +1,6 @@
-<div class="row justify-content-center">
-  <div class="form col-md-8" style="text-align: center;">
-    <br>
+<div id="tournaments">
+  <div class="form">
     <h1>New Tournament</h1>
-    <br>
     <%= simple_form_for(tournament) do |f| %>
       <%= f.input :name %>
       <%= f.input :description %>
@@ -10,11 +8,10 @@
       <%= f.input :number_of_teams %>
       <%= f.input :number_of_players_per_team %>
       <%= f.input :price %>
-      <%= f.input :start_time %>
-      <%= f.input :end_time %>
+      <%= f.input :start_time, as: :string, required: false,placeholder: "From", input_html: {id: "start_date"} %>
+      <%= f.input :end_time, as: :string, required: false,  placeholder: "To",input_html: {id: "end_date"} %>
       <%= f.button :submit, "Create Tournament", class: 'btn btn-primary' %>
     <% end %>
-    <br>
     <%= link_to 'Back', teams_path, class: "back-button" %>
   </div>
 </div>
