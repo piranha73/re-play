@@ -1,0 +1,15 @@
+.card-team {
+  overflow: hidden;
+  color: $light-blue;
+  font-size: 17px;
+  height: 70px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid;
+  border-color: $fluo-blue;
+  border-radius: 4px;
+  padding: 20px 20px;
+  margin: 5% auto;
+  width: 30%;
+}
