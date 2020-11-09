@@ -1,0 +1,13 @@
+<div id="bookings">
+  <div class="form">
+    <h1>New Booking</h1>
+    <h2>You can:</h2>
+    <%= link_to "Create Team", new_team_path(@tournament), class: 'btn btn-primary' %>
+    <h2>or join:</h2>
+    <%= simple_form_for [ @tournament, @booking ] do |f| %>
+      <%= f.association :team %>
+      <%= f.button :submit,  "Create Booking", class: 'btn btn-primary' %>
+    <% end %>
+    <%= link_to 'Back', tournaments_path, class: "back-button" %>
+  </div>
+</div>
