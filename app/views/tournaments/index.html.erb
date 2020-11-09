@@ -2,42 +2,13 @@
   <h1>Tournaments</h1>
 </div>
 <br>
+
 <div class="container-tournament-index">
-  <div class="cards">
-  <% @tournaments.each.with_index do |tournament,index| %>
-    <div  class = "tournament <%="active card1" if index == 0 %>" id="<%= tournament.name  %>"
-          data-latitude = "<%= tournament.latitude %>"
-          data-longitude = "<%= tournament.longitude %>">
-
-      <div class="card-first-column">
-        <h1><%= tournament.name %></h1>
-        <p><%=  tournament.description%></p>
-      </div>
-
-      <div class="card-second-column">
-        <h2><%= tournament.start_time %></h2>
-        <h2><%= tournament.end_time %></h2>
-        <%= link_to "Show Tournament", tournament_path(tournament), class: "btn btn-primary" %>
-      </div>
-
-      <div class="card-third-column">
-        <h2><%= tournament.price %></h2>
-        <h2><%= tournament.location %></h2>
-        <% if current_user.has_team? %>
-          <%= link_to "Book", new_tournament_booking_path(tournament), class: 'btn btn-success' %>
-        <% else %>
-          <button onclick="createTeam()">Book</button>
-        <% end %>
-      </div>
-
-    </div>
-  <% end %>
-  </div>
+  <%= render partial: "card_index", tournaments: @tournaments %>
 
   <%= render partial: "map_index", tournaments: @tournaments %>
 
 </div>
-
 
 
 <script type="text/javascript">

@@ -1,0 +1,34 @@
+<div class="cards">
+  <% @tournaments.each.with_index do |tournament,index| %>
+    <div  class = "tournament card1 <%="active" if index == 0 %>" id="<%= tournament.name  %>"
+          data-latitude = "<%= tournament.latitude %>"
+          data-longitude = "<%= tournament.longitude %>">
+
+      <div class="card-first-column">
+        <h1><%= tournament.name %></h1>
+        <h2><%=  tournament.description%></h2>
+      </div>
+
+      <div class="card-second-column">
+        <div>
+          <h2><%= tournament.start_time %></h2>
+          <h2><%= tournament.end_time %></h2>
+        </div>
+        <%= link_to "Show Tournament", tournament_path(tournament), class: "btn btn-primary" %>
+      </div>
+
+      <div class="card-third-column">
+        <div>
+          <p>€<%= tournament.price %></p>
+          <h2><%= tournament.location %></h2>
+        </div>
+        <% if current_user.has_team? %>
+          <%= link_to "Book", new_tournament_booking_path(tournament), class: 'btn btn-success' %>
+        <% else %>
+          <button onclick="createTeam()">Book</button>
+        <% end %>
+      </div>
+
+    </div>
+  <% end %>
+</div>
