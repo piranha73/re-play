@@ -38,9 +38,9 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initAutocomplete();
 
-  // if (document.getElementById('map')) {
-  //   initMapbox();
-  // }
+  if (document.getElementById('map')) {
+    initMapbox();
+  }
 
   // if (document.getElementById("map")) {
   //   tabToggle();
