@@ -23,7 +23,7 @@ class TournamentsController < ApplicationController
     @tournament = Tournament.find(params[:tournament_id])
     @tournament.started = true
     @tournament.save
-    # @tournament.structure.games_generator(@tournament)
+    @tournament.structure.games_generator(@tournament)
     redirect_to tournament_path(@tournament)
   end
 

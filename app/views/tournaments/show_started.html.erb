@@ -1,5 +1,19 @@
 <h1>CALENDAR GENERATED</h1>
 
 <% @tournament.matchdays.each do |matchday| %>
-  <%= matchday %>
+  <div class="card" style="" id="matchday">
+  <p>Mathcday Number: <%= matchday.number %></p>
+
+    <% matchday.games.each do |game| %>
+      <%= link_to tournament_game_path(@tournament, game) do %>
+        <div class="card" style="background-color: black" id="game">
+          <p><%= game.home_team.name %></p>
+          <p>vs</p>
+          <p> <%= game.away_team.name %> </p>
+        </div>
+      <% end %>
+    <% end %>
+
+  </div>
+
 <% end %>
