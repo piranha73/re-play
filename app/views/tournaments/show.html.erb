@@ -1,69 +1,12 @@
-<script>
-function tabToggle() {
-  const tab = document.getElementById("active");
-  const d2 = document.getElementById("map1");
-  if (tab.style.display !== "block") {
-    tab.style.display = "block";
-    d2.style.display = "none";
-  } else {
-    tab.style.display = "none";
-    d2.style.display = "block";
-  }
-}
-</script>
-
+<script src="../../javascript/tabs" defer></script>
 <% if current_user.is_manager?(@tournament) %>
-  <div class="container-tournament-show">
-    <div class="description">
-      <h1><%= @tournament.name %></h1>
-      <div class="top-container">
-        <div class="dates">
-          <p>Start Date: <%= @tournament.start_time %></p>
-          <p>End Date: <%= @tournament.end_time %></p>
-          <p><%= @tournament.location %></p>
-          <p>Tournament Price: €<%= @tournament.price %></p>
-        </div>
-        <div class="about-team">
-          <p>Number of Teams: <%= @tournament.number_of_teams %></p>
-          <p>Number of Players per Team: <%= @tournament.number_of_players_per_team %></p>
-        </div>
-      </div>
-      <div class="buttons">
-        <button class="btn"><%= link_to "Edit", edit_tournament_path(@tournament), class: "fas fa-edit" %></button>
-        <button class="btn"><%= link_to "Subscriptions", tournament_bookings_path(@tournament), class: "fas fa-user-friends" %></button>
-        <button class="btn"><%= link_to "Schedule Matches", tournament_generate_calendar_path(@tournament), method: :post, class: "fas fa-calendar-alt" %></button>
-    </div>
-<!--     <div class="button-container">
-      <button class="tab-toggle" style="width: 80px;">Map</button>
-    </div> -->
-
-    <div class="bottom-container">
-
-      <div class="active" id="active">
-        <p><%= @tournament.description %></p>
-        <% @tournament.teams.uniq.each do |team| %>
-            <h1><%= team.name %></h1>
-          <% end %>
-      </div>
-
-      <div class="map" id="map1">
-        <div>
-          <p><%= @tournament.description %></p>
-          <% @tournament.teams.uniq.each do |team| %>
-            <%= team.name %>
-          <% end %>
-        </div>
-        <div id="map"
-       style="width: 100%; height: 600px;"
-       data-markers="<%= @markers.to_json %>"
-       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
-
-    </div>
-  <%= link_to "Back", tournaments_path %>
-  </div>
-
+  <%= render "tournament_show", tournament: @tournament %>
 <% else %>
+
+
+
+
+
 
   <div class="container-tournament-show">
     <div class="description">
@@ -87,12 +30,10 @@ function tabToggle() {
           <button onclick="createTeam()">Book</button>
         <% end %>
       </div>
-<!--     <div class="button-container">
-      <button class="tab-toggle" style="width: 80px;">Map</button>
-    </div> -->
+      
     <div class="bottom-container">
 
-      <div class="active" id="active">
+      <div>
         <p><%= @tournament.description %></p>
         <% @tournament.teams.uniq.each do |team| %>
             <h1><%= team.name %></h1>
