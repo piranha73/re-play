@@ -31,6 +31,10 @@ gem 'devise'
 
 gem 'geocoder'
 
+gem 'typeform'
+
+gem "rest-client"
+
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
