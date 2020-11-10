@@ -1,11 +1,51 @@
 
-<% if current_user.is_manager?(@tournament) %>
-  <%= render "tournament_show_manager", tournament: @tournament %>
-<% else %>
-  <%= render "tournament_show_player", tournament: @tournament %>
-<% end %>
+<div class="container-tournament-show">
+    <div class="description">
+      <h1 style="font-size: 80px; margin-bottom: 20px;"><%= @tournament.name %></h1>
+      <div class="top-container">
+        <div class="play-button">
+          <%= link_to new_tournament_booking_path(@tournament) do %>
+            <i class="fas fa-play play-icon" style="font-size: 60px; color: #11ffff;"></i>
+          <% end %>
+        </div>
+        <div class="dates">
+          <h3>start_ <%#= @tournament.start_time.strftime("%d.%m") %></h3>
+          <h3>end_ <%#= @tournament.end_time.strftime("%d.%m") %></h3>
+        </div>
+        <div class="price-location">
+          <h3 style="color: #11ffff;">price_ <%= @tournament.price %>€</h3>
+          <h3>where_ <%= @tournament.location %></h3>
+        </div>
+      </div>
+      <% if current_user.is_manager?(@tournament) %>
+        <%= render partial: "tournament_manager_actions", tournament: @tournament %>
+      <% end %>
+      <div class="tabs-show">
+        <h2 class="tab-show-content active" data-tab-target="#map">map</h2>
+        <h2 class="tab-show-content" data-tab-target="#teams">teams</h2>
+      </div>
+      <div class="bottom-container">
 
+        <div class="bottom-left-box">
+          <p><%= @tournament.description %></p>
+        </div>
 
+        <div class="tab-content">
+          <div id="map"
+            style="width: 100%; height: 600px;"
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="pk.eyJ1IjoiZ2Jvbm9tZWxsaSIsImEiOiJja2hhZjg3eHkxNmJ6MnJydHlvcWp5M2I4In0._GoQ_hwa3yqq6ZSU2iUoAw" data-tab-content class="active">
+          </div>
+          <div class="teams" id="teams" data-tab-content>
+            <% @tournament.teams.uniq.each do |team| %>
+                <h1><%= team.name %></h1>
+              <% end %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
 <script type="text/javascript">
     function createTeam() {

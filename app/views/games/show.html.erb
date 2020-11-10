@@ -5,12 +5,12 @@
       <h1> <%= @home_team.name %> </h1>
     </div>
     <div class="result">
-      <h1 style="margin-left: 56px;"> <%=  @home_team.action_in_game(Action.first, @game) %> - <%= @away_team.action_in_game(Action.first, @game) %></h1>
-
+      <h1> <%=  @home_team.action_in_game(Action.first, @game) %> - <%= @away_team.action_in_game(Action.first, @game) %></h1>
     </div>
     <div class="away-team">
       <h1> <%= @away_team.name %> </h1>
     </div>
+
   </div>
 
   <% if current_user.is_manager?(@tournament) %>
@@ -22,7 +22,7 @@
       <%= render partial: 'games/highlights', locals: { team: @home_team } %>
     </div>
     <div class="actions" style="text-align: center;">
-      <p>Actions</p>
+      <p style="font-weight: bold;">Actions</p>
     </div>
     <div class="away-team" style="text-align: right;">
       <%= render partial: 'games/highlights', locals: { team: @away_team } %>

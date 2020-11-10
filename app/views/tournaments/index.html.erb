@@ -1,22 +1,22 @@
 <div class="index-tournaments">
 
-  <div class="title">
-    <h1>Tournaments</h1>
-  </div>
+    <div class="title;" style="margin: 0 auto;" >
+      <h1 style="font-size: 52px;">join a tournament</h1>
+    </div>
 
-  <div class="search-bar">
-    <%= simple_form_for :search, html: { class: 'form-inline' },wrapper: :horizontal_form, :method => :get  do |f| %>
-    <%= f.input :address, label: 'Type the address please', input_html: {id: "tournament_location"} %>
-    <%= f.input :start_time, placeholder: 'Starting date', input_html: { id: "flatpickr_start" }  %>
-    <%= f.input :end_time, placeholder: 'Ending date', input_html: { id: "flatpickr_end" }  %>
-    <%= f.button :submit, class: "btn btn-primary" %>
-    <% end %>
-  </div>
+    <div class="search-bar">
+      <%= simple_form_for :search, html: { class: 'form-inline' },wrapper: :horizontal_form, :method => :get  do |f| %>
+      <%= f.input :address, label: 'Type the address please', input_html: {id: "tournament_location"} %>
+      <%= f.input :start_time, placeholder: 'Starting date', input_html: { id: "flatpickr_start" }  %>
+      <%= f.input :end_time, placeholder: 'Ending date', input_html: { id: "flatpickr_end" }  %>
+      <%= f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+    </div>
 
 
   <div class="wrapper-index-tournaments">
     <div class="left-part">
-       <%= render partial: "card_index", tournaments: @tournaments %>
+       <%= render partial: "card_index", locals: { tournaments: @tournaments, buttons: true } %>
     </div>
 
     <div class="right-part">
