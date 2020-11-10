@@ -1,24 +1,38 @@
-#game-show-header {
-  display: flex;
-  color: $light-blue;
-  width: 100%;
-  justify-content: space-between;
-}
+.game-show {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin: 0 auto;
+  width: 60vw;
 
-#highlights {
-  display: flex;
-  color: $light-blue;
-  width: 100%;
-  justify-content: space-between;
-}
+  #game-show-header {
+    display: flex;
+    color: $light-blue;
+    width: 100%;
+    justify-content: space-between;
+  }
 
-#team-stats {
-  display: flex;
-  color: $light-blue;
-  width: 100%;
-  justify-content: space-between;
-}
+  #highlights {
+    display: flex;
+    color: $light-blue;
+    width: 100%;
+    justify-content: space-between;
+  }
 
-#manager-actions {
-  background-color: black;
+  #team-stats {
+    display: flex;
+    color: $light-blue;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  #manager-actions {
+    background-color: $dark-blue;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    label {
+      color: white;
+    }
+  }
+
 }
