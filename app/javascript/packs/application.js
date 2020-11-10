@@ -48,7 +48,7 @@ document.addEventListener('turbolinks:load', () => {
   // }
 
   if (document.querySelectorAll('[data-tab-target]')) {
-    tabsFunction();
+     tabsFunction();
   }
 });
 

@@ -27,6 +27,12 @@ class TournamentsController < ApplicationController
   end
 
   def show
+    @markers =
+      [{
+        lat: @tournament.latitude,
+        lng: @tournament.longitude
+      }]
+
     if @tournament.started
       render 'tournaments/show_started'
     else
