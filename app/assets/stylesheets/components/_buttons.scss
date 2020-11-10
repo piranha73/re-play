@@ -1,0 +1,30 @@
+.buttons-link {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px 10px;
+  margin: 5% auto;
+  height: 80px;
+  width: 48%;
+}
+
+.btn-copy {
+  color: $light-blue;
+  border: solid 1px;
+  border-color: $fluo-blue;
+  border-radius: 10px;
+}
+
+.btn-whatsapp {
+  color: $light-blue;
+  border: solid 1px;
+  border-color: $fluo-blue;
+  border-radius: 10px;
+}
+
+.btn-fb {
+  color: $light-blue;
+  border: solid 1px;
+  border-color: $fluo-blue;
+  border-radius: 10px;
+  padding: 5px 5px;
+}

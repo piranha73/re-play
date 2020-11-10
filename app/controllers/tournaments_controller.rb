@@ -27,8 +27,11 @@ class TournamentsController < ApplicationController
   end
 
   def show
-
-
+    @markers =
+      [{
+        lat: @tournament.latitude,
+        lng: @tournament.longitude
+      }]
     if @tournament.started
       render 'tournaments/show_started'
     else
@@ -58,7 +61,7 @@ class TournamentsController < ApplicationController
     @tournament.sport_id = 1
     @tournament.structure_id = 1
     if @tournament.save
-      redirect_to tournament_path(@tournament)
+      redirect_to tournament_share_path(@tournament)
     else
       render 'new'
     end
@@ -89,7 +92,6 @@ class TournamentsController < ApplicationController
 
       json_parsed = get_api
 
-      #prende il torneo creato in precedenza
       final_hash = json_parsed["items"].first["answers"]
 
 
@@ -116,6 +118,9 @@ class TournamentsController < ApplicationController
         render 'new'
       end
     end
+
+  def share
+    @last_id = Tournament.last.id
   end
 
   private

@@ -1,66 +1,9 @@
-<script src="../../javascript/tabs" defer></script>
+
 <% if current_user.is_manager?(@tournament) %>
-  <%= render "tournament_show", tournament: @tournament %>
+  <%= render "tournament_show_manager", tournament: @tournament %>
 <% else %>
-
-
-
-
-
-
-  <div class="container-tournament-show">
-    <div class="description">
-      <h1><%= @tournament.name %></h1>
-      <div class="top-container">
-        <div class="dates">
-          <p>Start Date: <%= @tournament.start_time %></p>
-          <p>End Date: <%= @tournament.end_time %></p>
-          <p><%= @tournament.location %></p>
-          <p>Tournament Price: €<%= @tournament.price %></p>
-        </div>
-        <div class="about-team">
-          <p>Number of Teams: <%= @tournament.number_of_teams %></p>
-          <p>Number of Players per Team: <%= @tournament.number_of_players_per_team %></p>
-        </div>
-      </div>
-      <div class="buttons">
-        <% if current_user.has_team? %>
-          <%= link_to "Book", new_tournament_booking_path(@tournament), class: 'btn btn-success' %>
-        <% else %>
-          <button onclick="createTeam()">Book</button>
-        <% end %>
-      </div>
-      
-    <div class="bottom-container">
-
-      <div>
-        <p><%= @tournament.description %></p>
-        <% @tournament.teams.uniq.each do |team| %>
-            <h1><%= team.name %></h1>
-          <% end %>
-        <%#= link_to "Teammates", , class: "btn btn-success" %>
-      </div>
-
-<!--       <div class="map" id="map1">
-        <p><%= @tournament.description %></p>
-        <% @tournament.teams.uniq.each do |team| %>
-            <%= team.name %>
-        <% end %>
- -->
-<!--         <div id="map"
-       style="width: 100%; height: 600px;"
-       data-markers="<%= @markers.to_json %>"
-       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div> -->
-
-    </div>
-  <%= link_to "Back", tournaments_path %>
-  </div>
-
+  <%= render "tournament_show_player", tournament: @tournament %>
 <% end %>
-
-
-
 
 
 

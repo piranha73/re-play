@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/typeformfetch' ,to: 'tournaments#type_form_fetch', as: "type_form_fetch"
   resources :tournaments do
     post '/generate_calendar', to: 'tournaments#generate_calendar'
+    get '/share', to: 'tournaments#share'
     resources :bookings, only: [ :index, :show, :new, :create, :destroy ]
     resources :games, only: [:show] do
       resources :statistics, only: [:create, :destroy]

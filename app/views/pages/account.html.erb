@@ -12,7 +12,7 @@
 
       <div class="bottom-box">
         <div class="left-box" style="margin-right: 20px;">
-          <h1 style="padding-bottom: 9px;">Managing</h1>
+          <h1 style="padding-bottom: 0px;">Managing</h1>
           <%= render partial: "pages/personal_tournaments", locals: { tournaments: current_user.tournaments } %>
         </div>
         <div class="right-box">
@@ -27,7 +27,7 @@
           </div>
 
           <div class="tab-content">
-            <div id="tournaments" data-tab-content>
+            <div id="tournaments" class="active" data-tab-content>
               <%= render partial: "pages/personal_tournaments", locals: { tournaments: current_user.player_tournaments } %>
             </div>
             <div id="teams" data-tab-content>

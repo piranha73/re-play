@@ -1,13 +1,19 @@
-<div id="team">
+<div id="header">
+  <div class="wrapper-team">
+    <h3><%= @team.name %></h3>
+    <p>players: <%= @team.users.size %></p>
 
-  <div class="card-product" style="margin: 0 auto; float: none;  margin-bottom: 10px; width: 70%; align-items: center; overflow: hidden; height: 120px; background: white; box-shadow: 0 0 15px rgba(0,0,0,0.2); display: flex; justify-content: space-evenly; padding: 20px 20px;">
-    <div class="card-product-infos" style="padding: 0px 50px;">
-      <h1 style="font-size: 25px; font-weight: bold; margin: 0; "><%= @team.name %></h1>
-      <p style="font-size: 19px; line-height: 1.4; margin-bottom: 5px; margin-top: 8px;">Here is your team!</p>
-      <%= link_to "Back to Home", account_path, class: 'btn btn-primary' %>
-      <%= link_to "", root_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger far fa-trash-alt", style: "text-align: right" %>
-      <br>
+    <div>
+      <%= link_to "", account_path, method: :delete, data: { confirm: "Are you sure?" }, class: "far fa-trash-alt", style: "color: red" %>
     </div>
   </div>
-
 </div>
+
+<div id="team-body">
+  <% @team.tournaments.uniq.each do |tournament| %>
+    <%= render partial: 'shared/tournament_stats', locals: { tournament: tournament} %>
+  <% end %>
+</div>
+
+
+

@@ -7,6 +7,7 @@
 
 .card-info {
   width: 100%;
+  height: 80px;
   border: solid 2px;
   border-color: $fluo-blue;
   margin-bottom: 10px;
@@ -14,6 +15,19 @@
   grid-template-columns: 4fr 1fr 1fr;
   padding: 5px;
   border-radius: 5px;
+}
+
+.card-info-2 {
+  width: 100%;
+  border: solid 2px;
+  border-color: $fluo-blue;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  &:hover {
+    border: solid 5px;
+    border-color: $fluo-blue;
+  }
 }
 
 body {
@@ -29,7 +43,7 @@ h1 {
   width: 90vw;
   margin: auto;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 
 .card-info-teams {
@@ -40,6 +54,10 @@ h1 {
   margin-bottom: 10px;
   padding: 5px;
   border-radius: 5px;
+  &:hover {
+    border: solid 5px;
+    border-color: $fluo-blue;
+  }
 }
 
 [data-tab-content] {

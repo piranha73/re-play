@@ -1,5 +1,5 @@
 <div id="teams">
-  <% @current_user.teams.each do |team| %>
+  <% teams.each do |team| %>
     <div class="card-team">
       <%= team.name %>
       <%= link_to "Show Team",team_path(team) %>
@@ -7,4 +7,4 @@
   <% end %>
 </div>
 
-<%= render "/shared/teams", teams: @teams %> <!--This is for Mike to use in the right page, delete from here when used!-->
+<%#= render "/shared/teams", teams: @teams %> <!--This is for Mike to use in the right page, delete from here when used!-->
