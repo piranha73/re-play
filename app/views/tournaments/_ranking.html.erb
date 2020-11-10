@@ -1,3 +1,6 @@
 <% @tournament.ranking.each do |array| %>
-  <p> <%= array[0].name %> <em><%= array[1] %></em></p>
+  <div class="teams-rankings">
+    <p> <%= array[0].name %> </p>
+    <p> <%= array[1] %> </p>
+  </div>
 <% end %>
