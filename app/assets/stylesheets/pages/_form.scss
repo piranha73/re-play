@@ -9,7 +9,7 @@
   display: grid;
   grid-row-gap: 5px;
   margin: 5% auto;
-  width: 60%;
+  width: 50%;
 }
 
 .form h2 {
@@ -22,13 +22,42 @@
 .form h1 {
   border-bottom: 1px solid;
   border-color: $fluo-blue;
-  padding-bottom: 20px;
+  padding-bottom: 18px;
 }
 
 .recognitionStyling {
   width: 20%;
-  display: block;
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
+  opacity: 0.6;
+  font-weight: lighter;
+}
+
+.btn-primary1 {
+  color: $light-blue;
+  border: 1px solid;
+  border-color: $fluo-blue;
+  border-radius: 4px;
+  width: 18%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#tournaments {
+  .form {
+    color: $light-blue;
+    border: 2px solid;
+    border-color: $fluo-blue;
+    border-radius: 4px;
+    font-size: 18px;
+    padding: 20px 20px;
+    margin: 5% auto;
+    width: 40%;
+  }
+  .recognitionStyling {
+    border-radius:7px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  }
 }
