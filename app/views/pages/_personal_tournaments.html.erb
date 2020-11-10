@@ -1,18 +1,22 @@
 
   <% tournaments.each do |tournament| %>
-    <div class="card-info" style="margin-top: 10px;">
-      <% if current_user.is_manager?(tournament) %>
-      <div class="right-text" style="">
-        <%= link_to  tournament.name, tournament_path(tournament), style: "font-size: 24px; text-align: left; color: #C7EAF5;" %>
+    <% if current_user.is_manager?(tournament) %>
+      <div class="card-info" style="margin-top: 10px;">
+        <div class="right-text" style="">
+          <%= link_to  tournament.name, tournament_path(tournament), style: "font-size: 24px; text-align: left; color: #C7EAF5;" %>
+          <h2 style="font-size: 18px; text-align: left; color: #C7EAF5;"><%= tournament.description %></h2>
+        </div>
+          <%#= link_to "Subscriptions", new_tournament_path(tournament), class: "btn btn-success", style: "align-self: flex-end; margin-right: 5px; margin-bottom: 5px; text-align: center; align-content: center" %>
+          <%#= link_to "Edit", edit_tournament_path(tournament), class: "btn btn-primary", style: "align-self: flex-end; margin-right: 5px; margin-bottom: 5px; text-align: center; align-content: center" %>
+      </div>
+    <% else %>
+        <%= link_to tournament_path(tournament) do %>
+      <div class="card-info-2" style="margin-top: 10px;">
+        <h1 style="font-size: 24px; text-align: left; color: #C7EAF5;"><%= tournament.name %></h1>
         <h2 style="font-size: 18px; text-align: left; color: #C7EAF5;"><%= tournament.description %></h2>
       </div>
-        <%= link_to "Subscriptions", new_tournament_path, class: "btn btn-success", style: "align-self: flex-end; margin-right: 5px; margin-bottom: 5px; text-align: center; align-content: center" %>
-        <%= link_to "Edit", edit_tournament_path(tournament), class: "btn btn-primary", style: "align-self: flex-end; margin-right: 5px; margin-bottom: 5px; text-align: center; align-content: center" %>
-      <% else %>
-        <%= link_to  tournament.name, tournament_path(tournament), style: "font-size: 24px; text-align: left; color: #C7EAF5;" %>
-        <h2 style="font-size: 18px; text-align: left; color: #C7EAF5;"><%= tournament.description %></h2>
       <% end %>
-    </div>
+      <% end %>
   <% end %>
 
 

@@ -1,23 +1,24 @@
-<h1>CALENDAR GENERATED</h1>
+<div class="show-started">
+  <div class="match-schedule">
+    <% @tournament.matchdays.each do |matchday| %>
+      <div class="" style="width: 60vw; margin: 0 auto;" id="matchday">
+      <h2>Matchday Number: <%= matchday.number %></h2>
 
-<% @tournament.matchdays.each do |matchday| %>
-  <div class="card" style="" id="matchday">
-  <p>Mathcday Number: <%= matchday.number %></p>
-
-    <% matchday.games.each do |game| %>
-      <%= link_to tournament_game_path(@tournament, game) do %>
-        <div class="card" style="background-color: black" id="game">
-          <p><%= game.home_team.name %></p>
-          <p>vs</p>
-          <p> <%= game.away_team.name %> </p>
-        </div>
-      <% end %>
+        <% matchday.games.each do |game| %>
+          <%= link_to tournament_game_path(@tournament, game) do %>
+            <div class="show-started-card" id="game">
+              <p><%= game.home_team.name %></p>
+              <p style="text-align: center;">vs</p>
+              <p style="text-align: right;"> <%= game.away_team.name %> </p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
     <% end %>
-
   </div>
-<% end %>
 
-<div id="ranking">
-  <h2>Ranking</h2>
-  <%= render partial: 'ranking' %>
+  <div id="ranking">
+    <h2>Ranking</h2>
+    <%= render partial: 'ranking' %>
+  </div>
 </div>
