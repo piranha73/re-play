@@ -1,7 +1,7 @@
 <div id="tournaments">
   <div class="form">
     <h1>New Tournament</h1>
-    <%= simple_form_for(tournament) do |f| %>
+    <%= simple_form_for(@tournament) do |f| %>
       <%= f.input :name %>
       <%= f.input :description %>
       <%= f.input :location %>
@@ -12,6 +12,6 @@
       <%= f.input :end_time, as: :string, required: false,  placeholder: "To",input_html: {id: "end_date"} %>
       <%= f.button :submit, "Create Tournament", class: 'btn btn-primary' %>
     <% end %>
-    <%= link_to 'Back', teams_path, class: "back-button" %>
+    <%= link_to 'Back', tournaments_path, class: "back-button" %>
   </div>
 </div>
