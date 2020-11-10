@@ -6,7 +6,9 @@ class TournamentsController < ApplicationController
     if params.has_key?(:search)
       start_time = Date.parse(params["search"]["start_time"])
       end_time = Date.parse(params["search"]["end_time"])
+      address = params["search"]["address"].split(",").first
       @tournaments = Tournament.where(['start_time >= ? AND end_time >= ?', start_time, Date.today])
+      .where("location like ?",  "%#{address}%")
 
     else
 
