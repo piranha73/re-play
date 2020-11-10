@@ -1,6 +1,8 @@
 <% @game.statistics.where(team: team).each do |statistic| %>
-  <%#= statistic.created_at %>
-  time
-  <%= statistic.user.first_name %>
-  <%= statistic.action.name %>
+  <div class="highlight">
+    <%#= statistic.created_at %>
+    <%= statistic.user.first_name %> -
+    <%= statistic.action.name %> -
+    time
+  </div>
 <% end %>

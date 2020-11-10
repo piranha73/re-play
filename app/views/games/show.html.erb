@@ -5,7 +5,7 @@
       <h1> <%= @home_team.name %> </h1>
     </div>
     <div class="result">
-      <h1 style="margin-left: 64px;"> <%=  @home_team.action_in_game(Action.first, @game) %> - <%= @away_team.action_in_game(Action.first, @game) %></h1>
+      <h1 style="margin-left: 56px;"> <%=  @home_team.action_in_game(Action.first, @game) %> - <%= @away_team.action_in_game(Action.first, @game) %></h1>
 
     </div>
     <div class="away-team">
@@ -21,14 +21,16 @@
     <div class="home-team">
       <%= render partial: 'games/highlights', locals: { team: @home_team } %>
     </div>
-    <div class="actions">
-      <p>action</p>
+    <div class="actions" style="text-align: center;">
+      <p>Actions</p>
     </div>
-    <div class="away-team">
+    <div class="away-team" style="text-align: right;">
       <%= render partial: 'games/highlights', locals: { team: @away_team } %>
     </div>
   </div>
 
+
+  <h1 style="text-align: center;">team stats</h1>
   <div id="team-stats">
     <div class="home-team">
       <%= render partial: 'games/team_highlights', locals: { team: @home_team, game: @game.id } %>

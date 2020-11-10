@@ -12,10 +12,22 @@
   }
 
   #highlights {
-    display: flex;
+    display: grid;
+    grid-template-columns: 4fr 1fr 4fr;
     color: $light-blue;
     width: 100%;
     justify-content: space-between;
+    background-color: $light-blue;
+    margin-top: 20px;
+    padding: 5px;
+
+    p {
+      color: $dark-blue;
+    }
+
+    .highlight {
+      color: $dark-blue;
+    }
   }
 
   #team-stats {
