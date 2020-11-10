@@ -21,7 +21,8 @@ class BookingsController < ApplicationController
     @booking.tournament = @tournament
     @booking.team = @team
     if @booking.save
-      redirect_to tournaments_path
+      JoinTeamPlayer.create(user: current_user, team: @team)
+      redirect_to account_path
       flash[:notice] = "Tournament booked"
     else
       render 'new'
