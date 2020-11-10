@@ -32,7 +32,7 @@
           <div id="map"
             style="width: 100%; height: 600px;"
             data-markers="<%= @markers.to_json %>"
-            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-tab-content class="active">
+            data-mapbox-api-key="pk.eyJ1IjoiZ2Jvbm9tZWxsaSIsImEiOiJja2hhZjg3eHkxNmJ6MnJydHlvcWp5M2I4In0._GoQ_hwa3yqq6ZSU2iUoAw" data-tab-content class="active">
           </div>
           <div class="teams" id="teams" data-tab-content>
             <% @tournament.teams.uniq.each do |team| %>

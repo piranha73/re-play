@@ -1,4 +1,4 @@
-<script src="../../javascript/tabs" defer></script>
+
 <% if current_user.is_manager?(@tournament) %>
   <%= render "tournament_show", tournament: @tournament %>
 <% else %>
@@ -30,7 +30,7 @@
           <button onclick="createTeam()">Book</button>
         <% end %>
       </div>
-      
+
     <div class="bottom-container">
 
       <div>
