@@ -1,17 +1,1 @@
-<div id="tournaments">
-  <div class="form">
-    <h1>New Tournament</h1>
-    <%= simple_form_for(tournament) do |f| %>
-      <%= f.input :name %>
-      <%= f.input :description %>
-      <%= f.input :location %>
-      <%= f.input :number_of_teams %>
-      <%= f.input :number_of_players_per_team %>
-      <%= f.input :price %>
-      <%= f.input :start_time, as: :string, required: false,placeholder: "From", input_html: {id: "start_date"} %>
-      <%= f.input :end_time, as: :string, required: false,  placeholder: "To",input_html: {id: "end_date"} %>
-      <%= f.button :submit, "Create Tournament", class: 'btn btn-primary' %>
-    <% end %>
-    <%= link_to 'Back', teams_path, class: "back-button" %>
-  </div>
-</div>
+<head> <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> <title>Re-play2</title> <style type="text/css"> html{ margin: 0; height: 100%; overflow: hidden; } iframe{ position: absolute; left:0; right:0; bottom:0; top:0; border:0; } </style> </head> <body> <iframe id="typeform-full" width="100%" height="100%" frameborder="0" allow="camera; microphone; autoplay; encrypted-media;" src="https://form.typeform.com/to/w7pbCVqU"></iframe> <script type="text/javascript" src="https://embed.typeform.com/embed.js"></script> </body>

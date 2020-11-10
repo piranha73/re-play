@@ -7,6 +7,9 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require('jquery.scrollto');
+
+
 
 
 
@@ -26,6 +29,7 @@ require("channels")
 import "../plugins/flatpickr";
 // External imports
 import "bootstrap";
+import $ from 'jquery';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -34,10 +38,18 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { tabsFunction } from "../components/tabs";
 import { tabToggle } from "../components/tabs2";
 
+
+
+
+
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initAutocomplete();
+
+
+
 
   if (document.getElementById('map')) {
     initMapbox();
@@ -51,4 +63,11 @@ document.addEventListener('turbolinks:load', () => {
     tabsFunction();
   }
 });
+
+
+
+
+
+
+
 

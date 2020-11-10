@@ -12,12 +12,12 @@ class TournamentsController < ApplicationController
 
     else
 
-    @tournaments = Tournament.all
+      @tournaments = Tournament.all
 
     end
 
 
-     @markers = @tournaments.geocoded.map do |tournament|
+    @markers = @tournaments.geocoded.map do |tournament|
       {
         lat: tournament.latitude,
         lng: tournament.longitude
@@ -27,6 +27,8 @@ class TournamentsController < ApplicationController
   end
 
   def show
+
+
     if @tournament.started
       render 'tournaments/show_started'
     else
@@ -80,7 +82,50 @@ class TournamentsController < ApplicationController
     redirect_to tournament_path
   end
 
+  def type_form_fetch
+
+      @tournaments = Tournament.all
+    if params.has_key?(:form)
+
+      json_parsed = get_api
+
+      #prende il torneo creato in precedenza
+      final_hash = json_parsed["items"].first["answers"]
+
+
+
+      hash_t = {
+        name: final_hash[0]["text"],
+        description: final_hash[1]["text"],
+        location: final_hash[2]["text"],
+        number_of_teams: final_hash[3]["number"],
+        number_of_players_per_team: final_hash[4]["number"],
+        price: final_hash[5]["number"],
+        start_time: Date.parse(final_hash[6]["date"]),
+        end_time: Date.parse(final_hash[7]["date"])
+
+      }
+
+      new_tournament = Tournament.new(hash_t)
+      new_tournament.user = current_user
+      new_tournament.sport_id = 1
+      new_tournament.structure_id = 1
+      if new_tournament.save
+        redirect_to tournament_path(new_tournament)
+      else
+        render 'new'
+      end
+    end
+  end
+
   private
+
+  def get_api
+    hash_new = Fetch.answers
+
+
+    return hash_new
+  end
 
   def find_tournament
     @tournament = Tournament.find(params[:id])
