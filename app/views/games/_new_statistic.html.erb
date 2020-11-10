@@ -2,5 +2,5 @@
   <%= f.association :user, collection: team.players_in_tournament(@tournament), label_method: :first_name%>
   <%= f.association :action %>
   <%= hidden_field_tag 'team_id', team.id %>
-  <%= f.button :submit, "Save Statistic" %>
+  <%= f.button :submit, "Save", class: "btn btn-success" %>
 <% end %>
