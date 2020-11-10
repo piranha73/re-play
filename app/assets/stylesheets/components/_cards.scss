@@ -1,5 +1,16 @@
+.card-link {
+  display: flex;
+  justify-content: center;
+  border: solid 1px;
+  border-color: $fluo-blue;
+  border-radius: 10px;
+  padding: 20px 20px;
+  margin: 5% auto;
+  height: 80px;
+  width: 38%;
+}
 
-  .card-team {
+.card-team {
     overflow: hidden;
     height: auto;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
