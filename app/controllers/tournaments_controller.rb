@@ -118,6 +118,7 @@ class TournamentsController < ApplicationController
         render 'new'
       end
     end
+  end
 
   def share
     @last_id = Tournament.last.id
