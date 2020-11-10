@@ -15,6 +15,14 @@ class Team < ApplicationRecord
     players_in_tournament(tournament).size >= tournament.number_of_players_per_team
   end
 
+  def action_in_games(action, tournament)
+    total = 0
+    tournament.games.each do |game|
+      total += action_in_game(action, game)
+    end
+    return total
+  end
+
   def action_in_game(action, game)
     self.statistics.where(game: game, action: action).size
   end
