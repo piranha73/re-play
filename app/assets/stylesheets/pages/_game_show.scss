@@ -5,10 +5,11 @@
   width: 60vw;
 
   #game-show-header {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
     color: $light-blue;
     width: 100%;
-    justify-content: space-between;
   }
 
   #highlights {

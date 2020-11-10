@@ -6,12 +6,20 @@
 
   h2 {
     color: $light-blue;
-    font-size: 32px;
+    font-size: 52px;
+    letter-spacing: 4px;
+  }
+
+  h3 {
+    color: $light-blue;
+    font-weight: lighter;
+    letter-spacing: 2px;
   }
 
   .top-container {
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
+    margin-bottom: 20px;
   }
 
   .description {
@@ -22,28 +30,31 @@
   .tabs-show {
     display: flex;
     justify-content: flex-end;
+    margin-top: 40px;
     h1 {
       font-size: 24px;
-
+    }
+    h2 {
+      opacity: 30%;
     }
     .tab-show-content {
       margin-left: 20px;
       cursor: pointer;
     }
     .tab-show-content.active {
-      background-color: $fluo-blue;
+      color: $light-blue;
+      opacity: 100%;
     }
     .tab-show-content:hover {
-      background-color: $fluo-blue;
-      color: $dark-blue;
+
     }
   }
 
   .bottom-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    // width: 80vw;
-    margin: 0 auto;
+    margin: 40px auto;
+
     .tab-content {
       height: 600px;
     }
@@ -60,6 +71,5 @@
   .button-container {
     width: 80vw;
     margin: 0 auto;
-
   }
 }

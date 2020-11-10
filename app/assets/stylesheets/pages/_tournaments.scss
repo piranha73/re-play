@@ -56,14 +56,14 @@
   flex-direction: column;
   justify-content: center;
 
- #map {
+  #map {
 
-  height: 100%;
-  width: 100%;
-  // position: -webkit-sticky;
-  // position: sticky;
-  // top: 20px;
- }
+    height: 100%;
+    width: 100%;
+    // position: -webkit-sticky;
+    position: sticky;
+    // top: 20px;
+  }
 
 
   .search-bar {
@@ -105,7 +105,7 @@
       margin-right: 20px;
       margin-left: 20px;
       display: grid;
-      grid-template-columns: 2fr 1fr 0.5fr;
+      grid-template-columns: 2fr 1fr 1fr;
 
       &:hover{
         border: 4px solid;

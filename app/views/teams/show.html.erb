@@ -1,13 +1,15 @@
-<div id="header">
-  <div class="wrapper-team">
+<div class="team-show">
+  <div class="">
     <h3><%= @team.name %></h3>
     <p>players: <%= @team.users.size %></p>
+    <p>number of tournaments participated</p>
+    <p>Won matches/Total</p>
+    <p>tournaments participating</p>
 
     <div>
       <%= link_to "", account_path, method: :delete, data: { confirm: "Are you sure?" }, class: "far fa-trash-alt", style: "color: red" %>
     </div>
   </div>
-</div>
 
 <div id="team-body">
   <% @team.tournaments.uniq.each do |tournament| %>
@@ -16,4 +18,4 @@
 </div>
 
 
-
+</div>

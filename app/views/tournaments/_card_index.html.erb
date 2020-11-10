@@ -1,26 +1,33 @@
-<% @tournaments.each.with_index do |tournament,index| %>
+<% tournaments.each.with_index do |tournament,index| %>
     <div class = "card1 tournament <%="active" if index == 0 %>" id="<%= tournament.name  %>"
       data-latitude = "<%= tournament.latitude %>"
       data-longitude = "<%= tournament.longitude %>">
         <div class="card-first-column">
-          <h1><%= tournament.name %></h1>
+          <h1 style="font-size: 46px;"><%= tournament.name %></h1>
           <h2><%=  tournament.description%></h2>
         </div>
 
         <div class="card-second-column">
           <div>
-            <h2><%= tournament.start_time %></h2>
-            <h2><%= tournament.end_time %></h2>
+            <h2>start_ <%#= tournament.start_time.strftime("%d.%m") %></h2>
+            <h2>end_ <%#= tournament.end_time.strftime("%d.%m") %></h2>
           </div>
-          <%= link_to "Show", tournament_path(tournament), class: "btn btn-primary" %>
+          <% if buttons %>
+            <%= link_to "Show", tournament_path(tournament), class: "btn btn-primary" %>
+          <% end %>
         </div>
       <div class="card-third-column">
         <div>
-          <p>€<%= tournament.price %></p>
-          <h2><%= tournament.location %></h2>
+          <h2>price_ <%= tournament.price %>€</h2>
+          <h2>where_ <%= tournament.location %></h2>
         </div>
         <% if current_user.has_team? %>
-          <%= link_to "Book", new_tournament_booking_path(tournament), class: 'btn btn-success' %>
+          <% if !buttons %>
+            <%= link_to "Show", tournament_path(tournament), class: "btn btn-primary" %>
+          <% end %>
+          <% if buttons %>
+            <%= link_to "Book", new_tournament_booking_path(tournament), class: 'btn btn-success' %>
+          <% end %>
         <% else %>
           <button onclick="createTeam()">Book</button>
         <% end %>
@@ -28,4 +35,3 @@
 
     </div>
 <% end %>
-
