@@ -16,6 +16,7 @@ class TeamsController < ApplicationController
   def create
     @team = Team.new(team_params)
     if @team.save
+      JoinTeamPlayer.create(user: current_user, team: @team)
       redirect_to team_path(@team)
     else
       render 'new'
