@@ -1,0 +1,7 @@
+<div class="tournament-stat">
+  <%= tournament.name %>
+  <% Action.all.each do |action| %>
+    <p><%= action.name %></p>
+    <p><%= @team.action_in_game(action, tournament) %></p>
+  <% end %>
+</div>
