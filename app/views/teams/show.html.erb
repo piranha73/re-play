@@ -1,7 +1,7 @@
 <div class="team-show">
   <div class="team-profile">
     <h2><%= @team.name %></h2>
-    <%= image_tag @team.logo, style: 'width: 50px;'%>
+    <%= image_tag url_for(@team.logo), style: 'width: 50px;'%>
     <p>players: <%= @team.users.size %></p>
     <p>number of tournaments participated</p>
     <p>Won matches/Total</p>

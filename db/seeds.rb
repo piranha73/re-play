@@ -72,7 +72,7 @@ User.create(first_name: 'Edward', last_name: 'Snowden', email: 'edward@email.com
 def create_team(name, index)
   team = Team.create(name: name)
   file_path = File.join(Rails.root, "/app/assets/images/team_logos/#{index}.png")
-  team.logo.attach(io: File.open(file_path), filename: "#{name}.png")
+  team.logo.attach(io: File.open(file_path), filename: "#{index}.png")
 end
 
 teams = ['FC Barcelona', 'AC Milan', 'Real Madrid', 'PSG', 'Raja', 'Widad', 'Chelsea', 'Manchester United', 'Manchester City', 'Olympique Marseille', 'Borussia Dortmund', 'Lakers', 'Miami Heat', 'Spurs', 'Cleveland Cavaliers', 'Red Sox', 'Celtics']
