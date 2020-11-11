@@ -1,5 +1,5 @@
 <div class="header">
-  <h1> Share the tournament link below :</h1>
+  <h1>share your tournament</h1>
 </div>
 
 <div class="card-link">
@@ -7,9 +7,9 @@
 </div>
 
 <div class="buttons-link">
-  <button type="button" class="btn btn-copy" onclick="copyToClipboard('myLink')"><i class="far fa-copy"></i></button>
-  <button type="button" class="btn btn-mail"><a href="mailto:"><i class="fas fa-envelope"></i></a></button>
-  <button type="button" class="btn btn-whatsapp"><i class="fab fa-whatsapp pr-1"></i><a href="https://wa.me/?text=Subscribe to this amazing tournament!" target="_blank">Whatsapp</a></button>
+  <div type="button" class="btn-copy" onclick="copyToClipboard('myLink')"><i class="far fa-copy"></i></div>
+  <div type="button" class="btn-mail"><a href="mailto:"><i class="fas fa-envelope"></i></a></div>
+  <div type="button" class="btn-whatsapp"><a href="https://wa.me/?text=Subscribe to this amazing tournament!%20http://localhost:3000/tournaments/<%= @last_id %>" target="_blank"><i class="fab fa-whatsapp pr-1" ></i></a></div>
 </div>
 
 <script>
