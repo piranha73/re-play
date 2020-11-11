@@ -71,3 +71,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Calculate Round Robin games
 gem 'round_robin_tournament'
+
+# Faker Gem
+gem 'faker'
+
