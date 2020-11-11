@@ -1,10 +1,12 @@
 <div class="team-show">
   <div class="team-profile">
-    <h2><%= @team.name %></h2>
-    <% unless @team.logo.nil? %>
-      <%= image_tag @team.logo, style: 'width: 50px;'%>
-    <% end %>
-    
+    <div class="d-flex" style="border-bottom: 1px solid #11FFFF;">
+      <h2><%= @team.name %></h2>
+      <% unless @team.logo.nil? %>
+        <%= image_tag @team.logo, style: 'width: 50px;'%>
+      <% end %>
+    </div>
+
     <p>players_ <%= @team.users.size %></p>
     <p>matches_won_ 24/24</p>
     <p>tournaments_won_ 3/3</p>
