@@ -1,10 +1,15 @@
-<div class="card-link">
-  <h1 id="myLink"> http://localhost:3000/tournaments/<%= @last_id %></h1>
+<div class="header">
+  <h1> Share the tournament link below :</h1>
 </div>
+
+<div class="card-link">
+  <h2 id="myLink"> http://localhost:3000/tournaments/<%= @last_id %></h2>
+</div>
+
 <div class="buttons-link">
   <button type="button" class="btn btn-copy" onclick="copyToClipboard('myLink')"><i class="far fa-copy"></i></button>
-  <button type="button" class="btn btn-fb"><i class="fab fa-facebook-f pr-1"></i> Facebook</button>
-  <button type="button" class="btn btn-whatsapp" onclick="location.href='https://wa.me/?text=urlencodedtext'"><i class="fab fa-whatsapp pr-1"></i> Whatsapp</button>
+  <button type="button" class="btn btn-mail"><a href="mailto:"><i class="fas fa-envelope"></i></a></button>
+  <button type="button" class="btn btn-whatsapp"><i class="fab fa-whatsapp pr-1"></i><a href="https://wa.me/?text=Subscribe to this amazing tournament!" target="_blank">Whatsapp</a></button>
 </div>
 
 <script>
