@@ -69,23 +69,17 @@ User.create(first_name: 'Joe', last_name: 'Rogan', email: 'joerogan@email.com', 
 User.create(first_name: 'Edward', last_name: 'Snowden', email: 'edward@email.com', password: '123456', address: "Boston, USA")
 
 #Team Seeds
-Team.create(name: 'FC Barcelona')
-Team.create(name: 'AC Milan')
-Team.create(name: 'Real Madrid')
-Team.create(name: 'PSG')
-Team.create(name: 'Raja')
-Team.create(name: 'Widad')
-Team.create(name: 'Chelsea')
-Team.create(name: 'Manchester United')
-Team.create(name: 'Manchester City')
-Team.create(name: 'Olympique Marseille')
-Team.create(name: 'Borussia Dortmund')
-Team.create(name: 'Lakers')
-Team.create(name: 'Miami Heat')
-Team.create(name: 'Spurs')
-Team.create(name: 'Cleveland Cavaliers')
-Team.create(name: 'Red Sox')
-Team.create(name: 'Celtics')
+def create_team(name, index)
+  team = Team.create(name: name)
+  file_path = File.join(Rails.root, "/app/assets/images/team_logos/#{index}.png")
+  team.logo.attach(io: File.open(file_path), filename: "#{name}_logo.png")
+end
+
+teams = ['FC Barcelona', 'AC Milan', 'Real Madrid', 'PSG', 'Raja', 'Widad', 'Chelsea', 'Manchester United', 'Manchester City', 'Olympique Marseille', 'Borussia Dortmund', 'Lakers', 'Miami Heat', 'Spurs', 'Cleveland Cavaliers', 'Red Sox', 'Celtics']
+teams.each_with_index do |team, index|
+  create_team(team, index+1)
+end
+
 
 #Join Team Player Seeds
 
@@ -175,7 +169,7 @@ JoinTeamPlayer.create(user_id: 13, team_id: 11)
 JoinTeamPlayer.create(user_id: 18, team_id: 11)
 
 #Team 12: Lakers 3/5
-JoinTeamPlayer.create(user_id: 4, team_id: 12)
+JoinTeamPlayer.create(user_id: 4  , team_id: 12)
 JoinTeamPlayer.create(user_id: 9, team_id: 12)
 JoinTeamPlayer.create(user_id: 14, team_id: 12)
 
