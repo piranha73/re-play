@@ -1,13 +1,28 @@
 <div id="teams">
-  <div class="form">
+  <div class="team-form">
     <h1>Team</h1>
+
     <%= simple_form_for [@current_user, @team] do |f| %>
-      <%= f.input :name, as: :string, required: false,placeholder: "Ex: Lakers", input_html: {id: "name", class: "recognitionStyling"} %>
-      <%= f.button :submit, class: 'btn btn-primary' %>
+    <%= f.input :name, as: :string, required: false,placeholder: "Ex: Lakers", input_html: {id: "name", class: "recognitionStyling"} %>
+    <!-- loop for the logos -->
+    <h1>Pick your logo</h1>
+    <div class="logo-choices">
+      <% 19.times do |i|  %>
+
+      <%= image_tag("team_logos/#{i + 1}.png", class: "image-logos", id: i)  %>
+
+
+      <% end  %>
+    </div>
+    <%= f.button :submit, class: 'btn btn-primary btn-lg btn-block' %>
     <% end %>
-    <%= link_to 'Back to Account', account_path, class: "back-button" %>
+
   </div>
 </div>
+
+
+
+
 
 
 
