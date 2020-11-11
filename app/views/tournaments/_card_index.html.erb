@@ -11,8 +11,8 @@
 
         <div class="card-second-column">
           <div>
-            <h2>start_ <%#= tournament.start_time.strftime("%d.%m") %></h2>
-            <h2>end_ <%#= tournament.end_time.strftime("%d.%m") %></h2>
+            <h2>start_ <%= tournament.start_time.strftime("%d.%m") %></h2>
+            <h2>end_ <%= tournament.end_time.strftime("%d.%m") %></h2>
           </div>
           <% if buttons %>
             <%= link_to "Show", tournament_path(tournament), class: "btn btn-primary" %>
