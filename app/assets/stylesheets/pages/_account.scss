@@ -46,17 +46,27 @@ h1 {
   grid-template-columns: 1fr 1fr;
 }
 
+a {
+    text-decoration: none;
+}
+
 .card-info-teams {
   width: 100%;
   height: 80px;
-  border: solid 2px;
-  border-color: $fluo-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //border: solid 2px;
+  //border-color: $fluo-blue;
+  background-color: $mid-blue;
   margin-bottom: 10px;
   padding: 5px;
   border-radius: 5px;
   &:hover {
-    border: solid 5px;
-    border-color: $fluo-blue;
+    //border: solid 5px;
+    box-shadow: 3px 3px 3px 0px rgba(199,234,245,0.6);
+    text-decoration: none;
+    //border-color: $fluo-blue;
   }
 }
 
@@ -84,32 +94,33 @@ h1 {
   text-align: left;
   flex-grow: 1;
   text-align: center;
+  border: solid transparent;
+  border-width: 0 3px 5px 3px;
 }
 
 .tab.active {
-  background-color: $fluo-blue;
-  color: $dark-blue;
-  border-color: $fluo-blue;
+  background-color: $mid-blue;
+  color: $light-blue;
+  border-color: $mid-blue;
 }
 
 .tab:hover {
-  color: $light-blue;
-  border: solid 1px $fluo-blue;
+  border-bottom-color: $mid-blue;
 }
 
 .vl {
-  border-left: 1px solid $fluo-blue;
+  border-left: 1px solid $mid-blue;
   height: 100vh;
   margin-left: 10px;
 }
 
 .tournaments {
-  border-right: 1px solid $fluo-blue;
+  border-right: 3px solid $mid-blue;
   border-radius: 10px 0 0 0;
 }
 
 .personal-info {
-  border-left: 1px solid $fluo-blue;
+  border-left: 3px solid $mid-blue;
   border-radius: 0 10px 0 0;
 }
 
