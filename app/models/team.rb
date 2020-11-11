@@ -4,7 +4,6 @@ class Team < ApplicationRecord
   has_many :join_team_players
   has_many :users, through: :join_team_players
   has_many :statistics
-  has_one_attached :logo
 
   def players_in_tournament(tournament)
     tournament.bookings.where(team: self).map do |booking|
