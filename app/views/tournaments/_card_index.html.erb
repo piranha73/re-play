@@ -1,5 +1,7 @@
 <% tournaments.each.with_index do |tournament,index| %>
-    <div class = "card1 tournament <%="active" if index == 0 %>" id="<%= tournament.name  %>"
+    <div class = "card1 tournament <%="active" if index == 0 %>
+      <%= current_user.is_manager?(tournament) ? 'manager-card' : 'player-card' %>"
+      id="<%= tournament.name  %>"
       data-latitude = "<%= tournament.latitude %>"
       data-longitude = "<%= tournament.longitude %>">
         <div class="card-first-column">
@@ -23,7 +25,11 @@
         </div>
         <% if current_user.has_team? %>
           <% if !buttons %>
-            <%= link_to "Show", tournament_path(tournament), class: "btn btn-primary" %>
+            <% if current_user.is_manager?(tournament) %>
+              <%= link_to "Manage", tournament_path(tournament), class: "btn btn-primary" %>
+            <% else %>
+              <%= link_to "Show", tournament_path(tournament), class: "btn btn-primary" %>
+            <% end %>
           <% end %>
           <% if buttons %>
             <%= link_to "Book", new_tournament_booking_path(tournament), class: 'btn btn-success' %>

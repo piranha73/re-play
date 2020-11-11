@@ -1,8 +1,24 @@
+<div class="header">
+  <h1>share your tournament</h1>
+</div>
+
 <div class="card-link">
-  <h1> http://localhost:3000/tournaments/<%= @last_id %></h1>
+  <h2 id="myLink"> http://localhost:3000/tournaments/<%= @last_id %></h2>
 </div>
+
 <div class="buttons-link">
-  <button type="button" class="btn btn-copy"><i class="far fa-copy"></i></button>
-  <button type="button" class="btn btn-fb"><i class="fab fa-facebook-f pr-1"></i> Facebook</button>
-  <button type="button" class="btn btn-whatsapp"><%= link_to "", "https://wa.me/?text=urlencodedtext" %><i class="fab fa-whatsapp pr-1"></i> Whatsapp</button>
+  <div type="button" class="btn-copy" onclick="copyToClipboard('myLink')"><i class="far fa-copy"></i></div>
+  <div type="button" class="btn-mail"><a href="mailto:"><i class="fas fa-envelope"></i></a></div>
+  <div type="button" class="btn-whatsapp"><a href="https://wa.me/?text=Subscribe to this amazing tournament!%20http://localhost:3000/tournaments/<%= @last_id %>" target="_blank"><i class="fab fa-whatsapp pr-1" ></i></a></div>
 </div>
+
+<script>
+  function copyToClipboard(elementId) {
+    var aux = document.createElement("input");
+    aux.setAttribute("value", document.getElementById(elementId).innerHTML);
+    document.body.appendChild(aux);
+    aux.select();
+    document.execCommand("copy");
+    document.body.removeChild(aux);
+  }
+</script>

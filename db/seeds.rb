@@ -69,83 +69,114 @@ User.create(first_name: 'Joe', last_name: 'Rogan', email: 'joerogan@email.com', 
 User.create(first_name: 'Edward', last_name: 'Snowden', email: 'edward@email.com', password: '123456', address: "Boston, USA")
 
 #Team Seeds
-Team.create(name: 'FC Barcelona')
-Team.create(name: 'AC Milan')
-Team.create(name: 'Real Madrid')
-Team.create(name: 'PSG')
-Team.create(name: 'Raja')
-Team.create(name: 'Widad')
-Team.create(name: 'Chelsea')
-Team.create(name: 'Manchester United')
-Team.create(name: 'Manchester City')
-Team.create(name: 'Olympique Marseille')
-Team.create(name: 'Borussia Dortmund')
-Team.create(name: 'Lakers')
-Team.create(name: 'Miami Heat')
-Team.create(name: 'Spurs')
-Team.create(name: 'Cleveland Cavaliers')
-Team.create(name: 'Red Sox')
-Team.create(name: 'Celtics')
+def create_team(name, index)
+  team = Team.create(name: name)
+  file_path = File.join(Rails.root, "/app/assets/images/team_logos/#{index}.png")
+  team.logo.attach(io: File.open(file_path), filename: "#{index}.png")
+end
+
+teams = ['FC Barcelona', 'AC Milan', 'Real Madrid', 'PSG', 'Raja', 'Widad', 'Chelsea', 'Manchester United', 'Manchester City', 'Olympique Marseille', 'Borussia Dortmund', 'Lakers', 'Miami Heat', 'Spurs', 'Cleveland Cavaliers', 'Red Sox', 'Celtics']
+teams.each_with_index do |team, index|
+  create_team(team, index+1)
+end
+
 
 #Join Team Player Seeds
+
+#Team 1: FC Barcelona 5/5
 JoinTeamPlayer.create(user_id: 1, team_id: 1)
 JoinTeamPlayer.create(user_id: 2, team_id: 1)
 JoinTeamPlayer.create(user_id: 3, team_id: 1)
 JoinTeamPlayer.create(user_id: 4, team_id: 1)
+JoinTeamPlayer.create(user_id: 5, team_id: 1)
 
-JoinTeamPlayer.create(user_id: 5, team_id: 2)
+#Team 2: AC Milan 5/5
 JoinTeamPlayer.create(user_id: 6, team_id: 2)
 JoinTeamPlayer.create(user_id: 7, team_id: 2)
 JoinTeamPlayer.create(user_id: 8, team_id: 2)
+JoinTeamPlayer.create(user_id: 9, team_id: 2)
+JoinTeamPlayer.create(user_id: 10, team_id: 2)
 
-JoinTeamPlayer.create(user_id: 9, team_id: 3)
-JoinTeamPlayer.create(user_id: 10, team_id: 3)
+#Team 3: Real Madrid 5/5
 JoinTeamPlayer.create(user_id: 11, team_id: 3)
 JoinTeamPlayer.create(user_id: 12, team_id: 3)
+JoinTeamPlayer.create(user_id: 13, team_id: 3)
+JoinTeamPlayer.create(user_id: 14, team_id: 3)
+JoinTeamPlayer.create(user_id: 15, team_id: 3)
 
-JoinTeamPlayer.create(user_id: 13, team_id: 4)
-JoinTeamPlayer.create(user_id: 14, team_id: 4)
-JoinTeamPlayer.create(user_id: 15, team_id: 4)
+#Team 4: PSG 5/5
 JoinTeamPlayer.create(user_id: 16, team_id: 4)
+JoinTeamPlayer.create(user_id: 17, team_id: 4)
+JoinTeamPlayer.create(user_id: 18, team_id: 4)
+JoinTeamPlayer.create(user_id: 19, team_id: 4)
+JoinTeamPlayer.create(user_id: 20, team_id: 4)
 
-JoinTeamPlayer.create(user_id: 17, team_id: 5)
-JoinTeamPlayer.create(user_id: 18, team_id: 5)
-JoinTeamPlayer.create(user_id: 19, team_id: 6)
-JoinTeamPlayer.create(user_id: 20, team_id: 6)
+#Team 5: Raja 5/5
+JoinTeamPlayer.create(user_id: 21, team_id: 5)
+JoinTeamPlayer.create(user_id: 22, team_id: 5)
+JoinTeamPlayer.create(user_id: 23, team_id: 5)
+JoinTeamPlayer.create(user_id: 24, team_id: 5)
+JoinTeamPlayer.create(user_id: 25, team_id: 5)
 
-JoinTeamPlayer.create(user_id: 21, team_id: 7)
-JoinTeamPlayer.create(user_id: 22, team_id: 7)
-JoinTeamPlayer.create(user_id: 23, team_id: 8)
-JoinTeamPlayer.create(user_id: 24, team_id: 8)
+#Team 6: Widad 6/5
+JoinTeamPlayer.create(user_id: 26, team_id: 6)
+JoinTeamPlayer.create(user_id: 27, team_id: 6)
+JoinTeamPlayer.create(user_id: 28, team_id: 6)
+JoinTeamPlayer.create(user_id: 29, team_id: 6)
+JoinTeamPlayer.create(user_id: 30, team_id: 6)
+JoinTeamPlayer.create(user_id: 31, team_id: 6)
 
-JoinTeamPlayer.create(user_id: 25, team_id: 9)
+#Team 7: Chelsea 7/5
+JoinTeamPlayer.create(user_id: 32, team_id: 7)
+JoinTeamPlayer.create(user_id: 33, team_id: 7)
+JoinTeamPlayer.create(user_id: 34, team_id: 7)
+JoinTeamPlayer.create(user_id: 35, team_id: 7)
+JoinTeamPlayer.create(user_id: 36, team_id: 7)
+JoinTeamPlayer.create(user_id: 37, team_id: 7)
+JoinTeamPlayer.create(user_id: 38, team_id: 7)
+
+#Team 8: Manchester United 8/5
+JoinTeamPlayer.create(user_id: 39, team_id: 8)
+JoinTeamPlayer.create(user_id: 40, team_id: 8)
+JoinTeamPlayer.create(user_id: 41, team_id: 8)
+JoinTeamPlayer.create(user_id: 42, team_id: 8)
+JoinTeamPlayer.create(user_id: 43, team_id: 8)
+JoinTeamPlayer.create(user_id: 44, team_id: 8)
+JoinTeamPlayer.create(user_id: 45, team_id: 8)
+JoinTeamPlayer.create(user_id: 46, team_id: 8)
+
+#Team 9: Manchester City 9/5
+JoinTeamPlayer.create(user_id: 47, team_id: 9)
+JoinTeamPlayer.create(user_id: 1, team_id: 9)
+JoinTeamPlayer.create(user_id: 6, team_id: 9)
+JoinTeamPlayer.create(user_id: 11, team_id: 9)
+JoinTeamPlayer.create(user_id: 16, team_id: 9)
+JoinTeamPlayer.create(user_id: 21, team_id: 9)
 JoinTeamPlayer.create(user_id: 26, team_id: 9)
-JoinTeamPlayer.create(user_id: 27, team_id: 9)
-JoinTeamPlayer.create(user_id: 28, team_id: 10)
+JoinTeamPlayer.create(user_id: 32, team_id: 9)
+JoinTeamPlayer.create(user_id: 39, team_id: 9)
 
-JoinTeamPlayer.create(user_id: 29, team_id: 10)
-JoinTeamPlayer.create(user_id: 30, team_id: 10)
-JoinTeamPlayer.create(user_id: 31, team_id: 11)
-JoinTeamPlayer.create(user_id: 32, team_id: 11)
+#Team 10: Olympique Marseille 4/5
+JoinTeamPlayer.create(user_id: 2, team_id: 10)
+JoinTeamPlayer.create(user_id: 7, team_id: 10)
+JoinTeamPlayer.create(user_id: 12, team_id: 10)
+JoinTeamPlayer.create(user_id: 17, team_id: 10)
 
-JoinTeamPlayer.create(user_id: 33, team_id: 11)
-JoinTeamPlayer.create(user_id: 34, team_id: 12)
-JoinTeamPlayer.create(user_id: 35, team_id: 12)
-JoinTeamPlayer.create(user_id: 36, team_id: 12)
+#Team 11: Borussia Dortmund 4/5
+JoinTeamPlayer.create(user_id: 3, team_id: 11)
+JoinTeamPlayer.create(user_id: 8, team_id: 11)
+JoinTeamPlayer.create(user_id: 13, team_id: 11)
+JoinTeamPlayer.create(user_id: 18, team_id: 11)
 
-JoinTeamPlayer.create(user_id: 37, team_id: 12)
-JoinTeamPlayer.create(user_id: 38, team_id: 12)
-JoinTeamPlayer.create(user_id: 39, team_id: 13)
-JoinTeamPlayer.create(user_id: 40, team_id: 13)
+#Team 12: Lakers 3/5
+JoinTeamPlayer.create(user_id: 4  , team_id: 12)
+JoinTeamPlayer.create(user_id: 9, team_id: 12)
+JoinTeamPlayer.create(user_id: 14, team_id: 12)
 
-JoinTeamPlayer.create(user_id: 41, team_id: 13)
-JoinTeamPlayer.create(user_id: 42, team_id: 13)
-JoinTeamPlayer.create(user_id: 43, team_id: 13)
-JoinTeamPlayer.create(user_id: 44, team_id: 14)
-
-JoinTeamPlayer.create(user_id: 45, team_id: 15)
-JoinTeamPlayer.create(user_id: 46, team_id: 16)
-JoinTeamPlayer.create(user_id: 47, team_id: 17)
+#Team 13: Miami Heat 3/5
+JoinTeamPlayer.create(user_id: 5, team_id: 13)
+JoinTeamPlayer.create(user_id: 10, team_id: 13)
+JoinTeamPlayer.create(user_id: 15, team_id: 13)
 
 #Tournament Seeds
 Tournament.create(name: "Champions League", location: "Madrid, Spain", description: "Great tournament!", number_of_teams: 5, number_of_players_per_team: 5, price: 1000, sport_id: 1, user_id: 1, structure_id: 1)

@@ -4,6 +4,7 @@ class Team < ApplicationRecord
   has_many :join_team_players
   has_many :users, through: :join_team_players
   has_many :statistics
+  has_one_attached :logo
 
   def players_in_tournament(tournament)
     tournament.bookings.where(team: self).map do |booking|
@@ -13,6 +14,14 @@ class Team < ApplicationRecord
 
   def enough_players?(tournament)
     players_in_tournament(tournament).size >= tournament.number_of_players_per_team
+  end
+
+  def action_in_games(action, tournament)
+    total = 0
+    tournament.games.each do |game|
+      total += action_in_game(action, game)
+    end
+    return total
   end
 
   def action_in_game(action, game)

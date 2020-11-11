@@ -74,7 +74,6 @@ h1 {
   justify-content: space-between;
   list-style-type: none;
   margin: 0;
-  border-bottom: 1px solid $fluo-blue;
   h1 {
     font-size: 32px;
   }
@@ -83,16 +82,19 @@ h1 {
 .tab {
   cursor: pointer;
   text-align: left;
+  flex-grow: 1;
+  text-align: center;
 }
 
 .tab.active {
   background-color: $fluo-blue;
   color: $dark-blue;
+  border-color: $fluo-blue;
 }
 
 .tab:hover {
-  background-color: $fluo-blue;
-  color: white;
+  color: $light-blue;
+  border: solid 1px $fluo-blue;
 }
 
 .vl {
@@ -101,7 +103,20 @@ h1 {
   margin-left: 10px;
 }
 
+.tournaments {
+  border-right: 1px solid $fluo-blue;
+  border-radius: 10px 0 0 0;
+}
 
+.personal-info {
+  border-left: 1px solid $fluo-blue;
+  border-radius: 0 10px 0 0;
+}
+
+.tab-content {
+  height: 500px;
+  overflow: auto;
+}
 
 
 

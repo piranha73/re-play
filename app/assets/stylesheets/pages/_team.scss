@@ -1,5 +1,29 @@
 .team-show {
+  width: 90vw;
+  margin: 0 auto;
   display: grid;
+  grid-template-columns: 1.5fr 2fr 2fr;
 
+  .team-profile {
+    background-color: $mid-blue;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 20px;
+
+    h2 {
+      border-bottom: 1px solid $fluo-blue;
+    }
+  }
+
+  h3 {
+    color: $light-blue;
+  }
+
+  p {
+    color: $light-blue;
+  }
+
+  h2 {
+    color: $light-blue;
+  }
 }
-
