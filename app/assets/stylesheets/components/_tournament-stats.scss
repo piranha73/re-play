@@ -1,9 +1,14 @@
 #team-body {
-
   display: flex;
   align-content: space-between;
+}
 
-  .tournament-stat {
+.tournament-stat {
 
-  }
+}
+
+.action {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }

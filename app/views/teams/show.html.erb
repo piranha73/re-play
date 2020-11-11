@@ -1,10 +1,11 @@
 <div class="team-show">
-  <div class="">
+  <div class="team-profile">
     <h2><%= @team.name %></h2>
     <p>players: <%= @team.users.size %></p>
     <p>number of tournaments participated</p>
     <p>Won matches/Total</p>
     <p>tournaments participating</p>
+    <p>player name, player number</p>
 
     <div>
       <%= link_to "", account_path, method: :delete, data: { confirm: "Are you sure?" }, class: "far fa-trash-alt", style: "color: red" %>
@@ -13,8 +14,13 @@
 
   <div id="team-body">
     <% @team.tournaments.uniq.each do |tournament| %>
-      <%= render partial: 'shared/tournament_stats', locals: { tournament: tournament} %>
+      <%#= render partial: 'shared/tournament_stats', locals: { tournament: tournament} %>
+      <%= render partial: 'shared/charts/radar'%>
     <% end %>
+  </div>
+
+  <div class="graphs">
+    <h1>Players' stats</h1>
   </div>
 
 </div>
