@@ -6,11 +6,31 @@
   .search-bar {
     display: flex;
     justify-content: center;
-    background-color: white;
+    background-color: transparent;
+    border: 1px solid #00eaea;
     margin-bottom: 50px;
-    border-radius: 4px;
-    margin-right: 20px;
-    margin-left: 20px;
+    border-radius: 25px;
+    margin-right: 50px;
+    margin-left: 50px;
+    padding: 20px;
+    .search-bar-field{
+      cursor: pointer;
+      border-radius: 30px;
+      padding: 20px;
+    }
+    .search-bar-label{
+      color: #C7EAF5;
+      font-family: 'Teko', 'sans-serif';
+      margin-top: 5px;
+      font-size: 30px;
+    }
+    #tournament_location{
+      padding-right: 30px;
+    }
+    #flatpickr_end{
+      margin-right: 100px;
+    }
+
   }
 
   .wrapper-index-tournaments {

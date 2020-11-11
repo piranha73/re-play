@@ -1,15 +1,15 @@
 <div class="index-tournaments">
 
     <div class="title;" style="margin: 0 auto;" >
-      <h1 style="font-size: 52px;">join a tournament</h1>
+      <h1 style="font-size: 52px;">Join a tournament</h1>
     </div>
 
     <div class="search-bar">
       <%= simple_form_for :search, html: { class: 'form-inline' },wrapper: :horizontal_form, :method => :get  do |f| %>
-      <%= f.input :address, label: 'Type the address please', input_html: {id: "tournament_location"} %>
-      <%= f.input :start_time, placeholder: 'Starting date', input_html: { id: "flatpickr_start" }  %>
-      <%= f.input :end_time, placeholder: 'Ending date', input_html: { id: "flatpickr_end" }  %>
-      <%= f.button :submit, class: "btn btn-primary" %>
+      <%= f.input :address, label: 'Location',:required => false, :label_html => { :class => 'search-bar-label' },placeholder: 'Where do you play?', input_html: {id: "tournament_location",class:"search-bar-field"} %>
+      <%= f.input :start_time, label: 'From', :required => false,:label_html => { :class => 'search-bar-label' },placeholder: 'Add dates', input_html: { id: "flatpickr_start",class:"search-bar-field" }  %>
+      <%= f.input :end_time,label: 'To',:required => false, :label_html => { :class => 'search-bar-label' },placeholder: 'Add dates', input_html: { id: "flatpickr_end",class:"search-bar-field" }  %>
+      <%= f.button :submit, "Play",class: "btn btn-primary" %>
       <% end %>
     </div>
 
