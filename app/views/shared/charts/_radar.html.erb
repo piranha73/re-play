@@ -1,14 +1,14 @@
-<canvas id="myChart"></canvas>
+<canvas id="radar" ></canvas>
 
 <script>
-  var ctx = document.getElementById('myChart').getContext('2d');
+  var ctx = document.getElementById('radar').getContext('2d');
   var chart = new Chart(ctx, {
       // The type of chart we want to create
       type: 'radar',
 
       // The data for our dataset
       data: {
-          labels: ['goal', 'assit', 'fauls', 'saves'],
+          labels: ['goal', 'assist', 'fouls', 'saves'],
           datasets: [
           {
               label: 'champions_league',
@@ -24,6 +24,6 @@
       },
 
       // Configuration options go here
-      options: {}
+      options: {responsive: true, maintainAspectRatio: true}
   });
 </script>

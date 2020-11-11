@@ -1,26 +1,31 @@
 <div class="team-show">
   <div class="team-profile">
     <h2><%= @team.name %></h2>
-    <p>players: <%= @team.users.size %></p>
-    <p>number of tournaments participated</p>
-    <p>Won matches/Total</p>
-    <p>tournaments participating</p>
-    <p>player name, player number</p>
-
+    <p>players_ <%= @team.users.size %></p>
+    <p>matches_won_ 24/24</p>
+    <p>tournaments_won_ 3/3</p>
+    <div class="d-flex"><i class="fas fa-tshirt" style="color: yellow;"></i><p>#2 - Michael</p></div>
+    <div class="d-flex"><i class="fas fa-tshirt" style="color: yellow;"></i><p>#8 - Giacomo</p></div>
+    <div class="d-flex"><i class="fas fa-tshirt" style="color: yellow;"></i><p>#37 - Michele</p></div>
+    <div class="d-flex"><i class="fas fa-tshirt" style="color: yellow;"></i><p>#56 - Yassine</p></div>
     <div>
-      <%= link_to "", account_path, method: :delete, data: { confirm: "Are you sure?" }, class: "far fa-trash-alt", style: "color: red" %>
+      <%= link_to "Delete Team", account_path, method: :delete, data: { confirm: "Are you sure?" }, class: "far fa-trash-alt", style: "color: red;" %>
     </div>
   </div>
 
   <div id="team-body">
-    <% @team.tournaments.uniq.each do |tournament| %>
-      <%#= render partial: 'shared/tournament_stats', locals: { tournament: tournament} %>
-      <%= render partial: 'shared/charts/radar'%>
-    <% end %>
+    <h1>Tournaments' stats</h1>
+    <div class="radar-graphs">
+      <% @team.tournaments.uniq.each do |tournament| %>
+        <%#= render partial: 'shared/tournament_stats', locals: { tournament: tournament} %>
+        <%= render partial: 'shared/charts/radar'%>
+      <% end %>
+    </div>
   </div>
 
   <div class="graphs">
     <h1>Players' stats</h1>
+    <%= render partial: 'shared/charts/charts' %>
   </div>
 
 </div>
