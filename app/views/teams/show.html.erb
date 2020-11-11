@@ -1,6 +1,6 @@
 <div class="team-show">
   <div class="">
-    <h3><%= @team.name %></h3>
+    <h2><%= @team.name %></h2>
     <p>players: <%= @team.users.size %></p>
     <p>number of tournaments participated</p>
     <p>Won matches/Total</p>
@@ -11,11 +11,10 @@
     </div>
   </div>
 
-<div id="team-body">
-  <% @team.tournaments.uniq.each do |tournament| %>
-    <%= render partial: 'shared/tournament_stats', locals: { tournament: tournament} %>
-  <% end %>
-</div>
-
+  <div id="team-body">
+    <% @team.tournaments.uniq.each do |tournament| %>
+      <%= render partial: 'shared/tournament_stats', locals: { tournament: tournament} %>
+    <% end %>
+  </div>
 
 </div>
