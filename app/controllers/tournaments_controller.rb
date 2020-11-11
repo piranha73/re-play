@@ -4,16 +4,31 @@ class TournamentsController < ApplicationController
   def index
 
     if params.has_key?(:search)
-      start_time = Date.parse(params["search"]["start_time"])
-      end_time = Date.parse(params["search"]["end_time"])
-      address = params["search"]["address"].split(",").first
-      @tournaments = Tournament.where(['start_time >= ? AND end_time >= ?', start_time, Date.today])
-      .where("location like ?",  "%#{address}%")
 
-    else
+        if params[:search][:start_time] != "" and params[:search][:end_time] != ""
 
+          start_time = Date.parse(params["search"]["start_time"])
+          end_time = Date.parse(params["search"]["end_time"])
+          @tournaments = Tournament.where(['start_time >= ? AND end_time >= ?', start_time, Date.today])
+
+        elsif params[:search][:start_time] != "" and params[:search][:end_time] != "" and params["search"]["address"] != ""
+
+          start_time = Date.parse(params["search"]["start_time"])
+          end_time = Date.parse(params["search"]["end_time"])
+          address = params["search"]["address"].split(",").first
+          @tournaments = Tournament.where(['start_time >= ? AND end_time >= ?', start_time, Date.today])
+          .where("location like ?",  "%#{address}%")
+
+        elsif params["search"]["address"] != ""
+          address = params["search"]["address"].split(",").first
+
+          @tournaments = Tournament.where("location like ?",  "%#{address}%")
+        end
+
+    end
+
+    if @tournaments.nil?
       @tournaments = Tournament.all
-
     end
 
 
