@@ -25,10 +25,8 @@
     <div id="team-body" style="margin-bottom: 20px;">
       <h1>Tournaments' stats</h1>
       <div class="radar-graphs">
-        <% @team.tournaments.uniq.each do |tournament| %>
           <%#= render partial: 'shared/tournament_stats', locals: { tournament: tournament} %>
           <%= render partial: 'shared/charts/radar'%>
-        <% end %>
       </div>
     </div>
 
