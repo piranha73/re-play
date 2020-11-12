@@ -22,7 +22,7 @@
       <% end %>
       <div class="tabs-show">
         <h2 class="tab-show-content active" data-tab-target="#map">map</h2>
-        <h2 class="tab-show-content" data-tab-target="#teams">teams</h2>
+        <h2 class="tab-show-content" data-tab-target="#teams-tournaments">teams</h2>
       </div>
       <div class="bottom-container">
 
@@ -36,7 +36,7 @@
             data-markers="<%= @markers.to_json %>"
             data-mapbox-api-key="pk.eyJ1IjoiZ2Jvbm9tZWxsaSIsImEiOiJja2hhZjg3eHkxNmJ6MnJydHlvcWp5M2I4In0._GoQ_hwa3yqq6ZSU2iUoAw" data-tab-content class="active">
           </div>
-          <div class="teams" id="teams" data-tab-content>
+          <div class="teams" id="teams-tournaments" data-tab-content>
             <% @tournament.teams.uniq.each do |team| %>
                 <h1><%= team.name %></h1>
               <% end %>

@@ -20,7 +20,7 @@
 
             <h1 data-tab-target="#tournaments" class="tab active tournaments" style="font-weight: normal;">Tournaments</h1>
 
-            <h1 data-tab-target="#teams" class="tab teams" style="font-weight: normal;">Teams</h1>
+            <h1 data-tab-target="#teams-tournaments" class="tab teams" style="font-weight: normal;">Teams</h1>
 
             <h1 data-tab-target="#personal-info" class="tab personal-info" style="font-weight: normal;">Personal Info</h1>
 
@@ -30,7 +30,7 @@
             <div id="tournaments" class="active" data-tab-content>
               <%= render partial: "tournaments/card_index", locals: { tournaments: current_user.player_tournaments, buttons: false } %>
             </div>
-            <div id="teams" data-tab-content>
+            <div id="teams-tournaments" data-tab-content>
               <%= render partial: "pages/personal_teams", locals: { teams: current_user.player_teams } %>
             </div>
             <div id="personal-info" data-tab-content>
