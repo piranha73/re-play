@@ -48,6 +48,21 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initAutocomplete();
 
+  const logos = document.querySelectorAll(".image-logos");
+
+  logos.forEach((element) => {
+    element.addEventListener("click", (event) => {
+     element.classList.toggle("logo-active");
+     let idImage = event.currentTarget.id
+     var input = document.createElement("input");
+     input.setAttribute("type", "hidden");
+     input.setAttribute("name", "image");
+     input.setAttribute("value", idImage);
+     document.getElementById("new_team").appendChild(input);
+
+   })
+  });
+
 
 
 
@@ -60,8 +75,8 @@ document.addEventListener('turbolinks:load', () => {
   // }
 
   if (document.querySelectorAll('[data-tab-target]')) {
-     tabsFunction();
-  }
+   tabsFunction();
+ }
 });
 
 

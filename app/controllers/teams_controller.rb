@@ -14,7 +14,11 @@ class TeamsController < ApplicationController
   end
 
   def create
+
     @team = Team.new(team_params)
+    @team.logo = params["image"].to_i + 1
+
+
     if @team.save
       JoinTeamPlayer.create(user: current_user, team: @team)
       redirect_to team_path(@team)

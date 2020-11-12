@@ -2,7 +2,8 @@
   <div class="team-profile">
     <h2><%= @team.name %></h2>
     <% unless @team.logo.nil? %>
-      <%= image_tag @team.logo, style: 'width: 50px;'%>
+      <%= image_tag("team_logos/#{@team.logo}.png")%>
+
     <% end %>
 
     <p>players_ <%= @team.users.size %></p>

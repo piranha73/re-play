@@ -2,7 +2,7 @@
   <div class="form">
     <h1>New Booking</h1>
     <h2>You can:</h2>
-    <%= link_to "Create Team", new_team_path(@tournament), class: 'btn btn-primary' %>
+    <%= link_to "Create Team", new_team_path(@tournament,@booking), class: 'btn btn-primary' %>
     <h2>or join:</h2>
     <%= simple_form_for [ @tournament, @booking ] do |f| %>
       <%= f.association :team %>
