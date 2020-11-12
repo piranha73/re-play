@@ -6,7 +6,7 @@
       data-longitude = "<%= tournament.longitude %>">
         <div class="card-first-column">
           <h1 style="font-size: 46px;"><%= tournament.name %></h1>
-          <h2><%=  tournament.description%></h2>
+          <h2><%= truncate(tournament.description, :length => 80, :omission => "" , :escape => false) %></h2>
         </div>
 
         <div class="card-second-column">
