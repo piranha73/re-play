@@ -3,7 +3,7 @@
 </div>
 
 <div class="card-link">
-  <h2 id="myLink"> http://localhost:3000/tournaments/<%= @last_id %></h2>
+  <h2 id="myLink"><%= request.url.gsub(/\/share/, "") %></h2>
 </div>
 
 <div class="buttons-link">
