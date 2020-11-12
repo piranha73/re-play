@@ -1,0 +1,99 @@
+.booking-form {
+  color: $light-blue;
+  border: 2px solid;
+  border-color: $fluo-blue;
+  border-radius: 4px;
+  font-size: 18px;
+  text-align: center;
+  padding: 30px 30px;
+  display: grid;
+  grid-row-gap: 5px;
+  margin: 5% auto;
+  width: 60%;
+  .create-join-container{
+    display:flex;
+    justify-content:space-between;
+    padding: 20px;
+  }
+  .create-team-btn{
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  border-radius: 2px;
+  white-space: nowrap;
+  outline: 0;
+  display: block;
+  padding: 15px 26px 15px;
+  background: #00eaea;
+  border: 1px solid #070226;
+  color: #212529;
+  font-size: 22px;
+  letter-spacing: .05rem;
+  width: 40%;
+  z-index: 2;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  }
+  .create-team-btn:hover {opacity: 0.8;}
+  .join-team-btn{
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  border-radius: 2px;
+  white-space: nowrap;
+  outline: 0;
+  display: block;
+  padding: 15px 26px 15px;
+  background: #00eaea;
+  border: 1px solid #070226;
+  color: #212529;
+  font-size: 22px;
+  letter-spacing: .05rem;
+  width: 40%;
+  z-index: 2;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+
+  }
+  .join-team-btn:hover {opacity: 0.8;}
+  h2 {
+    text-align: center;
+
+    font-weight: lighter;
+    padding: 10px;
+  }
+
+  h1 {
+    border-bottom: 1px solid;
+    border-color: $fluo-blue;
+    padding-bottom: 20px;
+  }
+}
+
+#booking_team_id {
+    display: none;
+  }
+#link-team{
+  text-decoration: none;
+  color:black;
+}
+.btn-booking{
+  cursor: pointer;
+  background-color: #19bb73;
+  border-color: #18b06c;
+  font-weight: 400;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.btn-booking:hover {opacity: 0.8;}
+.back-button{
+  text-decoration: none;
+}
+.back-button:hover {
+  text-decoration: none;}
+

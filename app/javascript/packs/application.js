@@ -65,6 +65,18 @@ document.addEventListener('turbolinks:load', () => {
 
 
 
+  const hiddenInput = $("#booking_team_id")
+  const hiddenButton = $("#hidden-btn")
+
+  if ((hiddenInput) && (hiddenButton)) {
+    hiddenButton.click( () =>{
+      console.log("btn clicked")
+      hiddenInput.fadeIn(1000);
+
+    })
+
+
+}
 
   if (document.getElementById('map')) {
     initMapbox();
