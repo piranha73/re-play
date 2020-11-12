@@ -3,11 +3,17 @@
     <div class="description">
       <h1 style="font-size: 80px; margin-bottom: 20px;"><%= @tournament.name %></h1>
       <div class="top-container">
-        <div class="play-button">
-          <%= link_to new_tournament_booking_path(@tournament) do %>
-            <i class="fas fa-play play-icon" style="font-size: 60px; color: #11ffff;"></i>
-          <% end %>
+          <% if !current_user.is_manager?(@tournament) %>
+        <div class="play-button" style="margin-left: 160px;">
+            <%= link_to new_tournament_booking_path(@tournament) do %>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <i class="fas fa-play play-icon" style=""></i>
+            <% end %>
         </div>
+          <% end %>
         <div class="dates">
           <h3>start_ <%= @tournament.start_time.strftime("%d.%m") %></h3>
           <h3>end_ <%= @tournament.end_time.strftime("%d.%m") %></h3>
@@ -27,6 +33,7 @@
       <div class="bottom-container">
 
         <div class="bottom-left-box">
+          <h1>Description</h1>
           <p><%= @tournament.description %></p>
         </div>
 
@@ -38,7 +45,7 @@
           </div>
           <div class="teams" id="teams-tournaments" data-tab-content>
             <% @tournament.teams.uniq.each do |team| %>
-                <h1><%= team.name %></h1>
+                <h1 style="text-align: right;"><%= team.name %></h1>
               <% end %>
           </div>
         </div>
