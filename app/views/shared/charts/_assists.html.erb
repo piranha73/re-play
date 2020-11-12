@@ -1,7 +1,7 @@
-<canvas id="charts"></canvas>
+<canvas id="assists"></canvas>
 
 <script>
-  var ctx = document.getElementById('charts').getContext('2d');
+  var ctx = document.getElementById('assists').getContext('2d');
   var chart = new Chart(ctx, {
       // The type of chart we want to create
       type: 'line',
@@ -10,10 +10,10 @@
       data: {
           labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
           datasets: [{
-              label: 'Saves',
-              backgroundColor: 'rgb(255, 99, 132)',
-              borderColor: 'rgb(255, 99, 132)',
-              data: [2, 2, 1, 4, 2, 8, 3]
+              label: 'Assists',
+              backgroundColor: 'rgb(128, 255, 219)',
+              borderColor: 'rgb(128, 255, 219)',
+              data: [1, 6, 3, 2, 8, 16, 12]
           }]
       },
 
