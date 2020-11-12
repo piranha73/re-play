@@ -74,7 +74,7 @@ def create_team(name, index)
   Team.create(name: name, logo: "team_logos/#{index}.png")
 end
 
-teams = ['FC Barcelona', 'AC Milan', 'Real Madrid', 'PSG', 'Raja', 'Widad', 'Chelsea', 'Manchester United', 'Manchester City', 'Olympique Marseille', 'Borussia Dortmund', 'Lakers', 'Miami Heat', 'Spurs', 'Cleveland Cavaliers', 'Red Sox', 'Celtics']
+teams = [Faker::Team.name, Faker::Team.name, Faker::Team.name, Faker::Team.name, Faker::Team.name, Faker::Team.name, Faker::Team.name, Faker::Team.name, Faker::Team.name, Faker::Team.name, Faker::Team.name, Faker::Team.name, Faker::Team.name, Faker::Team.name, Faker::Team.name, Faker::Team.name, Faker::Team.name]
 teams.each_with_index do |team, index|
   create_team(team, index+1)
 end
