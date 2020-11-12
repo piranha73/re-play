@@ -16,7 +16,7 @@ class TeamsController < ApplicationController
   def create
 
     @team = Team.new(team_params)
-    @team.logo = params["image"].to_i + 1
+    @team.logo = "team_logos/#{params["image"].to_i + 1}.png"
 
 
     if @team.save
