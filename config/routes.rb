@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     post '/generate_calendar', to: 'tournaments#generate_calendar'
     get '/share', to: 'tournaments#share'
     resources :bookings, only: [ :index, :show, :new, :create, :destroy ]
+    patch '/games/:id/start', to: 'games#start', as: 'game_start'
+    patch '/games/:id/finish', to: 'games#finish', as: 'game_finish'
     resources :games, only: [:show] do
       resources :statistics, only: [:create, :destroy]
     end

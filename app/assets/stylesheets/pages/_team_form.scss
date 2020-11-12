@@ -27,6 +27,7 @@ border-width: 2px;
 border-color: white;
 font-size: 30px;
 }
+
 .logo-choices{
   width: auto;
   display: flex;
@@ -34,6 +35,7 @@ font-size: 30px;
   margin-top: 50px;
   margin-bottom: 50px;
 }
+
 .image-logos{
   // background-color: white;
   // padding: 20px;
@@ -53,7 +55,6 @@ font-size: 30px;
   color: white;
   opacity: 1;
   }
-
 }
 
 
@@ -71,12 +72,12 @@ font-size: 30px;
   display: flex;
   justify-content: center;
 
-.recognitionStyling {
-  width: 50%;
-  display: block;
-  // margin-left: auto;
-  // margin-right: auto;
-  padding: 10px;
-}
+  .recognitionStyling {
+    width: 50%;
+    display: block;
+    // margin-left: auto;
+    // margin-right: auto;
+    padding: 10px;
+  }
 
 }

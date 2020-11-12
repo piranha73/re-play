@@ -14,7 +14,7 @@
             <h2>start_ <%= tournament.start_time.strftime("%d.%m") %></h2>
             <h2>end_ <%= tournament.end_time.strftime("%d.%m") %></h2>
           </div>
-          <% if buttons %>
+          <% if  !current_user.is_manager?(tournament) && index %>
             <%= link_to "Show", tournament_path(tournament), class: "btn btn-primary" %>
           <% end %>
         </div>
@@ -23,20 +23,18 @@
           <h2>price_ <%= tournament.price %>€</h2>
           <h2>where_ <%= tournament.location %></h2>
         </div>
-        <% if current_user.has_team? %>
-          <% if !buttons %>
-            <% if current_user.is_manager?(tournament) %>
-              <%= link_to "Manage", tournament_path(tournament), class: "btn btn-primary" %>
-            <% else %>
+          <% if current_user.is_manager?(tournament) %>
+            <%= link_to "Manage", tournament_path(tournament), class: "btn btn-primary" %>
+          <% elsif !index %>
               <%= link_to "Show", tournament_path(tournament), class: "btn btn-primary" %>
-            <% end %>
-          <% end %>
-          <% if buttons %>
+          <% else %>
             <%= link_to "Book", new_tournament_booking_path(tournament), class: 'btn btn-success' %>
-          <% end %>
-        <% else %>
-          <button onclick="createTeam()">Book</button>
         <% end %>
+
+        <%# if current_user.has_team? %>
+        <%# else %>
+          <!-- <button onclick="createTeam()">Book</button> -->
+        <%# end %>
       </div>
 
     </div>

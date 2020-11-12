@@ -3,6 +3,9 @@
   margin-right: 10px;
   margin: 0 auto;
   width: 60vw;
+  p {
+    color: $light-blue;
+  }
 
   #game-show-header {
     display: grid;

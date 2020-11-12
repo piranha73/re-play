@@ -3,11 +3,17 @@
     <div class="description">
       <h1 style="font-size: 80px; margin-bottom: 20px;"><%= @tournament.name %></h1>
       <div class="top-container">
-        <div class="play-button">
-          <%= link_to new_tournament_booking_path(@tournament) do %>
-            <i class="fas fa-play play-icon" style="font-size: 60px; color: #11ffff;"></i>
-          <% end %>
+          <% if !current_user.is_manager?(@tournament) %>
+        <div class="play-button" style="margin-left: 160px;">
+            <%= link_to new_tournament_booking_path(@tournament) do %>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <i class="fas fa-play play-icon" style=""></i>
+            <% end %>
         </div>
+          <% end %>
         <div class="dates">
           <h3>start_ <%= @tournament.start_time.strftime("%d.%m") %></h3>
           <h3>end_ <%= @tournament.end_time.strftime("%d.%m") %></h3>
@@ -22,11 +28,12 @@
       <% end %>
       <div class="tabs-show">
         <h2 class="tab-show-content active" data-tab-target="#map">map</h2>
-        <h2 class="tab-show-content" data-tab-target="#teams">teams</h2>
+        <h2 class="tab-show-content" data-tab-target="#teams-tournaments">teams</h2>
       </div>
       <div class="bottom-container">
 
         <div class="bottom-left-box">
+          <h1>Description</h1>
           <p><%= @tournament.description %></p>
         </div>
 
@@ -36,9 +43,9 @@
             data-markers="<%= @markers.to_json %>"
             data-mapbox-api-key="pk.eyJ1IjoiZ2Jvbm9tZWxsaSIsImEiOiJja2hhZjg3eHkxNmJ6MnJydHlvcWp5M2I4In0._GoQ_hwa3yqq6ZSU2iUoAw" data-tab-content class="active">
           </div>
-          <div class="teams" id="teams" data-tab-content>
+          <div class="teams" id="teams-tournaments" data-tab-content>
             <% @tournament.teams.uniq.each do |team| %>
-                <h1><%= team.name %></h1>
+                <h1 style="text-align: right;"><%= team.name %></h1>
               <% end %>
           </div>
         </div>

@@ -1,0 +1,13 @@
+<div id="game-show-header">
+
+  <div class="home-team">
+    <h1> <%= @home_team.name %> </h1>
+  </div>
+  <div class="result">
+    <h1> <%=  @home_team.action_in_game(Action.first, @game) %> - <%= @away_team.action_in_game(Action.first, @game) %></h1>
+  </div>
+  <div class="away-team">
+    <h1> <%= @away_team.name %> </h1>
+  </div>
+
+</div>
