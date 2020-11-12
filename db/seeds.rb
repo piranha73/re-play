@@ -16,9 +16,6 @@ Sport.create(name: 'Tennis')
 #Structure Seeds
 Structure.create(name: 'Type 1')
 
-#Optional Subscription Field Seeds
-#Optional.create(role: false, team: true, player_number: false)
-
 #User Seeds
 User.create(first_name: "Yassine", last_name: "Chaqroun", email: "yc@email.com", password: "123456", address: "Casablanca, Morocco")
 User.create(first_name: 'Michele', last_name: 'Comolli', email: 'mc@email.com', password: '123456', address: "Milan, Italy")
@@ -68,6 +65,7 @@ User.create(first_name: 'Led', last_name: 'Zepplin', email: 'lz@email.com', pass
 User.create(first_name: 'Guns', last_name: 'Roses', email: 'groses@email.com', password: '123456', address: "Boston, USA")
 User.create(first_name: 'Joe', last_name: 'Rogan', email: 'joerogan@email.com', password: '123456', address: "Boston, USA")
 User.create(first_name: 'Edward', last_name: 'Snowden', email: 'edward@email.com', password: '123456', address: "Boston, USA")
+User.create(first_name: 'Post', last_name: 'Malone', email: 'postma@email.com', password: '123456', address: "Boston, USA")
 
 #Team Seeds
 def create_team(name, index)
@@ -82,109 +80,90 @@ end
 
 #Join Team Player Seeds
 
-#Team 1: FC Barcelona 5/5
+#Team 1:
 JoinTeamPlayer.create(user_id: 1, team_id: 1)
 JoinTeamPlayer.create(user_id: 2, team_id: 1)
 JoinTeamPlayer.create(user_id: 3, team_id: 1)
 JoinTeamPlayer.create(user_id: 4, team_id: 1)
-JoinTeamPlayer.create(user_id: 5, team_id: 1)
 
-#Team 2: AC Milan 5/5
+#Team 2:
+JoinTeamPlayer.create(user_id: 5, team_id: 2)
 JoinTeamPlayer.create(user_id: 6, team_id: 2)
 JoinTeamPlayer.create(user_id: 7, team_id: 2)
 JoinTeamPlayer.create(user_id: 8, team_id: 2)
-JoinTeamPlayer.create(user_id: 9, team_id: 2)
-JoinTeamPlayer.create(user_id: 10, team_id: 2)
 
-#Team 3: Real Madrid 5/5
+#Team 3:
+JoinTeamPlayer.create(user_id: 9, team_id: 3)
+JoinTeamPlayer.create(user_id: 10, team_id: 3)
 JoinTeamPlayer.create(user_id: 11, team_id: 3)
 JoinTeamPlayer.create(user_id: 12, team_id: 3)
-JoinTeamPlayer.create(user_id: 13, team_id: 3)
-JoinTeamPlayer.create(user_id: 14, team_id: 3)
-JoinTeamPlayer.create(user_id: 15, team_id: 3)
 
-#Team 4: PSG 5/5
+#Team 4:
+JoinTeamPlayer.create(user_id: 13, team_id: 4)
+JoinTeamPlayer.create(user_id: 14, team_id: 4)
+JoinTeamPlayer.create(user_id: 15, team_id: 4)
 JoinTeamPlayer.create(user_id: 16, team_id: 4)
-JoinTeamPlayer.create(user_id: 17, team_id: 4)
-JoinTeamPlayer.create(user_id: 18, team_id: 4)
-JoinTeamPlayer.create(user_id: 19, team_id: 4)
-JoinTeamPlayer.create(user_id: 20, team_id: 4)
 
-#Team 5: Raja 5/5
-JoinTeamPlayer.create(user_id: 21, team_id: 5)
-JoinTeamPlayer.create(user_id: 22, team_id: 5)
-JoinTeamPlayer.create(user_id: 23, team_id: 5)
-JoinTeamPlayer.create(user_id: 24, team_id: 5)
-JoinTeamPlayer.create(user_id: 25, team_id: 5)
+#Team 5:
+JoinTeamPlayer.create(user_id: 17, team_id: 5)
+JoinTeamPlayer.create(user_id: 18, team_id: 5)
+JoinTeamPlayer.create(user_id: 19, team_id: 5)
+JoinTeamPlayer.create(user_id: 20, team_id: 5)
 
-#Team 6: Widad 6/5
-JoinTeamPlayer.create(user_id: 26, team_id: 6)
-JoinTeamPlayer.create(user_id: 27, team_id: 6)
-JoinTeamPlayer.create(user_id: 28, team_id: 6)
-JoinTeamPlayer.create(user_id: 29, team_id: 6)
-JoinTeamPlayer.create(user_id: 30, team_id: 6)
-JoinTeamPlayer.create(user_id: 31, team_id: 6)
+#Team 6:
+JoinTeamPlayer.create(user_id: 21, team_id: 6)
+JoinTeamPlayer.create(user_id: 22, team_id: 6)
+JoinTeamPlayer.create(user_id: 23, team_id: 6)
+JoinTeamPlayer.create(user_id: 24, team_id: 6)
 
-#Team 7: Chelsea 7/5
-JoinTeamPlayer.create(user_id: 32, team_id: 7)
-JoinTeamPlayer.create(user_id: 33, team_id: 7)
-JoinTeamPlayer.create(user_id: 34, team_id: 7)
-JoinTeamPlayer.create(user_id: 35, team_id: 7)
-JoinTeamPlayer.create(user_id: 36, team_id: 7)
-JoinTeamPlayer.create(user_id: 37, team_id: 7)
-JoinTeamPlayer.create(user_id: 38, team_id: 7)
+#Team 7:
+JoinTeamPlayer.create(user_id: 25, team_id: 7)
+JoinTeamPlayer.create(user_id: 26, team_id: 7)
+JoinTeamPlayer.create(user_id: 27, team_id: 7)
+JoinTeamPlayer.create(user_id: 28, team_id: 7)
 
-#Team 8: Manchester United 8/5
-JoinTeamPlayer.create(user_id: 39, team_id: 8)
-JoinTeamPlayer.create(user_id: 40, team_id: 8)
-JoinTeamPlayer.create(user_id: 41, team_id: 8)
-JoinTeamPlayer.create(user_id: 42, team_id: 8)
-JoinTeamPlayer.create(user_id: 43, team_id: 8)
-JoinTeamPlayer.create(user_id: 44, team_id: 8)
-JoinTeamPlayer.create(user_id: 45, team_id: 8)
-JoinTeamPlayer.create(user_id: 46, team_id: 8)
+#Team 8:
+JoinTeamPlayer.create(user_id: 29, team_id: 8)
+JoinTeamPlayer.create(user_id: 30, team_id: 8)
+JoinTeamPlayer.create(user_id: 31, team_id: 8)
+JoinTeamPlayer.create(user_id: 32, team_id: 8)
 
-#Team 9: Manchester City 9/5
-JoinTeamPlayer.create(user_id: 47, team_id: 9)
-JoinTeamPlayer.create(user_id: 1, team_id: 9)
-JoinTeamPlayer.create(user_id: 6, team_id: 9)
-JoinTeamPlayer.create(user_id: 11, team_id: 9)
-JoinTeamPlayer.create(user_id: 16, team_id: 9)
-JoinTeamPlayer.create(user_id: 21, team_id: 9)
-JoinTeamPlayer.create(user_id: 26, team_id: 9)
-JoinTeamPlayer.create(user_id: 32, team_id: 9)
-JoinTeamPlayer.create(user_id: 39, team_id: 9)
+#Team 9:
+JoinTeamPlayer.create(user_id: 33, team_id: 9)
+JoinTeamPlayer.create(user_id: 34, team_id: 9)
+JoinTeamPlayer.create(user_id: 35, team_id: 9)
+JoinTeamPlayer.create(user_id: 36, team_id: 9)
 
-#Team 10: Olympique Marseille 4/5
-JoinTeamPlayer.create(user_id: 2, team_id: 10)
-JoinTeamPlayer.create(user_id: 7, team_id: 10)
-JoinTeamPlayer.create(user_id: 12, team_id: 10)
-JoinTeamPlayer.create(user_id: 17, team_id: 10)
+#Team 10:
+JoinTeamPlayer.create(user_id: 37, team_id: 10)
+JoinTeamPlayer.create(user_id: 38, team_id: 10)
+JoinTeamPlayer.create(user_id: 39, team_id: 10)
+JoinTeamPlayer.create(user_id: 40, team_id: 10)
 
-#Team 11: Borussia Dortmund 4/5
-JoinTeamPlayer.create(user_id: 3, team_id: 11)
-JoinTeamPlayer.create(user_id: 8, team_id: 11)
-JoinTeamPlayer.create(user_id: 13, team_id: 11)
-JoinTeamPlayer.create(user_id: 18, team_id: 11)
+#Team 11:
+JoinTeamPlayer.create(user_id: 41, team_id: 11)
+JoinTeamPlayer.create(user_id: 42, team_id: 11)
+JoinTeamPlayer.create(user_id: 43, team_id: 11)
+JoinTeamPlayer.create(user_id: 44, team_id: 11)
 
-#Team 12: Lakers 3/5
-JoinTeamPlayer.create(user_id: 4  , team_id: 12)
-JoinTeamPlayer.create(user_id: 9, team_id: 12)
-JoinTeamPlayer.create(user_id: 14, team_id: 12)
+#Team 12:
+JoinTeamPlayer.create(user_id: 45, team_id: 12)
+JoinTeamPlayer.create(user_id: 46, team_id: 12)
+JoinTeamPlayer.create(user_id: 47, team_id: 12)
+JoinTeamPlayer.create(user_id: 48, team_id: 12)
 
-#Team 13: Miami Heat 3/5
-JoinTeamPlayer.create(user_id: 5, team_id: 13)
-JoinTeamPlayer.create(user_id: 10, team_id: 13)
-JoinTeamPlayer.create(user_id: 15, team_id: 13)
 
 #Tournament Seeds
-Tournament.create(name: "Champions League", location: "Madrid, Spain", description: Faker::Lorem.paragraph(sentence_count: 10, supplemental: true), number_of_teams: 5, number_of_players_per_team: 5, price: 1000, sport_id: 1, user_id: 1, structure_id: 1, start_time: Faker::Date.forward(days: 55) , end_time: Faker::Date.forward(days: 60))
-Tournament.create(name: "Europa League", location: "Milan, Italy", description: Faker::Lorem.paragraph(sentence_count: 10, supplemental: true), number_of_teams: 4, number_of_players_per_team: 2, price: 800, sport_id: 1, user_id: 2, structure_id: 1, start_time: Faker::Date.forward(days: 2) , end_time: Faker::Date.forward(days: 5))
-Tournament.create(name: "Players League", location: "Paris, France", description: Faker::Lorem.paragraph(sentence_count: 10, supplemental: true), number_of_teams: 3, number_of_players_per_team: 3, price: 700, sport_id: 1, user_id: 3, structure_id: 1, start_time: Faker::Date.forward(days: 7) , end_time: Faker::Date.forward(days: 11))
-Tournament.create(name: "Cool League", location: "London, UK", description: Faker::Lorem.paragraph(sentence_count: 10, supplemental: true), number_of_teams: 7, number_of_players_per_team: 5, price: 600, sport_id: 1, user_id: 4, structure_id: 1,start_time: Faker::Date.forward(days: 3) , end_time: Faker::Date.forward(days: 6))
-Tournament.create(name: "Pro League", location: "Berlin, Germany", description: Faker::Lorem.paragraph(sentence_count: 10, supplemental: true), number_of_teams: 8, number_of_players_per_team: 2, price: 500, sport_id: 1, user_id: 1, structure_id: 1, start_time: Faker::Date.forward(days: 23) , end_time: Faker::Date.forward(days: 27))
+Tournament.create(name: "Champions League", location: "Madrid, Spain", description: Faker::Lorem.paragraph(sentence_count: 10, supplemental: true), number_of_teams: 11, number_of_players_per_team: 4, price: 170, sport_id: 1, user_id: 1, structure_id: 1, start_time: Faker::Date.forward(days: 55) , end_time: Faker::Date.forward(days: 60))
+Tournament.create(name: "Europa League", location: "Milan, Italy", description: Faker::Lorem.paragraph(sentence_count: 10, supplemental: true), number_of_teams: 10, number_of_players_per_team: 4, price: 160, sport_id: 1, user_id: 2, structure_id: 1, start_time: Faker::Date.forward(days: 2) , end_time: Faker::Date.forward(days: 5))
+Tournament.create(name: "Players League", location: "Paris, France", description: Faker::Lorem.paragraph(sentence_count: 10, supplemental: true), number_of_teams: 9, number_of_players_per_team: 4, price: 150, sport_id: 1, user_id: 3, structure_id: 1, start_time: Faker::Date.forward(days: 7) , end_time: Faker::Date.forward(days: 11))
+Tournament.create(name: "Cool League", location: "London, UK", description: Faker::Lorem.paragraph(sentence_count: 10, supplemental: true), number_of_teams: 8, number_of_players_per_team: 4, price: 120, sport_id: 1, user_id: 4, structure_id: 1,start_time: Faker::Date.forward(days: 3) , end_time: Faker::Date.forward(days: 6))
+Tournament.create(name: "Pro League", location: "Berlin, Germany", description: Faker::Lorem.paragraph(sentence_count: 10, supplemental: true), number_of_teams: 12, number_of_players_per_team: 4, price: 200, sport_id: 1, user_id: 1, structure_id: 1, start_time: Faker::Date.forward(days: 23) , end_time: Faker::Date.forward(days: 27))
+
 
 #Booking Seeds
+
+#Tournament 1
 Booking.create(user_id: 1, team_id: 1, tournament_id: 1)
 Booking.create(user_id: 2, team_id: 1, tournament_id: 1)
 Booking.create(user_id: 3, team_id: 1, tournament_id: 1)
@@ -205,45 +184,239 @@ Booking.create(user_id: 14, team_id: 4, tournament_id: 1)
 Booking.create(user_id: 15, team_id: 4, tournament_id: 1)
 Booking.create(user_id: 16, team_id: 4, tournament_id: 1)
 
+Booking.create(user_id: 17, team_id: 5, tournament_id: 1)
+Booking.create(user_id: 18, team_id: 5, tournament_id: 1)
+Booking.create(user_id: 19, team_id: 5, tournament_id: 1)
+Booking.create(user_id: 20, team_id: 5, tournament_id: 1)
+
+Booking.create(user_id: 21, team_id: 6, tournament_id: 1)
+Booking.create(user_id: 22, team_id: 6, tournament_id: 1)
+Booking.create(user_id: 23, team_id: 6, tournament_id: 1)
+Booking.create(user_id: 24, team_id: 6, tournament_id: 1)
+
+Booking.create(user_id: 25, team_id: 7, tournament_id: 1)
+Booking.create(user_id: 26, team_id: 7, tournament_id: 1)
+Booking.create(user_id: 27, team_id: 7, tournament_id: 1)
+Booking.create(user_id: 28, team_id: 7, tournament_id: 1)
+
+Booking.create(user_id: 29, team_id: 8, tournament_id: 1)
+Booking.create(user_id: 30, team_id: 8, tournament_id: 1)
+Booking.create(user_id: 31, team_id: 8, tournament_id: 1)
+Booking.create(user_id: 32, team_id: 8, tournament_id: 1)
+
+Booking.create(user_id: 33, team_id: 9, tournament_id: 1)
+Booking.create(user_id: 34, team_id: 9, tournament_id: 1)
+Booking.create(user_id: 35, team_id: 9, tournament_id: 1)
+Booking.create(user_id: 36, team_id: 9, tournament_id: 1)
+
+Booking.create(user_id: 37, team_id: 10, tournament_id: 1)
+Booking.create(user_id: 38, team_id: 10, tournament_id: 1)
+Booking.create(user_id: 39, team_id: 10, tournament_id: 1)
+Booking.create(user_id: 40, team_id: 10, tournament_id: 1)
+
+Booking.create(user_id: 41, team_id: 11, tournament_id: 1)
+Booking.create(user_id: 42, team_id: 11, tournament_id: 1)
+Booking.create(user_id: 43, team_id: 11, tournament_id: 1)
+Booking.create(user_id: 44, team_id: 11, tournament_id: 1)
+
+#Tournament 2
+Booking.create(user_id: 1, team_id: 1, tournament_id: 2)
+Booking.create(user_id: 2, team_id: 1, tournament_id: 2)
+Booking.create(user_id: 3, team_id: 1, tournament_id: 2)
+Booking.create(user_id: 4, team_id: 1, tournament_id: 2)
+
+Booking.create(user_id: 5, team_id: 2, tournament_id: 2)
+Booking.create(user_id: 6, team_id: 2, tournament_id: 2)
+Booking.create(user_id: 7, team_id: 2, tournament_id: 2)
+Booking.create(user_id: 8, team_id: 2, tournament_id: 2)
+
+Booking.create(user_id: 9, team_id: 3, tournament_id: 2)
+Booking.create(user_id: 10, team_id: 3, tournament_id: 2)
+Booking.create(user_id: 11, team_id: 3, tournament_id: 2)
+Booking.create(user_id: 12, team_id: 3, tournament_id: 2)
+
+Booking.create(user_id: 13, team_id: 4, tournament_id: 2)
+Booking.create(user_id: 14, team_id: 4, tournament_id: 2)
+Booking.create(user_id: 15, team_id: 4, tournament_id: 2)
+Booking.create(user_id: 16, team_id: 4, tournament_id: 2)
+
 Booking.create(user_id: 17, team_id: 5, tournament_id: 2)
 Booking.create(user_id: 18, team_id: 5, tournament_id: 2)
-Booking.create(user_id: 19, team_id: 6, tournament_id: 2)
-Booking.create(user_id: 20, team_id: 6, tournament_id: 2)
+Booking.create(user_id: 19, team_id: 5, tournament_id: 2)
+Booking.create(user_id: 20, team_id: 5, tournament_id: 2)
 
-Booking.create(user_id: 21, team_id: 7, tournament_id: 2)
-Booking.create(user_id: 22, team_id: 7, tournament_id: 2)
-Booking.create(user_id: 23, team_id: 8, tournament_id: 2)
-Booking.create(user_id: 24, team_id: 8, tournament_id: 2)
+Booking.create(user_id: 21, team_id: 6, tournament_id: 2)
+Booking.create(user_id: 22, team_id: 6, tournament_id: 2)
+Booking.create(user_id: 23, team_id: 6, tournament_id: 2)
+Booking.create(user_id: 24, team_id: 6, tournament_id: 2)
 
-Booking.create(user_id: 25, team_id: 9, tournament_id: 3)
-Booking.create(user_id: 26, team_id: 9, tournament_id: 3)
-Booking.create(user_id: 27, team_id: 9, tournament_id: 3)
+Booking.create(user_id: 25, team_id: 7, tournament_id: 2)
+Booking.create(user_id: 26, team_id: 7, tournament_id: 2)
+Booking.create(user_id: 27, team_id: 7, tournament_id: 2)
+Booking.create(user_id: 28, team_id: 7, tournament_id: 2)
 
-Booking.create(user_id: 28, team_id: 10, tournament_id: 3)
-Booking.create(user_id: 29, team_id: 10, tournament_id: 3)
-Booking.create(user_id: 30, team_id: 10, tournament_id: 3)
+Booking.create(user_id: 29, team_id: 8, tournament_id: 2)
+Booking.create(user_id: 30, team_id: 8, tournament_id: 2)
+Booking.create(user_id: 31, team_id: 8, tournament_id: 2)
+Booking.create(user_id: 32, team_id: 8, tournament_id: 2)
 
-Booking.create(user_id: 31, team_id: 11, tournament_id: 3)
-Booking.create(user_id: 32, team_id: 11, tournament_id: 3)
-Booking.create(user_id: 33, team_id: 11, tournament_id: 3)
+Booking.create(user_id: 33, team_id: 9, tournament_id: 2)
+Booking.create(user_id: 34, team_id: 9, tournament_id: 2)
+Booking.create(user_id: 35, team_id: 9, tournament_id: 2)
+Booking.create(user_id: 36, team_id: 9, tournament_id: 2)
 
-Booking.create(user_id: 34, team_id: 12, tournament_id: 4)
-Booking.create(user_id: 35, team_id: 12, tournament_id: 4)
-Booking.create(user_id: 36, team_id: 12, tournament_id: 4)
-Booking.create(user_id: 37, team_id: 12, tournament_id: 4)
-Booking.create(user_id: 38, team_id: 12, tournament_id: 4)
+Booking.create(user_id: 37, team_id: 10, tournament_id: 2)
+Booking.create(user_id: 38, team_id: 10, tournament_id: 2)
+Booking.create(user_id: 39, team_id: 10, tournament_id: 2)
+Booking.create(user_id: 40, team_id: 10, tournament_id: 2)
 
-Booking.create(user_id: 39, team_id: 13, tournament_id: 4)
-Booking.create(user_id: 40, team_id: 13, tournament_id: 4)
-Booking.create(user_id: 41, team_id: 13, tournament_id: 4)
-Booking.create(user_id: 42, team_id: 13, tournament_id: 4)
-Booking.create(user_id: 43, team_id: 13, tournament_id: 4)
+#Tournament 3
+Booking.create(user_id: 9, team_id: 3, tournament_id: 3)
+Booking.create(user_id: 10, team_id: 3, tournament_id: 3)
+Booking.create(user_id: 11, team_id: 3, tournament_id: 3)
+Booking.create(user_id: 12, team_id: 3, tournament_id: 3)
 
-Booking.create(user_id: 44, team_id: 14, tournament_id: 5)
+Booking.create(user_id: 13, team_id: 4, tournament_id: 3)
+Booking.create(user_id: 14, team_id: 4, tournament_id: 3)
+Booking.create(user_id: 15, team_id: 4, tournament_id: 3)
+Booking.create(user_id: 16, team_id: 4, tournament_id: 3)
 
-Booking.create(user_id: 45, team_id: 15, tournament_id: 5)
-Booking.create(user_id: 46, team_id: 16, tournament_id: 5)
-Booking.create(user_id: 47, team_id: 17, tournament_id: 5)
+Booking.create(user_id: 17, team_id: 5, tournament_id: 3)
+Booking.create(user_id: 18, team_id: 5, tournament_id: 3)
+Booking.create(user_id: 19, team_id: 5, tournament_id: 3)
+Booking.create(user_id: 20, team_id: 5, tournament_id: 3)
+
+Booking.create(user_id: 21, team_id: 6, tournament_id: 3)
+Booking.create(user_id: 22, team_id: 6, tournament_id: 3)
+Booking.create(user_id: 23, team_id: 6, tournament_id: 3)
+Booking.create(user_id: 24, team_id: 6, tournament_id: 3)
+
+Booking.create(user_id: 25, team_id: 7, tournament_id: 3)
+Booking.create(user_id: 26, team_id: 7, tournament_id: 3)
+Booking.create(user_id: 27, team_id: 7, tournament_id: 3)
+Booking.create(user_id: 28, team_id: 7, tournament_id: 3)
+
+Booking.create(user_id: 29, team_id: 8, tournament_id: 3)
+Booking.create(user_id: 30, team_id: 8, tournament_id: 3)
+Booking.create(user_id: 31, team_id: 8, tournament_id: 3)
+Booking.create(user_id: 32, team_id: 8, tournament_id: 3)
+
+Booking.create(user_id: 33, team_id: 9, tournament_id: 3)
+Booking.create(user_id: 34, team_id: 9, tournament_id: 3)
+Booking.create(user_id: 35, team_id: 9, tournament_id: 3)
+Booking.create(user_id: 36, team_id: 9, tournament_id: 3)
+
+Booking.create(user_id: 37, team_id: 10, tournament_id: 3)
+Booking.create(user_id: 38, team_id: 10, tournament_id: 3)
+Booking.create(user_id: 39, team_id: 10, tournament_id: 3)
+Booking.create(user_id: 40, team_id: 10, tournament_id: 3)
+
+Booking.create(user_id: 41, team_id: 11, tournament_id: 3)
+Booking.create(user_id: 42, team_id: 11, tournament_id: 3)
+Booking.create(user_id: 43, team_id: 11, tournament_id: 3)
+Booking.create(user_id: 44, team_id: 11, tournament_id: 3)
+
+#Tournament 4
+Booking.create(user_id: 17, team_id: 5, tournament_id: 4)
+Booking.create(user_id: 18, team_id: 5, tournament_id: 4)
+Booking.create(user_id: 19, team_id: 5, tournament_id: 4)
+Booking.create(user_id: 20, team_id: 5, tournament_id: 4)
+
+Booking.create(user_id: 21, team_id: 6, tournament_id: 4)
+Booking.create(user_id: 22, team_id: 6, tournament_id: 4)
+Booking.create(user_id: 23, team_id: 6, tournament_id: 4)
+Booking.create(user_id: 24, team_id: 6, tournament_id: 4)
+
+Booking.create(user_id: 25, team_id: 7, tournament_id: 4)
+Booking.create(user_id: 26, team_id: 7, tournament_id: 4)
+Booking.create(user_id: 27, team_id: 7, tournament_id: 4)
+Booking.create(user_id: 28, team_id: 7, tournament_id: 4)
+
+Booking.create(user_id: 29, team_id: 8, tournament_id: 4)
+Booking.create(user_id: 30, team_id: 8, tournament_id: 4)
+Booking.create(user_id: 31, team_id: 8, tournament_id: 4)
+Booking.create(user_id: 32, team_id: 8, tournament_id: 4)
+
+Booking.create(user_id: 33, team_id: 9, tournament_id: 4)
+Booking.create(user_id: 34, team_id: 9, tournament_id: 4)
+Booking.create(user_id: 35, team_id: 9, tournament_id: 4)
+Booking.create(user_id: 36, team_id: 9, tournament_id: 4)
+
+Booking.create(user_id: 37, team_id: 10, tournament_id: 4)
+Booking.create(user_id: 38, team_id: 10, tournament_id: 4)
+Booking.create(user_id: 39, team_id: 10, tournament_id: 4)
+Booking.create(user_id: 40, team_id: 10, tournament_id: 4)
+
+Booking.create(user_id: 41, team_id: 11, tournament_id: 4)
+Booking.create(user_id: 42, team_id: 11, tournament_id: 4)
+Booking.create(user_id: 43, team_id: 11, tournament_id: 4)
+Booking.create(user_id: 44, team_id: 11, tournament_id: 4)
+
+Booking.create(user_id: 45, team_id: 11, tournament_id: 4)
+Booking.create(user_id: 46, team_id: 11, tournament_id: 4)
+Booking.create(user_id: 47, team_id: 11, tournament_id: 4)
+Booking.create(user_id: 48, team_id: 11, tournament_id: 4)
+
+#Tournament 5
+Booking.create(user_id: 1, team_id: 1, tournament_id: 5)
+Booking.create(user_id: 2, team_id: 1, tournament_id: 5)
+Booking.create(user_id: 3, team_id: 1, tournament_id: 5)
+Booking.create(user_id: 4, team_id: 1, tournament_id: 5)
+
+Booking.create(user_id: 5, team_id: 2, tournament_id: 5)
+Booking.create(user_id: 6, team_id: 2, tournament_id: 5)
+Booking.create(user_id: 7, team_id: 2, tournament_id: 5)
+Booking.create(user_id: 8, team_id: 2, tournament_id: 5)
+
+Booking.create(user_id: 9, team_id: 3, tournament_id: 5)
+Booking.create(user_id: 10, team_id: 3, tournament_id: 5)
+Booking.create(user_id: 11, team_id: 3, tournament_id: 5)
+Booking.create(user_id: 12, team_id: 3, tournament_id: 5)
+
+Booking.create(user_id: 13, team_id: 4, tournament_id: 5)
+Booking.create(user_id: 14, team_id: 4, tournament_id: 5)
+Booking.create(user_id: 15, team_id: 4, tournament_id: 5)
+Booking.create(user_id: 16, team_id: 4, tournament_id: 5)
+
+Booking.create(user_id: 17, team_id: 5, tournament_id: 5)
+Booking.create(user_id: 18, team_id: 5, tournament_id: 5)
+Booking.create(user_id: 19, team_id: 5, tournament_id: 5)
+Booking.create(user_id: 20, team_id: 5, tournament_id: 5)
+
+Booking.create(user_id: 21, team_id: 6, tournament_id: 5)
+Booking.create(user_id: 22, team_id: 6, tournament_id: 5)
+Booking.create(user_id: 23, team_id: 6, tournament_id: 5)
+Booking.create(user_id: 24, team_id: 6, tournament_id: 5)
+
+Booking.create(user_id: 25, team_id: 7, tournament_id: 5)
+Booking.create(user_id: 26, team_id: 7, tournament_id: 5)
+Booking.create(user_id: 27, team_id: 7, tournament_id: 5)
+Booking.create(user_id: 28, team_id: 7, tournament_id: 5)
+
+Booking.create(user_id: 29, team_id: 8, tournament_id: 5)
+Booking.create(user_id: 30, team_id: 8, tournament_id: 5)
+Booking.create(user_id: 31, team_id: 8, tournament_id: 5)
+Booking.create(user_id: 32, team_id: 8, tournament_id: 5)
+
+Booking.create(user_id: 33, team_id: 9, tournament_id: 5)
+Booking.create(user_id: 34, team_id: 9, tournament_id: 5)
+Booking.create(user_id: 35, team_id: 9, tournament_id: 5)
+Booking.create(user_id: 36, team_id: 9, tournament_id: 5)
+
+Booking.create(user_id: 37, team_id: 10, tournament_id: 5)
+Booking.create(user_id: 38, team_id: 10, tournament_id: 5)
+Booking.create(user_id: 39, team_id: 10, tournament_id: 5)
+Booking.create(user_id: 40, team_id: 10, tournament_id: 5)
+
+Booking.create(user_id: 41, team_id: 11, tournament_id: 5)
+Booking.create(user_id: 42, team_id: 11, tournament_id: 5)
+Booking.create(user_id: 43, team_id: 11, tournament_id: 5)
+Booking.create(user_id: 44, team_id: 11, tournament_id: 5)
+
+Booking.create(user_id: 45, team_id: 11, tournament_id: 5)
+Booking.create(user_id: 46, team_id: 11, tournament_id: 5)
+Booking.create(user_id: 47, team_id: 11, tournament_id: 5)
+Booking.create(user_id: 48, team_id: 11, tournament_id: 5)
 
 #Actions Seed
 Action.create(name:'goal')
