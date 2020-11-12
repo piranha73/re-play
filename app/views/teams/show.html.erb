@@ -1,5 +1,5 @@
 <div id="team-show">
-  <div class="team-profile">
+  <div class="team-profile col-3">
     <div class="team-profile-title">
       <h2><%= @team.name %></h2>
       <% unless @team.logo.nil? %>
@@ -16,23 +16,31 @@
     <div class="d-flex"><i class="fas fa-tshirt" style="color: yellow;"></i><p>#56 - Yassine</p></div>
 
     <div>
-      <%= link_to "Delete Team", account_path, method: :delete, data: { confirm: "Are you sure?" }, class: "far fa-trash-alt", style: "color: red;" %>
+      <%= link_to "", account_path, method: :delete, data: { confirm: "Are you sure?" }, class: "far fa-trash-alt", style: "color: red;" %>
+      <%= link_to "Delete Team", account_path, method: :delete, data: { confirm: "Are you sure?" }, style: "color: red; font-family: 'Teko', 'sans-serif'; font-size: 20px;" %>
     </div>
   </div>
 
-  <div id="team-body">
-    <h1>Tournaments' stats</h1>
-    <div class="radar-graphs">
-      <% @team.tournaments.uniq.each do |tournament| %>
-        <%#= render partial: 'shared/tournament_stats', locals: { tournament: tournament} %>
-        <%= render partial: 'shared/charts/radar'%>
-      <% end %>
+  <div class="team-show-right col-9">
+    <div id="team-body" style="margin-bottom: 20px;">
+      <h1>Tournaments' stats</h1>
+      <div class="radar-graphs">
+        <% @team.tournaments.uniq.each do |tournament| %>
+          <%#= render partial: 'shared/tournament_stats', locals: { tournament: tournament} %>
+          <%= render partial: 'shared/charts/radar'%>
+        <% end %>
+      </div>
     </div>
-  </div>
 
-  <div class="graphs">
-    <h1>Players' stats</h1>
-    <%= render partial: 'shared/charts/charts' %>
+    <div class="graphs">
+      <h1>Players' stats</h1>
+      <div class="d-flex flex-wrap">
+        <div class="col-6"><%= render partial: 'shared/charts/goals' %></div>
+        <div class="col-6"><%= render partial: 'shared/charts/charts' %></div>
+        <div class="col-6"><%= render partial: 'shared/charts/assists' %></div>
+        <div class="col-6"><%= render partial: 'shared/charts/fouls' %></div>
+      </div>
+    </div>
   </div>
 
 </div>

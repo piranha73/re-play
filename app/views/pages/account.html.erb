@@ -13,7 +13,9 @@
       <div class="bottom-box">
         <div class="left-box" style="margin-right: 20px;">
           <h1 style="padding-bottom: 0px;">Managing</h1>
+          <div class="" style="overflow: auto; height: 60vh;">
           <%= render partial: "tournaments/card_index", locals: { tournaments: current_user.tournaments, buttons: false } %>
+          </div>
         </div>
         <div class="right-box">
           <div class="tabs">
@@ -27,10 +29,10 @@
           </div>
 
           <div class="tab-content">
-            <div id="tournaments" class="active" data-tab-content>
+            <div id="tournaments" class="active" data-tab-content style="overflow: auto; height: 60vh;">
               <%= render partial: "tournaments/card_index", locals: { tournaments: current_user.player_tournaments, buttons: false } %>
             </div>
-            <div id="teams-tournaments" data-tab-content>
+            <div id="teams-tournaments" data-tab-content style="overflow: auto; height: 60vh;">
               <%= render partial: "pages/personal_teams", locals: { teams: current_user.player_teams } %>
             </div>
             <div id="personal-info" data-tab-content>

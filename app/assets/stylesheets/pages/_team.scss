@@ -1,14 +1,16 @@
 #team-show {
   width: 90vw;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 2fr 2fr;
+  display: flex;
 
   .team-profile {
     background-color: $mid-blue;
     border-radius: 10px;
     padding: 10px;
     margin-right: 20px;
+    height: 100%;
+    position: sticky;
+    top: 0;
 
     .team-profile-title {
       display: flex;
