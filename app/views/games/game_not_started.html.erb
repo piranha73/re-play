@@ -1,0 +1,10 @@
+<div class = "game-show">
+  <%= render partial: 'games/game_header' %>
+
+  <div style="display: flex; flex-direction: column; align-items: center;">
+    <h1>game not started</h1>
+    <% if current_user.is_manager?(@tournament) %>
+      <%= link_to "start game", tournament_game_start_path(@tournament, @game), method: :patch %>
+    <% end %>
+  </div>
+</div>

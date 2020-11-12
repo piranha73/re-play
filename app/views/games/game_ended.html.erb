@@ -1,11 +1,9 @@
-<div class="game-show">
-  <%=  render partial: 'games/game_header' %>
-  <div style="display: flex; justify-content: center;">
-    <%= link_to "end game", tournament_game_finish_path(@tournament, @game), method: :patch%>
+<div class = "game-show">
+  <%= render partial: 'games/game_header' %>
+
+  <div style="display: flex; flex-direction: column; align-items: center;">
+    <h1>game over</h1>
   </div>
-  <% if current_user.is_manager?(@tournament) %>
-    <%= render partial: 'games/manager_actions' %>
-  <% end %>
 
   <div id="highlights">
     <div class="home-team">
@@ -34,11 +32,10 @@
       <%= render partial: 'games/team_highlights', locals: { team: @away_team, game: @game.id } %>
     </div>
   </div>
-
-  <div style="text-align: center;">
-    <%= link_to tournament_path(@tournament) do %>
-        <i class="fas fa-angle-left"></i>
-        <p> tournament </p>
+  <div style="text-align: center">
+     <%= link_to tournament_path(@tournament) do %>
+      <i class="fas fa-angle-left"></i>
+      <p> tournament </p>
     <% end %>
   </div>
 </div>
