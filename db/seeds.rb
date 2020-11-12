@@ -7,65 +7,14 @@ Sport.create(name: 'Football')
 Structure.create(name: 'Type 1')
 
 #User Seeds
-# User.create(first_name: "Yassine", last_name: "Chaqroun", email: "yc@email.com", password: "123456", address: "Casablanca, Morocco")
-# User.create(first_name: 'Michele', last_name: 'Comolli', email: 'mc@email.com', password: '123456', address: "Milan, Italy")
-# User.create(first_name: 'Giacomo', last_name: 'Bonomelli', email: 'gb@email.com', password: '123456', address: "Milan, Italy")
-# User.create(first_name: 'Mike', last_name: 'Tung', email: 'mt@email.com', password: '123456', address: "Milan, Italy")
-# User.create(first_name: 'John', last_name: 'Smith', email: 'js@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Jake', last_name: 'Smith', email: 'jake@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Jay', last_name: 'Smith', email: 'jay@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Paul', last_name: 'Smith', email: 'ps@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Michael', last_name: 'Smith', email: 'ms@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Steve', last_name: 'Smith', email: 'ss@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Mary', last_name: 'Smith', email: 'mary@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Lena', last_name: 'Smith', email: 'ls@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Ines', last_name: 'Smith', email: 'is@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Abe', last_name: 'Smith', email: 'as@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Bob', last_name: 'Smith', email: 'bs@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Bill', last_name: 'Stevens', email: 'bill@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Mike', last_name: 'Stevens', email: 'mike@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Jane', last_name: 'Stevens', email: 'jane@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Chris', last_name: 'Stevens', email: 'chris@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Jean', last_name: 'Stevens', email: 'jean@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Paul', last_name: 'Stevens', email: 'paul@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Ines', last_name: 'Stevens', email: 'ines@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Adele', last_name: 'Stevens', email: 'adele@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Donald', last_name: 'Stevens', email: 'donald@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Barack', last_name: 'Obama', email: 'obama@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'George', last_name: 'Bush', email: 'bush@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Bill', last_name: 'Clinton', email: 'clinton@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Buffalo', last_name: 'Bill', email: 'bb@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Serena', last_name: 'Williams', email: 'sw@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Andy', last_name: 'Murray', email: 'am@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Roger', last_name: 'Federer', email: 'rf@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Rafael', last_name: 'Nadal', email: 'rn@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Max', last_name: 'Payne', email: 'maxp@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Michael', last_name: 'Jordan', email: 'michael@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Lebron', last_name: 'James', email: 'lj@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'David', last_name: 'August', email: 'da@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Nicolas', last_name: 'Jaar', email: 'nicolasjaar@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Solomun', last_name: 'Dimitri', email: 'solomun@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Bill', last_name: 'Burr', email: 'burr@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Leo', last_name: 'Messi', email: 'messi@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Christiano', last_name: 'Ronaldo', email: 'cr@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Didier', last_name: 'Deschamps', email: 'dd@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Drole', last_name: 'De Nom', email: 'ddn@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Antoine', last_name: 'De Caunnes', email: 'adc@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Led', last_name: 'Zepplin', email: 'lz@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Guns', last_name: 'Roses', email: 'groses@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Joe', last_name: 'Rogan', email: 'joerogan@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Edward', last_name: 'Snowden', email: 'edward@email.com', password: '123456', address: "Boston, USA")
-# User.create(first_name: 'Post', last_name: 'Malone', email: 'postma@email.com', password: '123456', address: "Boston, USA")
-
 User.create(first_name: "Yassine", last_name: "Chaqroun", email: "yc@email.com", password: "123456", address: "Casablanca, Morocco")
 User.create(first_name: 'Michele', last_name: 'Comolli', email: 'mc@email.com', password: '123456', address: "Milan, Italy")
 User.create(first_name: 'Giacomo', last_name: 'Bonomelli', email: 'gb@email.com', password: '123456', address: "Milan, Italy")
 User.create(first_name: 'Mike', last_name: 'Tung', email: 'mt@email.com', password: '123456', address: "Milan, Italy")
 
 76.times do |i|
-  name = Faker::Sports::Football.player
-  first_name = name.split.first
-  last_name = name.split.last
+  first_name = Faker::Name.first_name  
+  last_name = Faker::Name.last_name
   User.create(
     first_name: first_name,
     last_name: last_name,
@@ -83,12 +32,12 @@ p "created #{User.all.count} users with ugly names, especially Michele"
 end
 
 #Join Team Player Seeds
-@user_id = 1
+@user_id = 5
 
 def create_join_team_player(team)
   JoinTeamPlayer.create(user_id: @user_id, team: team)  
   if @user_id == User.all.count
-    @user_id = 1
+    @user_id = 5
   else
     @user_id += 1
   end
@@ -131,7 +80,6 @@ users_with_single_teams = users_non_managers.filter { |u| u.teams.count == 1 }
 @user_id = users_non_managers.first.id
 @teams_of_at_least_5 = Team.first(15)
 @teams_of_at_least_5_index = 0
-@teams_of_4 = Team.limit(5).offset(15)
 
 def create_booking(tournament)
   team = @teams_of_at_least_5[@teams_of_at_least_5_index]
@@ -185,6 +133,15 @@ Tournament.all.each do |tournament|
   puts "#{tournament.name} - #{message} (#{tournament.number_of_teams * 5} / #{users_in_tournament.flatten.uniq.size})"
 end
 
+puts "checking if tornament manager is not subscribed to the tournament...."
+Tournament.all.each do |tournament|
+  users_in_tournament = []
+  tournament.teams.uniq.each do |team|
+    users_in_tournament << tournament.bookings.where(team: team).map { |booking| booking.user }.uniq
+  end
+  message = users_in_tournament.flatten.uniq.include?(tournament.user) ? "subscribed" : "not subscribed"
+  puts "#{tournament.name} - #{message}"
+end
 
 puts " "
 # #Actions Seed
