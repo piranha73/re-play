@@ -38,6 +38,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { tabsFunction } from "../components/tabs";
 import { tabToggle } from "../components/tabs2";
 import { initSelect2 } from '../plugins/init_select2';
+import { moreThing } from "../components/more";
 
 
 
@@ -82,6 +83,9 @@ document.addEventListener('turbolinks:load', () => {
     initMapbox();
   }
 
+  if (document.querySelector(".more")) {
+    moreThing();
+  }
   // if (document.getElementById("map")) {
   //   tabToggle();
   // }
