@@ -52,3 +52,23 @@
   }
 
 }
+
+#man-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  .actions-form{
+    width: 100%;
+    text-align: right;
+  }
+}
+
+#man-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  .actions-form{
+    width: 100%;
+    text-align: left;
+  }
+}

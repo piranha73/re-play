@@ -37,7 +37,7 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initMapbox } from '../plugins/init_mapbox';
 import { tabsFunction } from "../components/tabs";
 import { tabToggle } from "../components/tabs2";
-
+import { initSelect2 } from '../plugins/init_select2';
 
 
 
@@ -89,6 +89,8 @@ document.addEventListener('turbolinks:load', () => {
   if (document.querySelectorAll('[data-tab-target]')) {
    tabsFunction();
  }
+
+ initSelect2();
 });
 
 
