@@ -1,0 +1,41 @@
+.wrapper-login-form{
+  border-style: solid;
+  border-width: 4px;
+  border-color: #11FFFF;
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px 20px 20px 20px;
+}
+.form-inputs{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+}
+.form-actions{
+  text-align: center;
+}
+#links-actions{
+  margin-top: 30px;
+  text-align: center;
+}
+#login-title{
+  color:#11ffff;
+  text-align: center;
+}
+.fa-envelope{
+  color: #11FFFF;
+}
+.fa-lock{
+  color: #11FFFF;
+}
+
+#login-password{
+  margin-top: 10px;
+}
+#login-email{
+  margin-top: 10px;
+}
+#remember-me{
+  color:#11FFFF;
+}
