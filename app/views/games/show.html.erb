@@ -1,7 +1,13 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <div class="game-show">
   <%=  render partial: 'games/game_header' %>
-  <div style="display: flex; justify-content: center;">
-    <%= link_to "end game", tournament_game_finish_path(@tournament, @game), method: :patch%>
+  <div style="display: flex; flex-direction: column; justify-content: center;">
+    <div style="margin: 1% auto; color: white;">
+      <span id="minutes"><%= @game.mins %></span>:<span id="seconds"><%= @game.secs %></span>
+    </div>
+    <div style="margin: 1% auto;">
+      <%= link_to "end game", tournament_game_finish_path(@tournament, @game), method: :patch%>
+    </div>
   </div>
   <% if current_user.is_manager?(@tournament) %>
     <%= render partial: 'games/manager_actions' %>
@@ -42,3 +48,13 @@
     <% end %>
   </div>
 </div>
+
+<script>
+  var sec = <%= @game.seconds_passed %> ;
+  console.log(sec)
+    function pad ( val ) { return val > 9 ? val : "0" + val; }
+    setInterval( function(){
+        $("#seconds").html(pad(++sec%60));
+        $("#minutes").html(pad(parseInt(sec/60,10)));
+    }, 1000);
+</script>

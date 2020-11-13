@@ -28,4 +28,28 @@ class Game < ApplicationRecord
   def is_started?
     self.start_time ? true : false
   end
+
+  def seconds_passed
+    return unless self.start_time
+
+    past = DateTime.parse(self.start_time.to_s)
+    present = DateTime.now.new_offset(0)
+    return ((present - past)*24*60*60).to_i
+  end
+
+  def secs
+    secs = (seconds_passed % 60).to_s
+    if secs.chars.size == 1
+      secs = "0#{secs}"
+    end
+    return secs
+  end
+
+  def mins
+    mins = (seconds_passed / 60).to_s
+    if mins.chars.size == 1
+      mins = "0#{mins}"
+    end
+    return mins
+  end
 end
