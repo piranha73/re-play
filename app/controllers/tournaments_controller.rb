@@ -76,7 +76,7 @@ class TournamentsController < ApplicationController
     @tournament.sport_id = 1
     @tournament.structure_id = 1
     if @tournament.save
-      redirect_to tournament_share_path(@tournament)
+      redirect_to tournament_path(@tournament)
     else
       render 'new'
     end

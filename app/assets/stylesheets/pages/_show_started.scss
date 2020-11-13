@@ -24,6 +24,8 @@
 
   #ranking {
     border-left: 1px solid;
+    position: sticky;
+    top: 0;
     border-color: $fluo-blue;
     padding-left: 30px;
     h2 {
