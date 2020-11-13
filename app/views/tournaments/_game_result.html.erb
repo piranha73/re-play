@@ -1,0 +1,11 @@
+<div>
+  <% if game.start_time.nil? %>
+    <p>vs</p>
+  <% else %>
+  <div class="d-flex">
+    <p><%= game.home_team.action_in_game(Action.first, game)%></p>
+    <p>-</p>
+    <p><%= game.away_team.action_in_game(Action.first, game)%></p>
+  </div>
+  <% end %>
+</div>
