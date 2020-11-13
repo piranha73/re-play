@@ -16,4 +16,5 @@ Rails.application.routes.draw do
 
   resources :teams
   get '/account', to: 'pages#account'
+  get 'more', to:'pages#more'
 end
