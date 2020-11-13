@@ -1,6 +1,6 @@
 <% @tournament.ranking.each_with_index do |array, index| %>
   <div class="teams-rankings">
-    <p style="margin-right: 10px;"><%= index + 1 %></p>
+    <p style="margin-right: 10px;">#<%= index + 1 %></p>
     <p> <%= array[0].name %> </p>
     <p> <%= array[1] %> </p>
   </div>
