@@ -1,9 +1,9 @@
 <div id="manager-actions">
-  <div class="match-form">
+  <div class="match-form" id="man-left">
     <%= render partial: "new_statistic", locals: { team: @home_team }%>
   </div>
 
-  <div class="match-form" style="text-align: right;">
+  <div class="match-form" id="man-right" style="text-align: right;">
     <%= render partial: "new_statistic", locals: { team: @away_team }%>
   </div>
 </div>

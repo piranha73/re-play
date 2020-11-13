@@ -1,6 +1,8 @@
 <%= simple_form_for([@tournament, @game, @statistic]) do |f| %>
-  <%= f.association :user, collection: team.players_in_tournament(@tournament), label_method: :first_name%>
-  <%= f.association :action %>
+  <div class="actions-form" style="" >
+    <%= f.association :user, collection: team.players_in_tournament(@tournament), label_method: :first_name, input_html: { class: 'btn btn-secondary dropdown-toggle' } %>
+    <%= f.association :action, input_html: { class: 'btn btn-secondary dropdown-toggle' } %>
+  </div>
   <%= hidden_field_tag 'team_id', team.id %>
   <%= f.button :submit, "Save", class: "btn btn-success" %>
 <% end %>
