@@ -8,8 +8,8 @@
           <%= link_to tournament_game_path(@tournament, game) do %>
             <div class="show-started-card" id="game">
               <p><%= game.home_team.name %></p>
-              <p style="text-align: center;">vs</p>
-              <p style="text-align: right;"> <%= game.away_team.name %> </p>
+              <%= render partial: 'game_result', locals: {game: game} %>
+              <p style="text-align: right;"><%= game.away_team.name %></p>
             </div>
           <% end %>
         <% end %>
