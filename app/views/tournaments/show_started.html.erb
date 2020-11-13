@@ -1,5 +1,6 @@
 <div class="show-started">
   <div class="match-schedule">
+    <h1 style="text-align: center;"><%= @tournament.name  %> </h1>
     <% @tournament.matchdays.each do |matchday| %>
       <div class="" style="width: 60vw; margin: 0 auto;" id="matchday">
       <h2>Matchday Number: <%= matchday.number %></h2>
