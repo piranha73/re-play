@@ -2,6 +2,7 @@
   <div class="highlight">
     <%= statistic.user.first_name %> -
     <%= statistic.action.name %> -
-    Time: <%= statistic.created_at.strftime("%M") %> minutes
+    <% highlight_time = statistic.created_at - statistic.game.start_time  %>
+    <%= "%.4g" % ("%.2f" % (highlight_time/1.minute)) %>'
   </div>
 <% end %>
